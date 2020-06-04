@@ -5,10 +5,10 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="https://aykuxt.github.io/Telethon/basic/quick-start/" rel="canonical"/>
+<link href="https://aykuxt.github.io/Telethon/concepts/strings/" rel="canonical"/>
 <link href="../../assets/images/favicon.png" rel="shortcut icon"/>
 <meta content="mkdocs-1.1.2, mkdocs-material-5.2.2" name="generator"/>
-<title>Quick-Start - Telethon Docs</title>
+<title>String-based Debugging - Telethon Docs</title>
 <link href="../../assets/stylesheets/main.a2408e81.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.a46bcfb3.min.css" rel="stylesheet"/>
 <meta content="#2196f3" name="theme-color"/>
@@ -22,7 +22,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#quick-start">
+<a class="md-skip" href="#string-based-debugging">
           Skip to content
         </a>
 </div>
@@ -43,7 +43,7 @@
           </span>
 <span class="md-header-nav__topic md-ellipsis">
             
-              Quick-Start
+              String-based Debugging
             
           </span>
 </div>
@@ -117,8 +117,8 @@
       Getting started
     </a>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="nav-2" id="nav-2" type="checkbox"/>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" id="nav-2" type="checkbox"/>
 <label class="md-nav__link" for="nav-2">
       First Steps
       <span class="md-nav__icon md-icon">
@@ -134,28 +134,27 @@
       </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../installation/" title="Installation">
+<a class="md-nav__link" href="../../basic/installation/" title="Installation">
       Installation
     </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../signing-in/" title="Signing In">
+<a class="md-nav__link" href="../../basic/signing-in/" title="Signing In">
       Signing In
     </a>
 </li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
-<a class="md-nav__link md-nav__link--active" href="./" title="Quick-Start">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../basic/quick-start/" title="Quick-Start">
       Quick-Start
     </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../updates/" title="Updates">
+<a class="md-nav__link" href="../../basic/updates/" title="Updates">
       Updates
     </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../next-steps/" title="Next Steps">
+<a class="md-nav__link" href="../../basic/next-steps/" title="Next Steps">
       Next Steps
     </a>
 </li>
@@ -186,8 +185,8 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" id="nav-4" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="nav-4" id="nav-4" type="checkbox"/>
 <label class="md-nav__link" for="nav-4">
       Concepts
       <span class="md-nav__icon md-icon">
@@ -202,13 +201,14 @@
         Concepts
       </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../concepts/strings/" title="String-based Debugging">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<a class="md-nav__link md-nav__link--active" href="./" title="String-based Debugging">
       String-based Debugging
     </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../concepts/entities/" title="Entities">
+<a class="md-nav__link" href="../entities/" title="Entities">
       Entities
     </a>
 </li>
@@ -259,109 +259,71 @@
 </div>
 <div class="md-content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/LonamiWebs/Telethon/edit/master/docs/basic/quick-start.md" title="Edit this page">
+<a class="md-content__button md-icon" href="https://github.com/LonamiWebs/Telethon/edit/master/docs/concepts/strings.md" title="Edit this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
 </a>
-<h1 id="quick-start">Quick-Start<a class="headerlink" href="#quick-start" title="Permanent link">¶</a></h1>
-<p>Let's see a longer example to learn some of the methods that the library
-has to offer. These are known as "friendly methods", and you should always
-use these if possible.</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">telethon</span> <span class="kn">import</span> <span class="n">TelegramClient</span>
-
-<span class="c1"># Remember to use your own values from my.telegram.org!</span>
-<span class="n">api_id</span> <span class="o">=</span> <span class="mi">12345</span>
-<span class="n">api_hash</span> <span class="o">=</span> <span class="s1">'0123456789abcdef0123456789abcdef'</span>
-<span class="n">client</span> <span class="o">=</span> <span class="n">TelegramClient</span><span class="p">(</span><span class="s1">'anon'</span><span class="p">,</span> <span class="n">api_id</span><span class="p">,</span> <span class="n">api_hash</span><span class="p">)</span>
-
-<span class="k">async</span> <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-    <span class="c1"># Getting information about yourself</span>
-    <span class="n">me</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">get_me</span><span class="p">()</span>
-
-    <span class="c1"># "me" is an User object. You can pretty-print</span>
-    <span class="c1"># any Telegram object with the "stringify" method:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">me</span><span class="o">.</span><span class="n">stringify</span><span class="p">())</span>
-
-    <span class="c1"># When you print something, you see a representation of it.</span>
-    <span class="c1"># You can access all attributes of Telegram objects with</span>
-    <span class="c1"># the dot operator. For example, to get the username:</span>
-    <span class="n">username</span> <span class="o">=</span> <span class="n">me</span><span class="o">.</span><span class="n">username</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">username</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">me</span><span class="o">.</span><span class="n">phone</span><span class="p">)</span>
-
-    <span class="c1"># You can print all the dialogs/conversations that you are part of:</span>
-    <span class="k">async</span> <span class="k">for</span> <span class="n">dialog</span> <span class="ow">in</span> <span class="n">client</span><span class="o">.</span><span class="n">iter_dialogs</span><span class="p">():</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">dialog</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="s1">'has ID'</span><span class="p">,</span> <span class="n">dialog</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
-
-    <span class="c1"># You can send messages to yourself...</span>
-    <span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="s1">'me'</span><span class="p">,</span> <span class="s1">'Hello, myself!'</span><span class="p">)</span>
-    <span class="c1"># ...to some chat ID</span>
-    <span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="o">-</span><span class="mi">100123456</span><span class="p">,</span> <span class="s1">'Hello, group!'</span><span class="p">)</span>
-    <span class="c1"># ...to your contacts</span>
-    <span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="s1">'+34600123123'</span><span class="p">,</span> <span class="s1">'Hello, friend!'</span><span class="p">)</span>
-    <span class="c1"># ...or even to any username</span>
-    <span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="s1">'TelethonChat'</span><span class="p">,</span> <span class="s1">'Hello, Telethon!'</span><span class="p">)</span>
-
-    <span class="c1"># You can, of course, use markdown in your messages:</span>
-    <span class="n">message</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span>
-        <span class="s1">'me'</span><span class="p">,</span>
-        <span class="s1">'This message has **bold**, `code`, __italics__ and '</span>
-        <span class="s1">'a [nice website](https://example.com)!'</span><span class="p">,</span>
-        <span class="n">link_preview</span><span class="o">=</span><span class="kc">False</span>
-    <span class="p">)</span>
-
-    <span class="c1"># Sending a message returns the sent message object, which you can use</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">message</span><span class="o">.</span><span class="n">raw_text</span><span class="p">)</span>
-
-    <span class="c1"># You can reply to messages directly if you have a message object</span>
-    <span class="k">await</span> <span class="n">message</span><span class="o">.</span><span class="n">reply</span><span class="p">(</span><span class="s1">'Cool!'</span><span class="p">)</span>
-
-    <span class="c1"># Or send files, songs, documents, albums...</span>
-    <span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">send_file</span><span class="p">(</span><span class="s1">'me'</span><span class="p">,</span> <span class="s1">'/home/me/Pictures/holidays.jpg'</span><span class="p">)</span>
-
-    <span class="c1"># You can print the message history of any chat:</span>
-    <span class="k">async</span> <span class="k">for</span> <span class="n">message</span> <span class="ow">in</span> <span class="n">client</span><span class="o">.</span><span class="n">iter_messages</span><span class="p">(</span><span class="s1">'me'</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">message</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="n">message</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
-
-        <span class="c1"># You can download media from messages, too!</span>
-        <span class="c1"># The method will return the path where the file was saved.</span>
-        <span class="k">if</span> <span class="n">message</span><span class="o">.</span><span class="n">photo</span><span class="p">:</span>
-            <span class="n">path</span> <span class="o">=</span> <span class="k">await</span> <span class="n">message</span><span class="o">.</span><span class="n">download_media</span><span class="p">()</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s1">'File saved to'</span><span class="p">,</span> <span class="n">path</span><span class="p">)</span>  <span class="c1"># printed after download is done</span>
-
-<span class="k">with</span> <span class="n">client</span><span class="p">:</span>
-    <span class="n">client</span><span class="o">.</span><span class="n">loop</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
+<h1 id="string-based-debugging">String-based Debugging<a class="headerlink" href="#string-based-debugging" title="Permanent link">¶</a></h1>
+<p>Debugging is <em>really</em> important. Telegram's API is really big and there
+is a lot of things that you should know. Such as, what attributes or fields
+does a result have? Well, the easiest thing to do is printing it:</p>
+<div class="highlight"><pre><span></span><code><span class="n">entity</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">get_entity</span><span class="p">(</span><span class="s1">'username'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">entity</span><span class="p">)</span>
 </code></pre></div>
-<p>Here, we show how to sign in, get information about yourself, send
-messages, files, getting chats, printing messages, and downloading
-files.</p>
-<p>You should make sure that you understand what the code shown here
-does, take note on how methods are called and used and so on before
-proceeding. We will see all the available methods later on.</p>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>Note that Telethon is an asynchronous library, and as such, you should
-get used to it and learn a bit of basic <code>asyncio</code>. This will help a lot.
-As a quick start, this means you generally want to write all your code
-inside some <code>async def</code> like so:</p>
-<div class="highlight"><pre><span></span><code><span class="n">client</span> <span class="o">=</span> <span class="o">...</span>
-
-<span class="k">async</span> <span class="k">def</span> <span class="nf">do_something</span><span class="p">(</span><span class="n">me</span><span class="p">):</span>
-    <span class="o">...</span>
-
-<span class="k">async</span> <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-    <span class="c1"># Most of your code should go here.</span>
-    <span class="c1"># You can of course make and use your own async def (do_something).</span>
-    <span class="c1"># They only need to be async if they need to await things.</span>
-    <span class="n">me</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">get_me</span><span class="p">()</span>
-    <span class="k">await</span> <span class="n">do_something</span><span class="p">(</span><span class="n">me</span><span class="p">)</span>
-
-<span class="k">with</span> <span class="n">client</span><span class="p">:</span>
-    <span class="n">client</span><span class="o">.</span><span class="n">loop</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
+<p>That will show a huge <strong>string</strong> similar to the following:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Channel</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="mi">1066197625</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">'Telegram Usernames'</span><span class="p">,</span> <span class="n">photo</span><span class="o">=</span><span class="n">ChatPhotoEmpty</span><span class="p">(),</span> <span class="n">date</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">43</span><span class="p">,</span> <span class="n">tzinfo</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">timezone</span><span class="o">.</span><span class="n">utc</span><span class="p">),</span> <span class="n">version</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">creator</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">broadcast</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">verified</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">megagroup</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">restricted</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">signatures</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="nb">min</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">scam</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">has_link</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">has_geo</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">slowmode_enabled</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">access_hash</span><span class="o">=-</span><span class="mi">6309373984955162244</span><span class="p">,</span> <span class="n">username</span><span class="o">=</span><span class="s1">'username'</span><span class="p">,</span> <span class="n">restriction_reason</span><span class="o">=</span><span class="p">[],</span> <span class="n">admin_rights</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">banned_rights</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">default_banned_rights</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">participants_count</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 </code></pre></div>
-<p>After you understand this, you may use the <code>telethon.sync</code> hack if you
-want do so (see :ref:<code>compatibility-and-convenience</code>), but note you may
-run into other issues (iPython, Anaconda, etc. have some issues with it).</p>
-</div>
+<p>That's a lot of text. But as you can see, all the properties are there.
+So if you want the title you <strong>don't use regex</strong> or anything like
+splitting <code>str(entity)</code> to get what you want. You just access the
+attribute you need:</p>
+<div class="highlight"><pre><span></span><code><span class="n">title</span> <span class="o">=</span> <span class="n">entity</span><span class="o">.</span><span class="n">title</span>
+</code></pre></div>
+<p>Can we get better than the shown string, though? Yes!</p>
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">entity</span><span class="o">.</span><span class="n">stringify</span><span class="p">())</span>
+</code></pre></div>
+<p>Will show a much better:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Channel</span><span class="p">(</span>
+    <span class="nb">id</span><span class="o">=</span><span class="mi">1066197625</span><span class="p">,</span>
+    <span class="n">title</span><span class="o">=</span><span class="s1">'Telegram Usernames'</span><span class="p">,</span>
+    <span class="n">photo</span><span class="o">=</span><span class="n">ChatPhotoEmpty</span><span class="p">(</span>
+    <span class="p">),</span>
+    <span class="n">date</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">43</span><span class="p">,</span> <span class="n">tzinfo</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">timezone</span><span class="o">.</span><span class="n">utc</span><span class="p">),</span>
+    <span class="n">version</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="n">creator</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">left</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">broadcast</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">verified</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">megagroup</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">restricted</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">signatures</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="nb">min</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">scam</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">has_link</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">has_geo</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">slowmode_enabled</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">access_hash</span><span class="o">=-</span><span class="mi">6309373984955162244</span><span class="p">,</span>
+    <span class="n">username</span><span class="o">=</span><span class="s1">'username'</span><span class="p">,</span>
+    <span class="n">restriction_reason</span><span class="o">=</span><span class="p">[</span>
+    <span class="p">],</span>
+    <span class="n">admin_rights</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">banned_rights</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">default_banned_rights</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">participants_count</span><span class="o">=</span><span class="kc">None</span>
+<span class="p">)</span>
+</code></pre></div>
+<p>Now it's easy to see how we could get, for example,
+the <code>year</code> value. It's inside <code>date</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">channel_year</span> <span class="o">=</span> <span class="n">entity</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">year</span>
+</code></pre></div>
+<p>You don't need to print everything to see what all the possible values
+can be. You can just search in <a href="http://tl.telethon.dev">http://tl.telethon.dev</a>.</p>
+<p>Remember that you can use Python's <a href="https://docs.python.org/3/library/functions.html#isinstance">isinstance</a>
+to check the type of something. For example:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">telethon</span> <span class="kn">import</span> <span class="n">types</span>
+
+<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">entity</span><span class="o">.</span><span class="n">photo</span><span class="p">,</span> <span class="n">types</span><span class="o">.</span><span class="n">ChatPhotoEmpty</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'Channel has no photo'</span><span class="p">)</span>
+</code></pre></div>
 </article>
 </div>
 </div>
@@ -369,7 +331,7 @@ run into other issues (iPython, Anaconda, etc. have some issues with it).</p>
 <footer class="md-footer">
 <div class="md-footer-nav">
 <nav aria-label="Footer" class="md-footer-nav__inner md-grid">
-<a class="md-footer-nav__link md-footer-nav__link--prev" href="../signing-in/" rel="prev" title="Signing In">
+<a class="md-footer-nav__link md-footer-nav__link--prev" href="../../quick-references/faq/" rel="prev" title="FAQ">
 <div class="md-footer-nav__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
 </div>
@@ -378,17 +340,17 @@ run into other issues (iPython, Anaconda, etc. have some issues with it).</p>
 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Signing In
+                FAQ
               </div>
 </div>
 </a>
-<a class="md-footer-nav__link md-footer-nav__link--next" href="../updates/" rel="next" title="Updates">
+<a class="md-footer-nav__link md-footer-nav__link--next" href="../entities/" rel="next" title="Entities">
 <div class="md-footer-nav__title">
 <div class="md-ellipsis">
 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Updates
+                Entities
               </div>
 </div>
 <div class="md-footer-nav__button md-icon">

@@ -1,0 +1,836 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="https://aykuxt.github.io/Telethon/concepts/botapi-vs-mtproto/" rel="canonical"/>
+<link href="../../assets/images/favicon.png" rel="shortcut icon"/>
+<meta content="mkdocs-1.1.2, mkdocs-material-5.2.2" name="generator"/>
+<title>HTTP Bot API vs MTProto - Telethon Docs</title>
+<link href="../../assets/stylesheets/main.a2408e81.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.a46bcfb3.min.css" rel="stylesheet"/>
+<meta content="#2196f3" name="theme-color"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&amp;display=fallback" rel="stylesheet"/>
+<style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+<link href="../../custom.css" rel="stylesheet"/>
+</head>
+<body data-md-color-accent="amber" data-md-color-primary="blue" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#http-bot-api-vs-mtproto">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header-nav md-grid">
+<a aria-label="Telethon Docs" class="md-header-nav__button md-logo" href="https://aykuxt.github.io/Telethon/" title="Telethon Docs">
+<img alt="logo" src="../../logo.svg"/>
+</a>
+<label class="md-header-nav__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"></path></svg>
+</label>
+<div class="md-header-nav__title" data-md-component="header-title">
+<div class="md-header-nav__ellipsis">
+<span class="md-header-nav__topic md-ellipsis">
+            Telethon Docs
+          </span>
+<span class="md-header-nav__topic md-ellipsis">
+            
+              HTTP Bot API vs MTProto
+            
+          </span>
+</div>
+</div>
+<label class="md-header-nav__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" data-md-state="active" name="query" placeholder="Search" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</label>
+<button aria-label="Clear" class="md-search__icon md-icon" data-md-component="search-reset" tabindex="-1" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg>
+</button>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header-nav__source">
+<a class="md-source" href="https://github.com/LonamiWebs/Telethon/" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    LonamiWebs/Telethon
+  </div>
+</a>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<nav aria-label="Tabs" class="md-tabs md-tabs--active" data-md-component="tabs">
+<div class="md-tabs__inner md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../..">
+          First Steps
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../quick-references/faq/">
+          Quick References
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link md-tabs__link--active" href="../strings/">
+          Concepts
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../modules/helpers/">
+          Modules
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../developing/philosophy/">
+          Developing
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../examples/word-of-warning/">
+          Full API Examples
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../misc/changelog/">
+          Miscellaneous
+        </a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Telethon Docs" class="md-nav__button md-logo" href="https://aykuxt.github.io/Telethon/" title="Telethon Docs">
+<img alt="logo" src="../../logo.svg"/>
+</a>
+    Telethon Docs
+  </label>
+<div class="md-nav__source">
+<a class="md-source" href="https://github.com/LonamiWebs/Telethon/" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    LonamiWebs/Telethon
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" id="nav-1" type="checkbox"/>
+<label class="md-nav__link" for="nav-1">
+      First Steps
+      <span class="md-nav__icon md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"></path></svg>
+</span>
+</label>
+<nav aria-label="First Steps" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="nav-1">
+<span class="md-nav__icon md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</span>
+        First Steps
+      </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../.." title="Getting Started">
+      Getting Started
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../basic/installation/" title="Installation">
+      Installation
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../basic/signing-in/" title="Signing In">
+      Signing In
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../basic/quick-start/" title="Quick-Start">
+      Quick-Start
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../basic/updates/" title="Updates">
+      Updates
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../basic/next-steps/" title="Next Steps">
+      Next Steps
+    </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" id="nav-2" type="checkbox"/>
+<label class="md-nav__link" for="nav-2">
+      Quick References
+      <span class="md-nav__icon md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"></path></svg>
+</span>
+</label>
+<nav aria-label="Quick References" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="nav-2">
+<span class="md-nav__icon md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</span>
+        Quick References
+      </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../quick-references/faq/" title="FAQ">
+      FAQ
+    </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="nav-3" id="nav-3" type="checkbox"/>
+<label class="md-nav__link" for="nav-3">
+      Concepts
+      <span class="md-nav__icon md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"></path></svg>
+</span>
+</label>
+<nav aria-label="Concepts" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="nav-3">
+<span class="md-nav__icon md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</span>
+        Concepts
+      </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../strings/" title="String-based Debugging">
+      String-based Debugging
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../entities/" title="Entities">
+      Entities
+    </a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+        HTTP Bot API vs MTProto
+        <span class="md-nav__icon md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"></path></svg>
+</span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./" title="HTTP Bot API vs MTProto">
+      HTTP Bot API vs MTProto
+    </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#what-is-bot-api">
+    What is Bot API?
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#what-is-mtproto">
+    What is MTProto?
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#advantages-of-mtproto-over-bot-api">
+    Advantages of MTProto over Bot API
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#migrating-from-bot-api-to-telethon">
+    Migrating from Bot API to Telethon
+  </a>
+<nav aria-label="Migrating from Bot API to Telethon" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#migrating-from-python-telegram-bot">
+    Migrating from python-telegram-bot
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#migrating-from-pytelegrambotapi">
+    Migrating from pyTelegramBotAPI
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#migrating-from-aiogram">
+    Migrating from aiogram
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#migrating-from-dumbot">
+    Migrating from dumbot
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" id="nav-4" type="checkbox"/>
+<label class="md-nav__link" for="nav-4">
+      Modules
+      <span class="md-nav__icon md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"></path></svg>
+</span>
+</label>
+<nav aria-label="Modules" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="nav-4">
+<span class="md-nav__icon md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</span>
+        Modules
+      </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../modules/helpers/" title="Helpers">
+      Helpers
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../modules/utils/" title="Utilities">
+      Utilities
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../modules/custom/" title="Custom package">
+      Custom package
+    </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" id="nav-5" type="checkbox"/>
+<label class="md-nav__link" for="nav-5">
+      Developing
+      <span class="md-nav__icon md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"></path></svg>
+</span>
+</label>
+<nav aria-label="Developing" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="nav-5">
+<span class="md-nav__icon md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</span>
+        Developing
+      </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../developing/philosophy/" title="Philosophy">
+      Philosophy
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../developing/test-servers/" title="Test Servers">
+      Test Servers
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../developing/coding-style/" title="Coding Style">
+      Coding Style
+    </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" id="nav-6" type="checkbox"/>
+<label class="md-nav__link" for="nav-6">
+      Full API Examples
+      <span class="md-nav__icon md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"></path></svg>
+</span>
+</label>
+<nav aria-label="Full API Examples" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="nav-6">
+<span class="md-nav__icon md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</span>
+        Full API Examples
+      </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../examples/word-of-warning/" title="A Word of Warning">
+      A Word of Warning
+    </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" id="nav-7" type="checkbox"/>
+<label class="md-nav__link" for="nav-7">
+      Miscellaneous
+      <span class="md-nav__icon md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"></path></svg>
+</span>
+</label>
+<nav aria-label="Miscellaneous" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="nav-7">
+<span class="md-nav__icon md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</span>
+        Miscellaneous
+      </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../misc/changelog/" title="Changelog (Version History)">
+      Changelog (Version History)
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../misc/wall-of-shame/" title="Wall of Shame">
+      Wall of Shame
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../misc/compatibility-and-convenience/" title="Compatibility and Convenience">
+      Compatibility and Convenience
+    </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#what-is-bot-api">
+    What is Bot API?
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#what-is-mtproto">
+    What is MTProto?
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#advantages-of-mtproto-over-bot-api">
+    Advantages of MTProto over Bot API
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#migrating-from-bot-api-to-telethon">
+    Migrating from Bot API to Telethon
+  </a>
+<nav aria-label="Migrating from Bot API to Telethon" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#migrating-from-python-telegram-bot">
+    Migrating from python-telegram-bot
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#migrating-from-pytelegrambotapi">
+    Migrating from pyTelegramBotAPI
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#migrating-from-aiogram">
+    Migrating from aiogram
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#migrating-from-dumbot">
+    Migrating from dumbot
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content">
+<article class="md-content__inner md-typeset">
+<a class="md-content__button md-icon" href="https://github.com/LonamiWebs/Telethon/edit/master/docs/concepts/botapi-vs-mtproto.md" title="Edit this page">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
+</a>
+<h1 id="http-bot-api-vs-mtproto">HTTP Bot API vs MTProto<a class="headerlink" href="#http-bot-api-vs-mtproto" title="Permanent link">¶</a></h1>
+<p>Telethon is more than just another viable alternative when developing bots
+for Telegram. If you haven't decided which wrapper library for bots to use
+yet, using Telethon from the beginning may save you some headaches later.</p>
+<h2 id="what-is-bot-api">What is Bot API?<a class="headerlink" href="#what-is-bot-api" title="Permanent link">¶</a></h2>
+<p>The <a href="https://core.telegram.org/bots/api">Telegram Bot API</a>, also known as HTTP Bot API and from now on referred
+to as simply "Bot API" is Telegram's official way for developers to control
+their own Telegram bots. Quoting their main page:</p>
+<blockquote>
+<p>The Bot API is an HTTP-based interface created for developers keen on
+building bots for Telegram.</p>
+<p>To learn how to create and set up a bot, please consult our
+<a href="https://core.telegram.org/bots">Introduction to Bots</a> and <a href="https://core.telegram.org/bots/faq">Bot FAQ</a>.</p>
+</blockquote>
+<p>Bot API is simply an HTTP endpoint which translates your requests to it into
+MTProto calls through <a href="https://core.telegram.org/tdlib">tdlib</a>, their bot backend.</p>
+<h2 id="what-is-mtproto">What is MTProto?<a class="headerlink" href="#what-is-mtproto" title="Permanent link">¶</a></h2>
+<p><a href="https://core.telegram.org/mtproto">MTProto</a> is Telegram's own protocol to communicate with their API when you
+connect to their servers.</p>
+<p>Telethon is an alternative MTProto-based backend written entirely in Python
+and much easier to setup and use.</p>
+<p>Both official applications and third-party clients (like your own
+applications) logged in as either user or bots <strong>can use MTProto</strong> to
+communicate directly with Telegram's API (which is not the HTTP bot API).</p>
+<p>When we talk about MTProto, we often mean "MTProto-based clients".</p>
+<h2 id="advantages-of-mtproto-over-bot-api">Advantages of MTProto over Bot API<a class="headerlink" href="#advantages-of-mtproto-over-bot-api" title="Permanent link">¶</a></h2>
+<p>MTProto clients (like Telethon) connect directly to Telegram's servers,
+which means there is no HTTP connection, no "polling" or "web hooks". This
+means <strong>less overhead</strong>, since the protocol used between you and the server
+is much more compact than HTTP requests with responses in wasteful JSON.</p>
+<p>Since there is a direct connection to Telegram's servers, even if their
+Bot API endpoint is down, you can still have connection to Telegram directly.</p>
+<p>Using a MTProto client, you are also not limited to the public API that
+they expose, and instead, <strong>you have full control</strong> of what your bot can do.
+Telethon offers you all the power with often <strong>much easier usage</strong> than any
+of the available Python Bot API wrappers.</p>
+<p>If your application ever needs user features because bots cannot do certain
+things, you will be able to easily login as a user and even keep your bot
+without having to learn a new library.</p>
+<p>If less overhead and full control didn't convince you to use Telethon yet,
+check out the wiki page <a href="https://github.com/LonamiWebs/Telethon/wiki/MTProto-vs-HTTP-Bot-API">MTProto vs HTTP Bot API</a> with a more exhaustive
+and up-to-date list of differences.</p>
+<h2 id="migrating-from-bot-api-to-telethon">Migrating from Bot API to Telethon<a class="headerlink" href="#migrating-from-bot-api-to-telethon" title="Permanent link">¶</a></h2>
+<p>It doesn't matter if you wrote your bot with requests_ and you were
+making API requests manually, or if you used a wrapper library like
+<a href="https://python-telegram-bot.readthedocs.io">python-telegram-bot</a> or <a href="https://github.com/eternnoir/pyTelegramBotAPI">pyTelegramBotAPI</a>. It's never too late to
+migrate to Telethon!</p>
+<p>If you were using an asynchronous library like <a href="https://docs.aiohttp.org/en/stable">aiohttp</a> or a wrapper like
+<a href="https://aiogram.readthedocs.io">aiogram</a> or <a href="https://github.com/Lonami/dumbot">dumbot</a>, it will be even easier, because Telethon is also an
+asynchronous library.</p>
+<p>Next, we will see some examples from the most popular libraries.</p>
+<h3 id="migrating-from-python-telegram-bot">Migrating from python-telegram-bot<a class="headerlink" href="#migrating-from-python-telegram-bot" title="Permanent link">¶</a></h3>
+<p>Let's take their <a href="https://github.com/python-telegram-bot/python-telegram-bot/blob/master/examples/echobot2.py">echobot2.py</a> example and shorten it a bit:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">telegram.ext</span> <span class="kn">import</span> <span class="n">Updater</span><span class="p">,</span> <span class="n">CommandHandler</span><span class="p">,</span> <span class="n">MessageHandler</span><span class="p">,</span> <span class="n">Filters</span>
+
+<span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="n">update</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
+    <span class="sd">"""Send a message when the command /start is issued."""</span>
+    <span class="n">update</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">reply_text</span><span class="p">(</span><span class="s1">'Hi!'</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">echo</span><span class="p">(</span><span class="n">update</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
+    <span class="sd">"""Echo the user message."""</span>
+    <span class="n">update</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">reply_text</span><span class="p">(</span><span class="n">update</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="sd">"""Start the bot."""</span>
+    <span class="n">updater</span> <span class="o">=</span> <span class="n">Updater</span><span class="p">(</span><span class="s2">"TOKEN"</span><span class="p">)</span>
+    <span class="n">dp</span> <span class="o">=</span> <span class="n">updater</span><span class="o">.</span><span class="n">dispatcher</span>
+    <span class="n">dp</span><span class="o">.</span><span class="n">add_handler</span><span class="p">(</span><span class="n">CommandHandler</span><span class="p">(</span><span class="s2">"start"</span><span class="p">,</span> <span class="n">start</span><span class="p">))</span>
+    <span class="n">dp</span><span class="o">.</span><span class="n">add_handler</span><span class="p">(</span><span class="n">MessageHandler</span><span class="p">(</span><span class="n">Filters</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="n">echo</span><span class="p">))</span>
+
+    <span class="n">updater</span><span class="o">.</span><span class="n">start_polling</span><span class="p">()</span>
+
+    <span class="n">updater</span><span class="o">.</span><span class="n">idle</span><span class="p">()</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</code></pre></div>
+<p>After using Telethon:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">telethon</span> <span class="kn">import</span> <span class="n">TelegramClient</span><span class="p">,</span> <span class="n">events</span>
+
+<span class="n">bot</span> <span class="o">=</span> <span class="n">TelegramClient</span><span class="p">(</span><span class="s1">'bot'</span><span class="p">,</span> <span class="mi">11111</span><span class="p">,</span> <span class="s1">'a1b2c3d4'</span><span class="p">)</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="n">bot_token</span><span class="o">=</span><span class="s1">'TOKEN'</span><span class="p">)</span>
+
+<span class="nd">@bot</span><span class="o">.</span><span class="n">on</span><span class="p">(</span><span class="n">events</span><span class="o">.</span><span class="n">NewMessage</span><span class="p">(</span><span class="n">pattern</span><span class="o">=</span><span class="s1">'/start'</span><span class="p">))</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+    <span class="sd">"""Send a message when the command /start is issued."""</span>
+    <span class="k">await</span> <span class="n">event</span><span class="o">.</span><span class="n">respond</span><span class="p">(</span><span class="s1">'Hi!'</span><span class="p">)</span>
+    <span class="k">raise</span> <span class="n">events</span><span class="o">.</span><span class="n">StopPropagation</span>
+
+<span class="nd">@bot</span><span class="o">.</span><span class="n">on</span><span class="p">(</span><span class="n">events</span><span class="o">.</span><span class="n">NewMessage</span><span class="p">)</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">echo</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+    <span class="sd">"""Echo the user message."""</span>
+    <span class="k">await</span> <span class="n">event</span><span class="o">.</span><span class="n">respond</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="sd">"""Start the bot."""</span>
+    <span class="n">bot</span><span class="o">.</span><span class="n">run_until_disconnected</span><span class="p">()</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</code></pre></div>
+<p>Key differences:</p>
+<ul>
+<li>The recommended way to do it imports less things.</li>
+<li>All handlers trigger by default, so we need <code>events.StopPropagation</code>.</li>
+<li>Adding handlers, responding and running is a lot less verbose.</li>
+<li>Telethon needs <code>async def</code> and <code>await</code>.</li>
+<li>The <code>bot</code> isn't hidden away by <code>Updater</code> or <code>Dispatcher</code>.</li>
+</ul>
+<h3 id="migrating-from-pytelegrambotapi">Migrating from pyTelegramBotAPI<a class="headerlink" href="#migrating-from-pytelegrambotapi" title="Permanent link">¶</a></h3>
+<p>Let's show another echobot from their README:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">telebot</span>
+
+<span class="n">bot</span> <span class="o">=</span> <span class="n">telebot</span><span class="o">.</span><span class="n">TeleBot</span><span class="p">(</span><span class="s2">"TOKEN"</span><span class="p">)</span>
+
+<span class="nd">@bot</span><span class="o">.</span><span class="n">message_handler</span><span class="p">(</span><span class="n">commands</span><span class="o">=</span><span class="p">[</span><span class="s1">'start'</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">send_welcome</span><span class="p">(</span><span class="n">message</span><span class="p">):</span>
+    <span class="n">bot</span><span class="o">.</span><span class="n">reply_to</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="s2">"Howdy, how are you doing?"</span><span class="p">)</span>
+
+<span class="nd">@bot</span><span class="o">.</span><span class="n">message_handler</span><span class="p">(</span><span class="n">func</span><span class="o">=</span><span class="k">lambda</span> <span class="n">m</span><span class="p">:</span> <span class="kc">True</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">echo_all</span><span class="p">(</span><span class="n">message</span><span class="p">):</span>
+    <span class="n">bot</span><span class="o">.</span><span class="n">reply_to</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">message</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+
+<span class="n">bot</span><span class="o">.</span><span class="n">polling</span><span class="p">()</span>
+</code></pre></div>
+<p>Now we rewrite it to use Telethon:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">telethon</span> <span class="kn">import</span> <span class="n">TelegramClient</span><span class="p">,</span> <span class="n">events</span>
+
+<span class="n">bot</span> <span class="o">=</span> <span class="n">TelegramClient</span><span class="p">(</span><span class="s1">'bot'</span><span class="p">,</span> <span class="mi">11111</span><span class="p">,</span> <span class="s1">'a1b2c3d4'</span><span class="p">)</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="n">bot_token</span><span class="o">=</span><span class="s1">'TOKEN'</span><span class="p">)</span>
+
+<span class="nd">@bot</span><span class="o">.</span><span class="n">on</span><span class="p">(</span><span class="n">events</span><span class="o">.</span><span class="n">NewMessage</span><span class="p">(</span><span class="n">pattern</span><span class="o">=</span><span class="s1">'/start'</span><span class="p">))</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">send_welcome</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+    <span class="k">await</span> <span class="n">event</span><span class="o">.</span><span class="n">reply</span><span class="p">(</span><span class="s1">'Howdy, how are you doing?'</span><span class="p">)</span>
+
+<span class="nd">@bot</span><span class="o">.</span><span class="n">on</span><span class="p">(</span><span class="n">events</span><span class="o">.</span><span class="n">NewMessage</span><span class="p">)</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">echo_all</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+    <span class="k">await</span> <span class="n">event</span><span class="o">.</span><span class="n">reply</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+
+<span class="n">bot</span><span class="o">.</span><span class="n">run_until_disconnected</span><span class="p">()</span>
+</code></pre></div>
+<p>Key differences:</p>
+<ul>
+<li>Instead of doing <code>bot.reply_to(message)</code>, we can do <code>event.reply</code>.
+  Note that the <code>event</code> behaves just like their <code>message</code>.</li>
+<li>Telethon also supports <code>func=lambda m: True</code>, but it's not necessary.</li>
+</ul>
+<h3 id="migrating-from-aiogram">Migrating from aiogram<a class="headerlink" href="#migrating-from-aiogram" title="Permanent link">¶</a></h3>
+<p>From their GitHub:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">aiogram</span> <span class="kn">import</span> <span class="n">Bot</span><span class="p">,</span> <span class="n">Dispatcher</span><span class="p">,</span> <span class="n">executor</span><span class="p">,</span> <span class="n">types</span>
+
+<span class="n">API_TOKEN</span> <span class="o">=</span> <span class="s1">'BOT TOKEN HERE'</span>
+
+<span class="c1"># Initialize bot and dispatcher</span>
+<span class="n">bot</span> <span class="o">=</span> <span class="n">Bot</span><span class="p">(</span><span class="n">token</span><span class="o">=</span><span class="n">API_TOKEN</span><span class="p">)</span>
+<span class="n">dp</span> <span class="o">=</span> <span class="n">Dispatcher</span><span class="p">(</span><span class="n">bot</span><span class="p">)</span>
+
+<span class="nd">@dp</span><span class="o">.</span><span class="n">message_handler</span><span class="p">(</span><span class="n">commands</span><span class="o">=</span><span class="p">[</span><span class="s1">'start'</span><span class="p">])</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">send_welcome</span><span class="p">(</span><span class="n">message</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">Message</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    This handler will be called when client send `/start` command.</span>
+<span class="sd">    """</span>
+    <span class="k">await</span> <span class="n">message</span><span class="o">.</span><span class="n">reply</span><span class="p">(</span><span class="s2">"Hi!</span><span class="se">\n</span><span class="s2">I'm EchoBot!</span><span class="se">\n</span><span class="s2">Powered by aiogram."</span><span class="p">)</span>
+
+<span class="nd">@dp</span><span class="o">.</span><span class="n">message_handler</span><span class="p">(</span><span class="n">regexp</span><span class="o">=</span><span class="s1">'(^cat[s]?$|puss)'</span><span class="p">)</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">cats</span><span class="p">(</span><span class="n">message</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">Message</span><span class="p">):</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'data/cats.jpg'</span><span class="p">,</span> <span class="s1">'rb'</span><span class="p">)</span> <span class="k">as</span> <span class="n">photo</span><span class="p">:</span>
+        <span class="k">await</span> <span class="n">bot</span><span class="o">.</span><span class="n">send_photo</span><span class="p">(</span><span class="n">message</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="n">photo</span><span class="p">,</span> <span class="n">caption</span><span class="o">=</span><span class="s1">'Cats is here 😺'</span><span class="p">,</span>
+                             <span class="n">reply_to_message_id</span><span class="o">=</span><span class="n">message</span><span class="o">.</span><span class="n">message_id</span><span class="p">)</span>
+
+<span class="nd">@dp</span><span class="o">.</span><span class="n">message_handler</span><span class="p">()</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">echo</span><span class="p">(</span><span class="n">message</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">Message</span><span class="p">):</span>
+    <span class="k">await</span> <span class="n">bot</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="n">message</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="n">message</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
+    <span class="n">executor</span><span class="o">.</span><span class="n">start_polling</span><span class="p">(</span><span class="n">dp</span><span class="p">,</span> <span class="n">skip_updates</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</code></pre></div>
+<p>After rewrite:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">telethon</span> <span class="kn">import</span> <span class="n">TelegramClient</span><span class="p">,</span> <span class="n">events</span>
+
+<span class="c1"># Initialize bot and... just the bot!</span>
+<span class="n">bot</span> <span class="o">=</span> <span class="n">TelegramClient</span><span class="p">(</span><span class="s1">'bot'</span><span class="p">,</span> <span class="mi">11111</span><span class="p">,</span> <span class="s1">'a1b2c3d4'</span><span class="p">)</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="n">bot_token</span><span class="o">=</span><span class="s1">'TOKEN'</span><span class="p">)</span>
+
+<span class="nd">@bot</span><span class="o">.</span><span class="n">on</span><span class="p">(</span><span class="n">events</span><span class="o">.</span><span class="n">NewMessage</span><span class="p">(</span><span class="n">pattern</span><span class="o">=</span><span class="s1">'/start'</span><span class="p">))</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">send_welcome</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+    <span class="k">await</span> <span class="n">event</span><span class="o">.</span><span class="n">reply</span><span class="p">(</span><span class="s1">'Howdy, how are you doing?'</span><span class="p">)</span>
+
+<span class="nd">@bot</span><span class="o">.</span><span class="n">on</span><span class="p">(</span><span class="n">events</span><span class="o">.</span><span class="n">NewMessage</span><span class="p">(</span><span class="n">pattern</span><span class="o">=</span><span class="s1">'(^cat[s]?$|puss)'</span><span class="p">))</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">cats</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+    <span class="k">await</span> <span class="n">event</span><span class="o">.</span><span class="n">reply</span><span class="p">(</span><span class="s1">'Cats is here 😺'</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="s1">'data/cats.jpg'</span><span class="p">)</span>
+
+<span class="nd">@bot</span><span class="o">.</span><span class="n">on</span><span class="p">(</span><span class="n">events</span><span class="o">.</span><span class="n">NewMessage</span><span class="p">)</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">echo_all</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+    <span class="k">await</span> <span class="n">event</span><span class="o">.</span><span class="n">reply</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
+    <span class="n">bot</span><span class="o">.</span><span class="n">run_until_disconnected</span><span class="p">()</span>
+</code></pre></div>
+<p>Key differences:</p>
+<ul>
+<li>Telethon offers convenience methods to avoid retyping
+  <code>bot.send_photo(message.chat.id, ...)</code> all the time,
+  and instead let you type <code>event.reply</code>.</li>
+<li>Sending files is <strong>a lot</strong> easier. The methods for sending
+  photos, documents, audios, etc. are all the same!</li>
+</ul>
+<h3 id="migrating-from-dumbot">Migrating from dumbot<a class="headerlink" href="#migrating-from-dumbot" title="Permanent link">¶</a></h3>
+<p>Showcasing their subclassing example:</p>
+<div class="highlight"><pre><span></span><code>    <span class="kn">from</span> <span class="nn">dumbot</span> <span class="kn">import</span> <span class="n">Bot</span>
+
+    <span class="k">class</span> <span class="nc">Subbot</span><span class="p">(</span><span class="n">Bot</span><span class="p">):</span>
+        <span class="k">async</span> <span class="k">def</span> <span class="nf">init</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">me</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">getMe</span><span class="p">()</span>
+
+        <span class="k">async</span> <span class="k">def</span> <span class="nf">on_update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">update</span><span class="p">):</span>
+            <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">sendMessage</span><span class="p">(</span>
+                <span class="n">chat_id</span><span class="o">=</span><span class="n">update</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                <span class="n">text</span><span class="o">=</span><span class="s1">'i am </span><span class="si">{}</span><span class="s1">'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">me</span><span class="o">.</span><span class="n">username</span><span class="p">)</span>
+            <span class="p">)</span>
+
+    <span class="n">Subbot</span><span class="p">(</span><span class="n">token</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</code></pre></div>
+<p>After rewriting:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">telethon</span> <span class="kn">import</span> <span class="n">TelegramClient</span><span class="p">,</span> <span class="n">events</span>
+
+<span class="k">class</span> <span class="nc">Subbot</span><span class="p">(</span><span class="n">TelegramClient</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">a</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
+        <span class="k">await</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">a</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_event_handler</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">on_update</span><span class="p">,</span> <span class="n">events</span><span class="o">.</span><span class="n">NewMessage</span><span class="p">)</span>
+
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">connect</span><span class="p">():</span>
+        <span class="k">await</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">me</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_me</span><span class="p">()</span>
+
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">on_update</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+        <span class="k">await</span> <span class="n">event</span><span class="o">.</span><span class="n">reply</span><span class="p">(</span><span class="s1">'i am </span><span class="si">{}</span><span class="s1">'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">me</span><span class="o">.</span><span class="n">username</span><span class="p">))</span>
+
+<span class="n">bot</span> <span class="o">=</span> <span class="n">Subbot</span><span class="p">(</span><span class="s1">'bot'</span><span class="p">,</span> <span class="mi">11111</span><span class="p">,</span> <span class="s1">'a1b2c3d4'</span><span class="p">)</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="n">bot_token</span><span class="o">=</span><span class="s1">'TOKEN'</span><span class="p">)</span>
+<span class="n">bot</span><span class="o">.</span><span class="n">run_until_disconnected</span><span class="p">()</span>
+</code></pre></div>
+<p>Key differences:</p>
+<ul>
+<li>Telethon method names are <code>snake_case</code>.</li>
+<li>dumbot does not offer friendly methods like <code>update.reply</code>.</li>
+<li>Telethon does not have an implicit <code>on_update</code> handler, so
+  we need to manually register one.</li>
+</ul>
+</article>
+</div>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-nav">
+<nav aria-label="Footer" class="md-footer-nav__inner md-grid">
+<a class="md-footer-nav__link md-footer-nav__link--prev" href="../entities/" rel="prev" title="Entities">
+<div class="md-footer-nav__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</div>
+<div class="md-footer-nav__title">
+<div class="md-ellipsis">
+<span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Entities
+              </div>
+</div>
+</a>
+<a class="md-footer-nav__link md-footer-nav__link--next" href="../../modules/helpers/" rel="next" title="Helpers">
+<div class="md-footer-nav__title">
+<div class="md-ellipsis">
+<span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Helpers
+              </div>
+</div>
+<div class="md-footer-nav__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"></path></svg>
+</div>
+</a>
+</nav>
+</div>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-footer-copyright">
+<div class="md-footer-copyright__highlight">
+            Copyright © 2020 Telethon
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+          Material for MkDocs
+        </a>
+</div>
+<div class="md-footer-social">
+<a class="md-footer-social__link" href="https://github.com/LonamiWebs/Telethon" rel="noopener" target="_blank" title="github.com">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
+</a>
+<a class="md-footer-social__link" href="https://t.me/TelethonChat" rel="noopener" target="_blank" title="t.me">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><path d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm121.8 169.9l-40.7 191.8c-3 13.6-11.1 16.9-22.4 10.5l-62-45.7-29.9 28.8c-3.3 3.3-6.1 6.1-12.5 6.1l4.4-63.1 114.9-103.8c5-4.4-1.1-6.9-7.7-2.5l-142 89.4-61.2-19.1c-13.3-4.2-13.6-13.3 2.8-19.7l239.1-92.2c11.1-4 20.8 2.7 17.2 19.5z"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<script src="../../assets/javascripts/vendor.d710d30a.min.js"></script>
+<script src="../../assets/javascripts/bundle.5f27aba8.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+<script>
+        app = initialize({
+          base: "../..",
+          features: ["instant", "tabs"],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.27c6a5e6.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+</body>
+</html>

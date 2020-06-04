@@ -5,10 +5,10 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="https://aykuxt.github.io/Telethon/quick-references/client-reference/" rel="canonical"/>
+<link href="https://aykuxt.github.io/Telethon/misc/compatibility-and-convenience/" rel="canonical"/>
 <link href="../../assets/images/favicon.png" rel="shortcut icon"/>
 <meta content="mkdocs-1.1.2, mkdocs-material-5.2.2" name="generator"/>
-<title>Client Reference - Telethon Docs</title>
+<title>Compatibility and Convenience - Telethon Docs</title>
 <link href="../../assets/stylesheets/main.a2408e81.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.a46bcfb3.min.css" rel="stylesheet"/>
 <meta content="#2196f3" name="theme-color"/>
@@ -22,7 +22,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#client-reference">
+<a class="md-skip" href="#compatibility-and-convenience">
           Skip to content
         </a>
 </div>
@@ -43,7 +43,7 @@
           </span>
 <span class="md-header-nav__topic md-ellipsis">
             
-              Client Reference
+              Compatibility and Convenience
             
           </span>
 </div>
@@ -89,7 +89,7 @@
 </nav>
 </header>
 <div class="md-container" data-md-component="container">
-<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<nav aria-label="Tabs" class="md-tabs md-tabs--active" data-md-component="tabs">
 <div class="md-tabs__inner md-grid">
 <ul class="md-tabs__list">
 <li class="md-tabs__item">
@@ -98,7 +98,7 @@
         </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../faq/">
+<a class="md-tabs__link" href="../../quick-references/faq/">
           Quick References
         </a>
 </li>
@@ -123,7 +123,7 @@
         </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../misc/changelog/">
+<a class="md-tabs__link md-tabs__link--active" href="../changelog/">
           Miscellaneous
         </a>
 </li>
@@ -219,7 +219,7 @@
       </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../faq/" title="FAQ">
+<a class="md-nav__link" href="../../quick-references/faq/" title="FAQ">
       FAQ
     </a>
 </li>
@@ -352,8 +352,8 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" id="nav-7" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="nav-7" id="nav-7" type="checkbox"/>
 <label class="md-nav__link" for="nav-7">
       Miscellaneous
       <span class="md-nav__icon md-icon">
@@ -369,19 +369,56 @@
       </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../misc/changelog/" title="Changelog (Version History)">
+<a class="md-nav__link" href="../changelog/" title="Changelog (Version History)">
       Changelog (Version History)
     </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../misc/wall-of-shame/" title="Wall of Shame">
+<a class="md-nav__link" href="../wall-of-shame/" title="Wall of Shame">
       Wall of Shame
     </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../misc/compatibility-and-convenience/" title="Compatibility and Convenience">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+        Compatibility and Convenience
+        <span class="md-nav__icon md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"></path></svg>
+</span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./" title="Compatibility and Convenience">
       Compatibility and Convenience
     </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#compatibility">
+    Compatibility
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#convenience">
+    Convenience
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#speed">
+    Speed
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#learning">
+    Learning
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -403,77 +440,23 @@
     </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#telegramclient">
-    TelegramClient
-  </a>
-<nav aria-label="TelegramClient" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#auth">
-    Auth
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#base">
-    Base
+<a class="md-nav__link" href="#compatibility">
+    Compatibility
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#messages">
-    Messages
+<a class="md-nav__link" href="#convenience">
+    Convenience
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#uploads">
-    Uploads
+<a class="md-nav__link" href="#speed">
+    Speed
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#downloads">
-    Downloads
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#dialogs">
-    Dialogs
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#users">
-    Users
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#chats">
-    Chats
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#parse-mode">
-    Parse Mode
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#updates">
-    Updates
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#bots">
-    Bots
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#buttons">
-    Buttons
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#account">
-    Account
+<a class="md-nav__link" href="#learning">
+    Learning
   </a>
 </li>
 </ul>
@@ -483,148 +466,174 @@
 </div>
 <div class="md-content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/LonamiWebs/Telethon/edit/master/docs/quick-references/client-reference.md" title="Edit this page">
+<a class="md-content__button md-icon" href="https://github.com/LonamiWebs/Telethon/edit/master/docs/misc/compatibility-and-convenience.md" title="Edit this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
 </a>
-<h1 id="client-reference">Client Reference<a class="headerlink" href="#client-reference" title="Permanent link">¶</a></h1>
-<p>This page contains a summary of all the important methods and properties that
-you may need when using Telethon. They are sorted by relevance and are not in
-alphabetical order.</p>
-<p>You should use this page to learn about which methods are available, and
-if you need an usage example or further description of the arguments, be
-sure to follow the links.</p>
-<h2 id="telegramclient">TelegramClient<a class="headerlink" href="#telegramclient" title="Permanent link">¶</a></h2>
-<p>This is a summary of the methods and
-properties you will find at :ref:<code>telethon-client</code>.</p>
-<h3 id="auth">Auth<a class="headerlink" href="#auth" title="Permanent link">¶</a></h3>
-<p>.. currentmodule:: telethon.client.auth.AuthMethods</p>
-<p>.. autosummary::
-    :nosignatures:</p>
-<div class="codehilite"><pre><span></span><code>start
-send_code_request
-sign_in
-sign_up
-log_out
-edit_2fa
+<h1 id="compatibility-and-convenience">Compatibility and Convenience<a class="headerlink" href="#compatibility-and-convenience" title="Permanent link">¶</a></h1>
+<p>Telethon is an <code>asyncio</code> library. Compatibility is an important concern,
+and while it can't always be kept and mistakes happens, the <a href="../changelog/">Changelog</a>
+is there to tell you when these important changes happen.</p>
+<h2 id="compatibility">Compatibility<a class="headerlink" href="#compatibility" title="Permanent link">¶</a></h2>
+<p>Some decisions when developing will inevitable be proven wrong in the future.
+One of these decisions was using threads. Now that Python 3.4 is reaching EOL
+and using <code>asyncio</code> is usable as of Python 3.5 it makes sense for a library
+like Telethon to make a good use of it.</p>
+<p>If you have old code, <strong>just use old versions</strong> of the library! There is
+nothing wrong with that other than not getting new updates or fixes, but
+using a fixed version with <code>pip install telethon==0.19.1.6</code> is easy
+enough to do.</p>
+<p>You might want to consider using <a href="https://docs.python.org/3/tutorial/venv.html&gt;">Virtual Environments</a>
+in your projects.</p>
+<p>There's no point in maintaining a synchronous version because the whole point
+is that people don't have time to upgrade, and there has been several changes
+and clean-ups. Using an older version is the right way to go.</p>
+<p>Sometimes, other small decisions are made. These all will be reflected in the
+:ref:<code>changelog</code> which you should read when upgrading.</p>
+<p>If you want to jump the <code>asyncio</code> boat, here are some of the things you will
+need to start migrating really old code:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># 1. Import the client from telethon.sync</span>
+<span class="kn">from</span> <span class="nn">telethon.sync</span> <span class="kn">import</span> <span class="n">TelegramClient</span>
+
+<span class="c1"># 2. Change this monster...</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="k">assert</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">client</span><span class="o">.</span><span class="n">is_user_authorized</span><span class="p">():</span>
+        <span class="n">client</span><span class="o">.</span><span class="n">send_code_request</span><span class="p">(</span><span class="n">phone_number</span><span class="p">)</span>
+        <span class="n">me</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">sign_in</span><span class="p">(</span><span class="n">phone_number</span><span class="p">,</span> <span class="nb">input</span><span class="p">(</span><span class="s1">'Enter code: '</span><span class="p">))</span>
+
+    <span class="o">...</span>  <span class="c1"># REST OF YOUR CODE</span>
+<span class="k">finally</span><span class="p">:</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">disconnect</span><span class="p">()</span>
+
+<span class="c1"># ...for this:</span>
+<span class="k">with</span> <span class="n">client</span><span class="p">:</span>
+    <span class="o">...</span>  <span class="c1"># REST OF YOUR CODE</span>
+
+<span class="c1"># 3. client.idle() no longer exists.</span>
+<span class="c1"># Change this...</span>
+<span class="n">client</span><span class="o">.</span><span class="n">idle</span><span class="p">()</span>
+<span class="c1"># ...to this:</span>
+<span class="n">client</span><span class="o">.</span><span class="n">run_until_disconnected</span><span class="p">()</span>
+
+<span class="c1"># 4. client.add_update_handler no longer exists.</span>
+<span class="c1"># Change this...</span>
+<span class="n">client</span><span class="o">.</span><span class="n">add_update_handler</span><span class="p">(</span><span class="n">handler</span><span class="p">)</span>
+<span class="c1"># ...to this:</span>
+<span class="n">client</span><span class="o">.</span><span class="n">add_event_handler</span><span class="p">(</span><span class="n">handler</span><span class="p">)</span>
 </code></pre></div>
-<h2 id="base">Base<a class="headerlink" href="#base" title="Permanent link">¶</a></h2>
-<p>.. py:currentmodule:: telethon.client.telegrambaseclient.TelegramBaseClient</p>
-<p>.. autosummary::
-    :nosignatures:</p>
-<div class="codehilite"><pre><span></span><code>connect
-disconnect
-is_connected
-disconnected
-loop
+<p>In addition, all the update handlers must be <code>async def</code>, and you need
+to <code>await</code> method calls that rely on network requests, such as getting
+the chat or sender. If you don't use updates, you're done!</p>
+<h2 id="convenience">Convenience<a class="headerlink" href="#convenience" title="Permanent link">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The entire documentation assumes you have done one of the following:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">telethon</span> <span class="kn">import</span> <span class="n">TelegramClient</span><span class="p">,</span> <span class="n">sync</span>
+<span class="c1"># or</span>
+<span class="kn">from</span> <span class="nn">telethon.sync</span> <span class="kn">import</span> <span class="n">TelegramClient</span>
 </code></pre></div>
-<h2 id="messages">Messages<a class="headerlink" href="#messages" title="Permanent link">¶</a></h2>
-<p>.. py:currentmodule:: telethon.client.messages.MessageMethods</p>
-<p>.. autosummary::
-    :nosignatures:</p>
-<div class="codehilite"><pre><span></span><code>send_message
-edit_message
-delete_messages
-forward_messages
-iter_messages
-get_messages
-pin_message
-send_read_acknowledge
+<p>This makes the examples shorter and easier to think about.</p>
+</div>
+<p>For quick scripts that don't need updates, it's a lot more convenient to
+forget about <code>asyncio</code> and just work with sequential code. This can prove
+to be a powerful hybrid for running under the Python REPL too.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">telethon.sync</span> <span class="kn">import</span> <span class="n">TelegramClient</span>
+<span class="c1">#            ^~~~~ note this part; it will manage the asyncio loop for you</span>
+
+<span class="k">with</span> <span class="n">TelegramClient</span><span class="p">(</span><span class="o">...</span><span class="p">)</span> <span class="k">as</span> <span class="n">client</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">client</span><span class="o">.</span><span class="n">get_me</span><span class="p">()</span><span class="o">.</span><span class="n">username</span><span class="p">)</span>
+    <span class="c1">#     ^ notice the lack of await, or loop.run_until_complete().</span>
+    <span class="c1">#       Since there is no loop running, this is done behind the scenes.</span>
+    <span class="c1">#</span>
+    <span class="n">message</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="s1">'me'</span><span class="p">,</span> <span class="s1">'Hi!'</span><span class="p">)</span>
+    <span class="kn">import</span> <span class="nn">time</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+    <span class="n">message</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span>
+
+    <span class="c1"># You can also have an hybrid between a synchronous</span>
+    <span class="c1"># part and asynchronous event handlers.</span>
+    <span class="c1">#</span>
+    <span class="kn">from</span> <span class="nn">telethon</span> <span class="kn">import</span> <span class="n">events</span>
+    <span class="nd">@client</span><span class="o">.</span><span class="n">on</span><span class="p">(</span><span class="n">events</span><span class="o">.</span><span class="n">NewMessage</span><span class="p">(</span><span class="n">pattern</span><span class="o">=</span><span class="s1">'(?i)hi|hello'</span><span class="p">))</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">handler</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+        <span class="k">await</span> <span class="n">event</span><span class="o">.</span><span class="n">reply</span><span class="p">(</span><span class="s1">'hey'</span><span class="p">)</span>
+
+    <span class="n">client</span><span class="o">.</span><span class="n">run_until_disconnected</span><span class="p">()</span>
 </code></pre></div>
-<h2 id="uploads">Uploads<a class="headerlink" href="#uploads" title="Permanent link">¶</a></h2>
-<p>.. py:currentmodule:: telethon.client.uploads.UploadMethods</p>
-<p>.. autosummary::
-    :nosignatures:</p>
-<div class="codehilite"><pre><span></span><code>send_file
-upload_file
+<p>Some methods, such as <code>with</code>, <code>start</code>, <code>disconnect</code> and
+<code>run_until_disconnected</code> work both in synchronous and asynchronous
+contexts by default for convenience, and to avoid the little overhead
+it has when using methods like sending a message, getting messages, etc.
+This keeps the best of both worlds as a sane default.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>As a rule of thumb, if you're inside an <code>async def</code> and you need
+the client, you need to <code>await</code> calls to the API. If you call other
+functions that also need API calls, make them <code>async def</code> and <code>await</code>
+them too. Otherwise, there is no need to do so with this mode.</p>
+</div>
+<h2 id="speed">Speed<a class="headerlink" href="#speed" title="Permanent link">¶</a></h2>
+<p>When you're ready to micro-optimize your application, or if you simply
+don't need to call any non-basic methods from a synchronous context,
+just get rid of <code>telethon.sync</code> and work inside an <code>async def</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">asyncio</span>
+<span class="kn">from</span> <span class="nn">telethon</span> <span class="kn">import</span> <span class="n">TelegramClient</span><span class="p">,</span> <span class="n">events</span>
+
+<span class="k">async</span> <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="k">async</span> <span class="k">with</span> <span class="n">TelegramClient</span><span class="p">(</span><span class="o">...</span><span class="p">)</span> <span class="k">as</span> <span class="n">client</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">((</span><span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">get_me</span><span class="p">())</span><span class="o">.</span><span class="n">username</span><span class="p">)</span>
+        <span class="c1">#     ^_____________________^ notice these parenthesis</span>
+        <span class="c1">#     You want to ``await`` the call, not the username.</span>
+        <span class="c1">#</span>
+        <span class="n">message</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="s1">'me'</span><span class="p">,</span> <span class="s1">'Hi!'</span><span class="p">)</span>
+        <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+        <span class="k">await</span> <span class="n">message</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span>
+
+        <span class="nd">@client</span><span class="o">.</span><span class="n">on</span><span class="p">(</span><span class="n">events</span><span class="o">.</span><span class="n">NewMessage</span><span class="p">(</span><span class="n">pattern</span><span class="o">=</span><span class="s1">'(?i)hi|hello'</span><span class="p">))</span>
+        <span class="k">async</span> <span class="k">def</span> <span class="nf">handler</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+            <span class="k">await</span> <span class="n">event</span><span class="o">.</span><span class="n">reply</span><span class="p">(</span><span class="s1">'hey'</span><span class="p">)</span>
+
+        <span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">run_until_disconnected</span><span class="p">()</span>
+
+<span class="n">loop</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span>
+<span class="n">loop</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
 </code></pre></div>
-<h2 id="downloads">Downloads<a class="headerlink" href="#downloads" title="Permanent link">¶</a></h2>
-<p>.. currentmodule:: telethon.client.downloads.DownloadMethods</p>
-<p>.. autosummary::
-    :nosignatures:</p>
-<div class="codehilite"><pre><span></span><code>download_media
-download_profile_photo
-download_file
-iter_download
+<p>The <code>telethon.sync</code> magic module simply wraps every method behind:</p>
+<div class="highlight"><pre><span></span><code><span class="n">loop</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span>
+<span class="n">loop</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
 </code></pre></div>
-<h2 id="dialogs">Dialogs<a class="headerlink" href="#dialogs" title="Permanent link">¶</a></h2>
-<p>.. py:currentmodule:: telethon.client.dialogs.DialogMethods</p>
-<p>.. autosummary::
-    :nosignatures:</p>
-<div class="codehilite"><pre><span></span><code>iter_dialogs
-get_dialogs
-edit_folder
-iter_drafts
-get_drafts
-delete_dialog
-conversation
-</code></pre></div>
-<h2 id="users">Users<a class="headerlink" href="#users" title="Permanent link">¶</a></h2>
-<p>.. py:currentmodule:: telethon.client.users.UserMethods</p>
-<p>.. autosummary::
-    :nosignatures:</p>
-<div class="codehilite"><pre><span></span><code>get_me
-is_bot
-is_user_authorized
-get_entity
-get_input_entity
-get_peer_id
-</code></pre></div>
-<h2 id="chats">Chats<a class="headerlink" href="#chats" title="Permanent link">¶</a></h2>
-<p>.. currentmodule:: telethon.client.chats.ChatMethods</p>
-<p>.. autosummary::
-    :nosignatures:</p>
-<div class="codehilite"><pre><span></span><code>iter_participants
-get_participants
-kick_participant
-iter_admin_log
-get_admin_log
-iter_profile_photos
-get_profile_photos
-edit_admin
-edit_permissions
-action
-</code></pre></div>
-<h2 id="parse-mode">Parse Mode<a class="headerlink" href="#parse-mode" title="Permanent link">¶</a></h2>
-<p>.. py:currentmodule:: telethon.client.messageparse.MessageParseMethods</p>
-<p>.. autosummary::
-    :nosignatures:</p>
-<div class="codehilite"><pre><span></span><code>parse_mode
-</code></pre></div>
-<h2 id="updates">Updates<a class="headerlink" href="#updates" title="Permanent link">¶</a></h2>
-<p>.. py:currentmodule:: telethon.client.updates.UpdateMethods</p>
-<p>.. autosummary::
-    :nosignatures:</p>
-<div class="codehilite"><pre><span></span><code>on
-run_until_disconnected
-add_event_handler
-remove_event_handler
-list_event_handlers
-catch_up
-</code></pre></div>
-<h2 id="bots">Bots<a class="headerlink" href="#bots" title="Permanent link">¶</a></h2>
-<p>.. currentmodule:: telethon.client.bots.BotMethods</p>
-<p>.. autosummary::
-    :nosignatures:</p>
-<div class="codehilite"><pre><span></span><code>inline_query
-</code></pre></div>
-<h2 id="buttons">Buttons<a class="headerlink" href="#buttons" title="Permanent link">¶</a></h2>
-<p>.. currentmodule:: telethon.client.buttons.ButtonMethods</p>
-<p>.. autosummary::
-    :nosignatures:</p>
-<div class="codehilite"><pre><span></span><code>build_reply_markup
-</code></pre></div>
-<h2 id="account">Account<a class="headerlink" href="#account" title="Permanent link">¶</a></h2>
-<p>.. currentmodule:: telethon.client.account.AccountMethods</p>
-<p>.. autosummary::
-    :nosignatures:</p>
-<div class="codehilite"><pre><span></span><code>takeout
-end_takeout
-</code></pre></div>
+<p>So that you don't have to write it yourself every time. That's the
+overhead you pay if you import it, and what you save if you don't.</p>
+<h2 id="learning">Learning<a class="headerlink" href="#learning" title="Permanent link">¶</a></h2>
+<p>You know the library uses <code>asyncio</code> everywhere, and you want to learn
+how to do things right. Even though <code>asyncio</code> is its own topic, the
+documentation wants you to learn how to use Telethon correctly, and for
+that, you need to use <code>asyncio</code> correctly too. For this reason, there
+is a section called :ref:<code>mastering-asyncio</code> that will introduce you to
+the <code>asyncio</code> world, with links to more resources for learning how to
+use it. Feel free to check that section out once you have read the rest.</p>
 </article>
 </div>
 </div>
 </main>
 <footer class="md-footer">
+<div class="md-footer-nav">
+<nav aria-label="Footer" class="md-footer-nav__inner md-grid">
+<a class="md-footer-nav__link md-footer-nav__link--prev" href="../wall-of-shame/" rel="prev" title="Wall of Shame">
+<div class="md-footer-nav__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</div>
+<div class="md-footer-nav__title">
+<div class="md-ellipsis">
+<span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Wall of Shame
+              </div>
+</div>
+</a>
+</nav>
+</div>
 <div class="md-footer-meta md-typeset">
 <div class="md-footer-meta__inner md-grid">
 <div class="md-footer-copyright">

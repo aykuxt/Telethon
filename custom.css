@@ -3,3 +3,11 @@ div.doc-contents:not(.first) {
   border-left: 2px solid rgba(230, 230, 230);
   margin-bottom: 40px;
 }
+
+.md-typeset__table p {
+  margin: 0;
+}
+
+.hidden-toc {
+  display: none;
+}

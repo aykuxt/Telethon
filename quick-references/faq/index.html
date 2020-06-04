@@ -273,6 +273,11 @@
       Helpers
     </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../modules/utils/" title="Utilities">
+      Utilities
+    </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -357,11 +362,11 @@
 <a class="md-content__button md-icon" href="https://github.com/LonamiWebs/Telethon/edit/master/docs/quick-references/faq.md" title="Edit this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
 </a>
-<h1 id="faq">FAQ<a class="headerlink" href="#faq" title="Permanent link">¤</a></h1>
+<h1 id="faq">FAQ<a class="headerlink" href="#faq" title="Permanent link">¶</a></h1>
 <p>Let's start the quick references section with some useful tips to keep in
 mind, with the hope that you will understand why certain things work the
 way that they do.</p>
-<h3 id="code-without-errors-doesnt-work">Code without errors doesn't work<a class="headerlink" href="#code-without-errors-doesnt-work" title="Permanent link">¤</a></h3>
+<h3 id="code-without-errors-doesnt-work">Code without errors doesn't work<a class="headerlink" href="#code-without-errors-doesnt-work" title="Permanent link">¶</a></h3>
 <p>Then it probably has errors, but you haven't enabled logging yet.
 To enable logging, at the following code to the top of your main file:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">logging</span>
@@ -376,7 +381,7 @@ To enable logging, at the following code to the top of your main file:</p>
 <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span>     <span class="c1"># will show a lot of output to help debugging issues in the library</span>
 </code></pre></div>
 <p>See the official Python documentation for more information on logging_.</p>
-<h3 id="how-can-i-except-floodwaiterror">How can I except FloodWaitError?<a class="headerlink" href="#how-can-i-except-floodwaiterror" title="Permanent link">¤</a></h3>
+<h3 id="how-can-i-except-floodwaiterror">How can I except FloodWaitError?<a class="headerlink" href="#how-can-i-except-floodwaiterror" title="Permanent link">¶</a></h3>
 <p>You can use all errors from the API by importing:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">telethon</span> <span class="kn">import</span> <span class="n">errors</span>
 </code></pre></div>
@@ -388,7 +393,7 @@ To enable logging, at the following code to the top of your main file:</p>
     <span class="c1"># to wait before making the request again.</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">'Flood for'</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">seconds</span><span class="p">)</span>
 </code></pre></div>
-<h3 id="my-account-was-deletedlimited-when-using-the-library">My account was deleted/limited when using the library<a class="headerlink" href="#my-account-was-deletedlimited-when-using-the-library" title="Permanent link">¤</a></h3>
+<h3 id="my-account-was-deletedlimited-when-using-the-library">My account was deleted/limited when using the library<a class="headerlink" href="#my-account-was-deletedlimited-when-using-the-library" title="Permanent link">¶</a></h3>
 <p>The library will only do things that you tell it to do. If you use
 the library with bad intentions, Telegram will hopefully ban you.</p>
 <p>However, you may also be part of a limited country, such as Iran or Russia.
@@ -407,9 +412,9 @@ You should notice this by getting errors like <code>PeerFloodError</code>,
 which means you're limited, for instance,
 when sending a message to some accounts but not others.</p>
 <p>For more discussion, please see <a href="https://github.com/LonamiWebs/Telethon/issues/297">issue 297</a>.</p>
-<h3 id="how-can-i-use-a-proxy">How can I use a proxy?<a class="headerlink" href="#how-can-i-use-a-proxy" title="Permanent link">¤</a></h3>
+<h3 id="how-can-i-use-a-proxy">How can I use a proxy?<a class="headerlink" href="#how-can-i-use-a-proxy" title="Permanent link">¶</a></h3>
 <p>This was one of the first things described in :ref:<code>signing-in</code>.</p>
-<h3 id="how-do-i-access-a-field">How do I access a field?<a class="headerlink" href="#how-do-i-access-a-field" title="Permanent link">¤</a></h3>
+<h3 id="how-do-i-access-a-field">How do I access a field?<a class="headerlink" href="#how-do-i-access-a-field" title="Permanent link">¶</a></h3>
 <p>This is basic Python knowledge. You should use the dot operator:</p>
 <div class="highlight"><pre><span></span><code><span class="n">me</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">get_me</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">me</span><span class="o">.</span><span class="n">username</span><span class="p">)</span>
@@ -436,7 +441,7 @@ when sending a message to some accounts but not others.</p>
     <span class="k">for</span> <span class="n">size</span> <span class="ow">in</span> <span class="n">photo</span><span class="o">.</span><span class="n">sizes</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">size</span><span class="o">.</span><span class="n">type</span><span class="p">)</span>
 </code></pre></div>
-<h3 id="attributeerror-coroutine-object-has-no-attribute-id">AttributeError: 'coroutine' object has no attribute 'id'<a class="headerlink" href="#attributeerror-coroutine-object-has-no-attribute-id" title="Permanent link">¤</a></h3>
+<h3 id="attributeerror-coroutine-object-has-no-attribute-id">AttributeError: 'coroutine' object has no attribute 'id'<a class="headerlink" href="#attributeerror-coroutine-object-has-no-attribute-id" title="Permanent link">¶</a></h3>
 <p>You either forgot to:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">telethon.sync</span>
 <span class="c1">#              ^^^^^ import sync</span>
@@ -447,7 +452,7 @@ when sending a message to some accounts but not others.</p>
     <span class="c1">#    ^^^^^ note the await</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">me</span><span class="o">.</span><span class="n">username</span><span class="p">)</span>
 </code></pre></div>
-<h3 id="sqlite3operationalerror-database-is-locked">sqlite3.OperationalError: database is locked<a class="headerlink" href="#sqlite3operationalerror-database-is-locked" title="Permanent link">¤</a></h3>
+<h3 id="sqlite3operationalerror-database-is-locked">sqlite3.OperationalError: database is locked<a class="headerlink" href="#sqlite3operationalerror-database-is-locked" title="Permanent link">¶</a></h3>
 <p>An older process is still running and is using the same <code>'session'</code> file.</p>
 <p>This error occurs when <strong>two or more clients use the same session</strong>,
 that is, when you write the same session name to be used in the client:</p>
@@ -462,7 +467,7 @@ to find out the process locking the file. As a last resort, you can
 reboot your system.</p>
 <p>If you really dislike SQLite, use a different session storage. There
 is an entire section covering that at :ref:<code>sessions</code>.</p>
-<h3 id="eventchat-or-eventsender-is-none"><code>event.chat</code> or <code>event.sender</code> is None<a class="headerlink" href="#eventchat-or-eventsender-is-none" title="Permanent link">¤</a></h3>
+<h3 id="eventchat-or-eventsender-is-none"><code>event.chat</code> or <code>event.sender</code> is None<a class="headerlink" href="#eventchat-or-eventsender-is-none" title="Permanent link">¶</a></h3>
 <p>Telegram doesn't always send this information in order to save bandwidth.
 If you need the information, you should fetch it yourself, since the library
 won't do unnecessary work unless you need to:</p>
@@ -470,7 +475,7 @@ won't do unnecessary work unless you need to:</p>
     <span class="n">chat</span> <span class="o">=</span> <span class="k">await</span> <span class="n">event</span><span class="o">.</span><span class="n">get_chat</span><span class="p">()</span>
     <span class="n">sender</span> <span class="o">=</span> <span class="k">await</span> <span class="n">event</span><span class="o">.</span><span class="n">get_sender</span><span class="p">()</span>
 </code></pre></div>
-<h3 id="what-does-bases-chatgetter-mean">What does <code>bases ChatGetter</code> mean?<a class="headerlink" href="#what-does-bases-chatgetter-mean" title="Permanent link">¤</a></h3>
+<h3 id="what-does-bases-chatgetter-mean">What does <code>bases ChatGetter</code> mean?<a class="headerlink" href="#what-does-bases-chatgetter-mean" title="Permanent link">¶</a></h3>
 <p>In Python, classes can base others. This is called <code>inheritance
 &lt;https://ddg.gg/python%20inheritance&gt;</code>_. What it means is that
 "if a class bases another, you can use the other's methods too".</p>
@@ -486,13 +491,13 @@ things like <code>obj.chat_id &lt;telethon.tl.custom.chatgetter.ChatGetter&gt;</
 <p>Telegram has a lot to offer, and inheritance helps the library reduce
 boilerplate, so it's important to know this concept. For newcomers,
 this may be a problem, so we explain what it means here in the FAQ.</p>
-<h3 id="can-i-use-flask-with-the-library">Can I use Flask with the library?<a class="headerlink" href="#can-i-use-flask-with-the-library" title="Permanent link">¤</a></h3>
+<h3 id="can-i-use-flask-with-the-library">Can I use Flask with the library?<a class="headerlink" href="#can-i-use-flask-with-the-library" title="Permanent link">¶</a></h3>
 <p>Yes, if you know what you are doing. However, you will probably have a
 lot of headaches to get threads and asyncio to work together. Instead,
 consider using <a href="https://pgjones.gitlab.io/quart/">Quart</a>, an asyncio-based
 alternative to <a href="https://flask.pocoo.org/">Flask</a>.</p>
 <p>Check out <a href="https://github.com/LonamiWebs/Telethon/tree/master/telethon_examples#quart_loginpy">quart_login.py</a> for an example web-application based on Quart.</p>
-<h3 id="can-i-use-anacondaspyderipython-with-the-library">Can I use Anaconda/Spyder/IPython with the library?<a class="headerlink" href="#can-i-use-anacondaspyderipython-with-the-library" title="Permanent link">¤</a></h3>
+<h3 id="can-i-use-anacondaspyderipython-with-the-library">Can I use Anaconda/Spyder/IPython with the library?<a class="headerlink" href="#can-i-use-anacondaspyderipython-with-the-library" title="Permanent link">¶</a></h3>
 <p>Yes, but these interpreters run the asyncio event loop implicitly,
 which interferes with the <code>telethon.sync</code> magic module.</p>
 <p>If you use them, you should <strong>not</strong> import <code>sync</code>:</p>
@@ -506,6 +511,14 @@ which interferes with the <code>telethon.sync</code> magic module.</p>
 <p>You are also more likely to get "sqlite3.OperationalError: database is locked"
 with them. If they cause too much trouble, just write your code in a <code>.py</code>
 file and run that, or use the normal <code>python</code> interpreter.</p>
+<hr/>
+<div class="md-source-date">
+<small>
+    
+      Last update: June 4, 2020
+    
+  </small>
+</div>
 </article>
 </div>
 </div>

@@ -233,6 +233,11 @@
       Helpers
     </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../modules/utils/" title="Utilities">
+      Utilities
+    </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -277,7 +282,7 @@
 <a class="md-content__button md-icon" href="https://github.com/LonamiWebs/Telethon/edit/master/docs/basic/updates.md" title="Edit this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
 </a>
-<h1 id="updates">Updates<a class="headerlink" href="#updates" title="Permanent link">¤</a></h1>
+<h1 id="updates">Updates<a class="headerlink" href="#updates" title="Permanent link">¶</a></h1>
 <p>Updates are an important topic in a messaging platform like Telegram.
 After all, you want to be notified when a new message arrives, when
 a member joins, when someone starts typing, etc.
@@ -292,7 +297,7 @@ add the following snippet to the very top of your file:</p>
                     <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">WARNING</span><span class="p">)</span>
 </code></pre></div>
 </div>
-<h2 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link">¤</a></h2>
+<h2 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link">¶</a></h2>
 <p>Let's start things with an example to automate replies:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">telethon</span> <span class="kn">import</span> <span class="n">TelegramClient</span><span class="p">,</span> <span class="n">events</span>
 
@@ -337,7 +342,7 @@ which is a safer and often faster approach to threads.</p>
 <p>You <strong>must</strong> <code>await</code> all method calls that use
 network requests, which is most of them.</p>
 </div>
-<h2 id="more-examples">More Examples<a class="headerlink" href="#more-examples" title="Permanent link">¤</a></h2>
+<h2 id="more-examples">More Examples<a class="headerlink" href="#more-examples" title="Permanent link">¶</a></h2>
 <p>Replying to messages with hello is fun, but, can we do more?</p>
 <div class="highlight"><pre><span></span><code><span class="nd">@client</span><span class="o">.</span><span class="n">on</span><span class="p">(</span><span class="n">events</span><span class="o">.</span><span class="n">NewMessage</span><span class="p">(</span><span class="n">outgoing</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">pattern</span><span class="o">=</span><span class="sa">r</span><span class="s1">'\.save'</span><span class="p">))</span>
 <span class="k">async</span> <span class="k">def</span> <span class="nf">handler</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
@@ -365,7 +370,7 @@ can learn more at https://regexone.com/.</p>
 <p>So far, we have only seen the <code>NewMessage
 &lt;telethon.events.newmessage.NewMessage&gt;</code>, but there are many more
 which will be covered later. This is only a small introduction to updates.</p>
-<h2 id="entities">Entities<a class="headerlink" href="#entities" title="Permanent link">¤</a></h2>
+<h2 id="entities">Entities<a class="headerlink" href="#entities" title="Permanent link">¶</a></h2>
 <p>When you need the user or chat where an event occurred, you <strong>must</strong> use
 the following methods:</p>
 <div class="highlight"><pre><span></span><code><span class="k">async</span> <span class="k">def</span> <span class="nf">handler</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
@@ -389,6 +394,14 @@ information, so you have to <strong>use the methods</strong>, not the properties
 As a rule of thumb, remember that new message events behave just
 like message objects, so you can do with them everything you can
 do with a message object.</p>
+<hr/>
+<div class="md-source-date">
+<small>
+    
+      Last update: June 4, 2020
+    
+  </small>
+</div>
 </article>
 </div>
 </div>

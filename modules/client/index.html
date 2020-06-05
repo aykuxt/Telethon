@@ -1,0 +1,2078 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="https://aykuxt.github.io/Telethon/modules/client/" rel="canonical"/>
+<link href="../../assets/images/favicon.png" rel="shortcut icon"/>
+<meta content="mkdocs-1.1.2, mkdocs-material-5.2.2" name="generator"/>
+<title>TelegramClient - Telethon Docs</title>
+<link href="../../assets/stylesheets/main.a2408e81.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.a46bcfb3.min.css" rel="stylesheet"/>
+<meta content="#2196f3" name="theme-color"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&amp;display=fallback" rel="stylesheet"/>
+<style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+<link href="../../custom.css" rel="stylesheet"/>
+</head>
+<body data-md-color-accent="amber" data-md-color-primary="blue" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#telegramclient">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header-nav md-grid">
+<a aria-label="Telethon Docs" class="md-header-nav__button md-logo" href="https://aykuxt.github.io/Telethon/" title="Telethon Docs">
+<img alt="logo" src="../../logo.svg"/>
+</a>
+<label class="md-header-nav__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"></path></svg>
+</label>
+<div class="md-header-nav__title" data-md-component="header-title">
+<div class="md-header-nav__ellipsis">
+<span class="md-header-nav__topic md-ellipsis">
+            Telethon Docs
+          </span>
+<span class="md-header-nav__topic md-ellipsis">
+            
+              TelegramClient
+            
+          </span>
+</div>
+</div>
+<label class="md-header-nav__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" data-md-state="active" name="query" placeholder="Search" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</label>
+<button aria-label="Clear" class="md-search__icon md-icon" data-md-component="search-reset" tabindex="-1" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg>
+</button>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header-nav__source">
+<a class="md-source" href="https://github.com/LonamiWebs/Telethon/" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    LonamiWebs/Telethon
+  </div>
+</a>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<nav aria-label="Tabs" class="md-tabs md-tabs--active" data-md-component="tabs">
+<div class="md-tabs__inner md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../..">
+          First Steps
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../quick-references/faq/">
+          Quick References
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../concepts/strings/">
+          Concepts
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../developing/philosophy/">
+          Developing
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../examples/word-of-warning/">
+          Full API Examples
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../misc/changelog/">
+          Miscellaneous
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link md-tabs__link--active" href="../helpers/">
+          Modules
+        </a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Telethon Docs" class="md-nav__button md-logo" href="https://aykuxt.github.io/Telethon/" title="Telethon Docs">
+<img alt="logo" src="../../logo.svg"/>
+</a>
+    Telethon Docs
+  </label>
+<div class="md-nav__source">
+<a class="md-source" href="https://github.com/LonamiWebs/Telethon/" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    LonamiWebs/Telethon
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" id="nav-1" type="checkbox"/>
+<label class="md-nav__link" for="nav-1">
+      First Steps
+      <span class="md-nav__icon md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"></path></svg>
+</span>
+</label>
+<nav aria-label="First Steps" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="nav-1">
+<span class="md-nav__icon md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</span>
+        First Steps
+      </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../.." title="Getting Started">
+      Getting Started
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../basic/installation/" title="Installation">
+      Installation
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../basic/signing-in/" title="Signing In">
+      Signing In
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../basic/quick-start/" title="Quick-Start">
+      Quick-Start
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../basic/updates/" title="Updates">
+      Updates
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../basic/next-steps/" title="Next Steps">
+      Next Steps
+    </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" id="nav-2" type="checkbox"/>
+<label class="md-nav__link" for="nav-2">
+      Quick References
+      <span class="md-nav__icon md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"></path></svg>
+</span>
+</label>
+<nav aria-label="Quick References" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="nav-2">
+<span class="md-nav__icon md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</span>
+        Quick References
+      </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../quick-references/faq/" title="FAQ">
+      FAQ
+    </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" id="nav-3" type="checkbox"/>
+<label class="md-nav__link" for="nav-3">
+      Concepts
+      <span class="md-nav__icon md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"></path></svg>
+</span>
+</label>
+<nav aria-label="Concepts" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="nav-3">
+<span class="md-nav__icon md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</span>
+        Concepts
+      </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../concepts/strings/" title="String-based Debugging">
+      String-based Debugging
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../concepts/entities/" title="Entities">
+      Entities
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../concepts/botapi-vs-mtproto/" title="HTTP Bot API vs MTProto">
+      HTTP Bot API vs MTProto
+    </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" id="nav-4" type="checkbox"/>
+<label class="md-nav__link" for="nav-4">
+      Developing
+      <span class="md-nav__icon md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"></path></svg>
+</span>
+</label>
+<nav aria-label="Developing" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="nav-4">
+<span class="md-nav__icon md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</span>
+        Developing
+      </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../developing/philosophy/" title="Philosophy">
+      Philosophy
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../developing/test-servers/" title="Test Servers">
+      Test Servers
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../developing/project-structure/" title="Project Structure">
+      Project Structure
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../developing/coding-style/" title="Coding Style">
+      Coding Style
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../developing/testing/" title="Tests">
+      Tests
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../developing/understanding-the-type-language/" title="Understanding the Type Language">
+      Understanding the Type Language
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../developing/tips-for-porting-the-project/" title="Tips for Porting the Project">
+      Tips for Porting the Project
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../developing/telegram-api-in-other-languages/" title="Telegram API in Other Languages">
+      Telegram API in Other Languages
+    </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" id="nav-5" type="checkbox"/>
+<label class="md-nav__link" for="nav-5">
+      Full API Examples
+      <span class="md-nav__icon md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"></path></svg>
+</span>
+</label>
+<nav aria-label="Full API Examples" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="nav-5">
+<span class="md-nav__icon md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</span>
+        Full API Examples
+      </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../examples/word-of-warning/" title="A Word of Warning">
+      A Word of Warning
+    </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" id="nav-6" type="checkbox"/>
+<label class="md-nav__link" for="nav-6">
+      Miscellaneous
+      <span class="md-nav__icon md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"></path></svg>
+</span>
+</label>
+<nav aria-label="Miscellaneous" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="nav-6">
+<span class="md-nav__icon md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</span>
+        Miscellaneous
+      </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../misc/changelog/" title="Changelog (Version History)">
+      Changelog (Version History)
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../misc/wall-of-shame/" title="Wall of Shame">
+      Wall of Shame
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../misc/compatibility-and-convenience/" title="Compatibility and Convenience">
+      Compatibility and Convenience
+    </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="nav-7" id="nav-7" type="checkbox"/>
+<label class="md-nav__link" for="nav-7">
+      Modules
+      <span class="md-nav__icon md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"></path></svg>
+</span>
+</label>
+<nav aria-label="Modules" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="nav-7">
+<span class="md-nav__icon md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</span>
+        Modules
+      </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../helpers/" title="Helpers">
+      Helpers
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../utils/" title="Utilities">
+      Utilities
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../custom/" title="Custom package">
+      Custom package
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../errors/" title="API Errors">
+      API Errors
+    </a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+        TelegramClient
+        <span class="md-nav__icon md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"></path></svg>
+</span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./" title="TelegramClient">
+      TelegramClient
+    </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#telegram.client">
+    telegram.client
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#telegram.client.Telegram">
+    Telegram
+  </a>
+<nav aria-label="Telegram" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#telegram.client.Telegram.__init__">
+    __init__()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#telegram.client.Telegram.call_method">
+    call_method()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#telegram.client.Telegram.create_basic_group_chat">
+    create_basic_group_chat()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#telegram.client.Telegram.delete_messages">
+    delete_messages()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#telegram.client.Telegram.get_chat">
+    get_chat()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#telegram.client.Telegram.get_chat_history">
+    get_chat_history()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#telegram.client.Telegram.get_chats">
+    get_chats()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#telegram.client.Telegram.get_me">
+    get_me()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#telegram.client.Telegram.get_message">
+    get_message()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#telegram.client.Telegram.get_supergroup_full_info">
+    get_supergroup_full_info()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#telegram.client.Telegram.get_user">
+    get_user()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#telegram.client.Telegram.get_web_page_instant_view">
+    get_web_page_instant_view()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#telegram.client.Telegram.idle">
+    idle()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#telegram.client.Telegram.login">
+    login()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#telegram.client.Telegram.remove_update_handler">
+    remove_update_handler()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#telegram.client.Telegram.send_message">
+    send_message()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#telegram.client.Telegram.stop">
+    stop()
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#telegram.client">
+    telegram.client
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#telegram.client.Telegram">
+    Telegram
+  </a>
+<nav aria-label="Telegram" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#telegram.client.Telegram.__init__">
+    __init__()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#telegram.client.Telegram.call_method">
+    call_method()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#telegram.client.Telegram.create_basic_group_chat">
+    create_basic_group_chat()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#telegram.client.Telegram.delete_messages">
+    delete_messages()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#telegram.client.Telegram.get_chat">
+    get_chat()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#telegram.client.Telegram.get_chat_history">
+    get_chat_history()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#telegram.client.Telegram.get_chats">
+    get_chats()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#telegram.client.Telegram.get_me">
+    get_me()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#telegram.client.Telegram.get_message">
+    get_message()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#telegram.client.Telegram.get_supergroup_full_info">
+    get_supergroup_full_info()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#telegram.client.Telegram.get_user">
+    get_user()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#telegram.client.Telegram.get_web_page_instant_view">
+    get_web_page_instant_view()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#telegram.client.Telegram.idle">
+    idle()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#telegram.client.Telegram.login">
+    login()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#telegram.client.Telegram.remove_update_handler">
+    remove_update_handler()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#telegram.client.Telegram.send_message">
+    send_message()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#telegram.client.Telegram.stop">
+    stop()
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content">
+<article class="md-content__inner md-typeset">
+<a class="md-content__button md-icon" href="https://github.com/LonamiWebs/Telethon/edit/master/docs/modules/client.md" title="Edit this page">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
+</a>
+<h1 id="telegramclient">TelegramClient<a class="headerlink" href="#telegramclient" title="Permanent link">¶</a></h1>
+<p>The <code>TelegramClient &lt;telegramclient.TelegramClient&gt;</code> aggregates several mixin
+classes to provide all the common functionality in a nice, Pythonic interface.
+Each mixin has its own methods, which you all can use.</p>
+<p><strong>In short, to create a client you must run:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">telethon</span> <span class="kn">import</span> <span class="n">TelegramClient</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">TelegramClient</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">api_id</span><span class="p">,</span> <span class="n">api_hash</span><span class="p">)</span>
+
+<span class="k">async</span> <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="c1"># Now you can use all client methods listed below, like for example...</span>
+    <span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="s1">'me'</span><span class="p">,</span> <span class="s1">'Hello to myself!'</span><span class="p">)</span>
+
+<span class="k">with</span> <span class="n">client</span><span class="p">:</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">loop</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
+</code></pre></div>
+<p>You <strong>don't</strong> need to import these <code>AuthMethods</code>, <code>MessageMethods</code>, etc.
+Together they are the <code>TelegramClient &lt;telegramclient.TelegramClient&gt;</code> and
+you can access all of their methods.</p>
+<p>See :ref:<code>client-ref</code> for a short summary.</p>
+<div class="doc doc-object doc-module">
+<h2 class="hidden-toc" href="#telegram.client" id="telegram.client" style="visibility: hidden; width: 0; height: 0;">
+<a class="headerlink" href="#telegram.client" title="Permanent link">¶</a></h2>
+<div class="doc doc-contents first">
+<div class="doc doc-children">
+<div class="doc doc-object doc-class">
+<h2 class="doc doc-heading" id="telegram.client.Telegram">
+<code>Telegram</code>
+<a class="headerlink" href="#telegram.client.Telegram" title="Permanent link">¶</a></h2>
+<div class="doc doc-contents">
+<div class="doc doc-children">
+<div class="doc doc-object doc-method">
+<h3 class="doc doc-heading" id="telegram.client.Telegram.__init__">
+<code class="highlight language-python">
+__init__<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">api_id</span><span class="p">,</span> <span class="n">api_hash</span><span class="p">,</span> <span class="n">database_encryption_key</span><span class="p">,</span> <span class="n">phone</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">bot_token</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">library_path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">worker</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">files_directory</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">use_test_dc</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">use_message_database</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">device_model</span><span class="o">=</span><span class="s1">'python-telegram'</span><span class="p">,</span> <span class="n">application_version</span><span class="o">=</span><span class="s1">'0.12.0'</span><span class="p">,</span> <span class="n">system_version</span><span class="o">=</span><span class="s1">'unknown'</span><span class="p">,</span> <span class="n">system_language_code</span><span class="o">=</span><span class="s1">'en'</span><span class="p">,</span> <span class="n">login</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">default_workers_queue_size</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">tdlib_verbosity</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">proxy_server</span><span class="o">=</span><span class="s1">''</span><span class="p">,</span> <span class="n">proxy_port</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">proxy_type</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">use_secret_chats</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> </code>
+<span class="doc doc-properties">
+<small class="doc doc-property doc-property-special"><code>special</code></small>
+</span>
+<a class="headerlink" href="#telegram.client.Telegram.__init__" title="Permanent link">¶</a></h3>
+<div class="doc doc-contents">
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>api_id</code></td>
+<td><code>int</code></td>
+<td>
+<p>//my.telegram.org/apps/)</p>
+</td>
+<td><em>required</em></td>
+</tr>
+<tr>
+<td><code>api_hash</code></td>
+<td><code>str</code></td>
+<td>
+<p>//my.telegram.org/apps/)</p>
+</td>
+<td><em>required</em></td>
+</tr>
+</tbody>
+</table>
+<details class="quote">
+<summary>Source code in <code>telegram\client.py</code></summary>
+<table class="highlighttable">
+<tr>
+<td class="linenos">
+<div class="linenodiv">
+<pre><span></span> 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117</pre>
+</div>
+</td>
+<td class="code">
+<div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="n">api_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+    <span class="n">api_hash</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">database_encryption_key</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">bytes</span><span class="p">],</span>
+    <span class="n">phone</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">bot_token</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">library_path</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">worker</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Type</span><span class="p">[</span><span class="n">BaseWorker</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">files_directory</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">use_test_dc</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="n">use_message_database</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">device_model</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">'python-telegram'</span><span class="p">,</span>
+    <span class="n">application_version</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">VERSION</span><span class="p">,</span>
+    <span class="n">system_version</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">'unknown'</span><span class="p">,</span>
+    <span class="n">system_language_code</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">'en'</span><span class="p">,</span>
+    <span class="n">login</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="n">default_workers_queue_size</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">,</span>
+    <span class="n">tdlib_verbosity</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="n">proxy_server</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">''</span><span class="p">,</span>
+    <span class="n">proxy_port</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="n">proxy_type</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">use_secret_chats</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="sd">"""</span>
+<span class="sd">    Args:</span>
+<span class="sd">        api_id - ID of your app (https://my.telegram.org/apps/)</span>
+<span class="sd">        api_hash - api_hash of your app (https://my.telegram.org/apps/)</span>
+<span class="sd">        phone - your phone number</span>
+<span class="sd">        library_path - you can change path to the compiled libtdjson library</span>
+<span class="sd">        worker - worker to process updates</span>
+<span class="sd">        files_directory - directory for the tdlib's files (database, images, etc.)</span>
+<span class="sd">        use_test_dc - use test datacenter</span>
+<span class="sd">        use_message_database</span>
+<span class="sd">        use_secret_chats</span>
+<span class="sd">        device_model</span>
+<span class="sd">        application_version</span>
+<span class="sd">        system_version</span>
+<span class="sd">        system_language_code</span>
+<span class="sd">    """</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">api_id</span> <span class="o">=</span> <span class="n">api_id</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">api_hash</span> <span class="o">=</span> <span class="n">api_hash</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">library_path</span> <span class="o">=</span> <span class="n">library_path</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">phone</span> <span class="o">=</span> <span class="n">phone</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">bot_token</span> <span class="o">=</span> <span class="n">bot_token</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">use_test_dc</span> <span class="o">=</span> <span class="n">use_test_dc</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">device_model</span> <span class="o">=</span> <span class="n">device_model</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">system_version</span> <span class="o">=</span> <span class="n">system_version</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">system_language_code</span> <span class="o">=</span> <span class="n">system_language_code</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">application_version</span> <span class="o">=</span> <span class="n">application_version</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">use_message_database</span> <span class="o">=</span> <span class="n">use_message_database</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_queue_put_timeout</span> <span class="o">=</span> <span class="mi">10</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">proxy_server</span> <span class="o">=</span> <span class="n">proxy_server</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">proxy_port</span> <span class="o">=</span> <span class="n">proxy_port</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">proxy_type</span> <span class="o">=</span> <span class="n">proxy_type</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">use_secret_chats</span> <span class="o">=</span> <span class="n">use_secret_chats</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">bot_token</span> <span class="ow">and</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">phone</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">'You must provide bot_token or phone'</span><span class="p">)</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">_database_encryption_key</span> <span class="o">=</span> <span class="n">database_encryption_key</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">files_directory</span><span class="p">:</span>
+        <span class="n">hasher</span> <span class="o">=</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">md5</span><span class="p">()</span>
+        <span class="n">str_to_encode</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">phone</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">bot_token</span>  <span class="c1"># type: ignore</span>
+        <span class="n">hasher</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">str_to_encode</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">'utf-8'</span><span class="p">))</span>
+        <span class="n">directory_name</span> <span class="o">=</span> <span class="n">hasher</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span>
+        <span class="n">files_directory</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">'/tmp/.tdlib_files/</span><span class="si">{</span><span class="n">directory_name</span><span class="si">}</span><span class="s1">/'</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">files_directory</span> <span class="o">=</span> <span class="n">files_directory</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">_authorized</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_is_enabled</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="c1"># todo: move to worker</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_workers_queue</span><span class="p">:</span> <span class="n">queue</span><span class="o">.</span><span class="n">Queue</span> <span class="o">=</span> <span class="n">queue</span><span class="o">.</span><span class="n">Queue</span><span class="p">(</span>
+        <span class="n">maxsize</span><span class="o">=</span><span class="n">default_workers_queue_size</span>
+    <span class="p">)</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">worker</span><span class="p">:</span>
+        <span class="n">worker</span> <span class="o">=</span> <span class="n">SimpleWorker</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">worker</span> <span class="o">=</span> <span class="n">worker</span><span class="p">(</span><span class="n">queue</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_workers_queue</span><span class="p">)</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">_results</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">AsyncResult</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_update_handlers</span><span class="p">:</span> <span class="n">DefaultDict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="n">Callable</span><span class="p">]]</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">_tdjson</span> <span class="o">=</span> <span class="n">TDJson</span><span class="p">(</span><span class="n">library_path</span><span class="o">=</span><span class="n">library_path</span><span class="p">,</span> <span class="n">verbosity</span><span class="o">=</span><span class="n">tdlib_verbosity</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_run</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">login</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">login</span><span class="p">()</span>
+</code></pre>
+</div>
+</td>
+</tr>
+</table>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-method">
+<h3 class="doc doc-heading" id="telegram.client.Telegram.call_method">
+<code class="highlight language-python">
+call_method<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">method_name</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> </code>
+<a class="headerlink" href="#telegram.client.Telegram.call_method" title="Permanent link">¶</a></h3>
+<div class="doc doc-contents">
+<p>Use this method to call any other method of the tdlib</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>method_name</code></td>
+<td><code>str</code></td>
+<td>
+<p>Name of the method</p>
+</td>
+<td><em>required</em></td>
+</tr>
+<tr>
+<td><code>params</code></td>
+<td><code>Optional[Dict[str, Any]]</code></td>
+<td>
+<p>parameters</p>
+</td>
+<td><code>None</code></td>
+</tr>
+</tbody>
+</table>
+<details class="quote">
+<summary>Source code in <code>telegram\client.py</code></summary>
+<table class="highlighttable">
+<tr>
+<td class="linenos">
+<div class="linenodiv">
+<pre><span></span>325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343</pre>
+</div>
+</td>
+<td class="code">
+<div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="nf">call_method</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="n">method_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">params</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">block</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">AsyncResult</span><span class="p">:</span>
+    <span class="sd">"""</span>
+<span class="sd">    Use this method to call any other method of the tdlib</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        method_name: Name of the method</span>
+<span class="sd">        params: parameters</span>
+<span class="sd">    """</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'@type'</span><span class="p">:</span> <span class="n">method_name</span><span class="p">}</span>
+
+    <span class="k">if</span> <span class="n">params</span><span class="p">:</span>
+        <span class="n">data</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_send_data</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="n">block</span><span class="p">)</span>
+</code></pre>
+</div>
+</td>
+</tr>
+</table>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-method">
+<h3 class="doc doc-heading" id="telegram.client.Telegram.create_basic_group_chat">
+<code class="highlight language-python">
+create_basic_group_chat<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">basic_group_id</span><span class="p">)</span> </code>
+<a class="headerlink" href="#telegram.client.Telegram.create_basic_group_chat" title="Permanent link">¶</a></h3>
+<div class="doc doc-contents">
+<p>Create a chat from a basic group</p>
+<details class="quote">
+<summary>Source code in <code>telegram\client.py</code></summary>
+<table class="highlighttable">
+<tr>
+<td class="linenos">
+<div class="linenodiv">
+<pre><span></span>299
+300
+301
+302
+303
+304
+305
+306
+307
+308</pre>
+</div>
+</td>
+<td class="code">
+<div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="nf">create_basic_group_chat</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">basic_group_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">AsyncResult</span><span class="p">:</span>
+    <span class="sd">"""</span>
+<span class="sd">    Create a chat from a basic group</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        basic_group_id</span>
+<span class="sd">    """</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_send_data</span><span class="p">(</span>
+        <span class="p">{</span><span class="s1">'@type'</span><span class="p">:</span> <span class="s1">'createBasicGroupChat'</span><span class="p">,</span> <span class="s1">'basic_group_id'</span><span class="p">:</span> <span class="n">basic_group_id</span><span class="p">}</span>
+    <span class="p">)</span>
+</code></pre>
+</div>
+</td>
+</tr>
+</table>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-method">
+<h3 class="doc doc-heading" id="telegram.client.Telegram.delete_messages">
+<code class="highlight language-python">
+delete_messages<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">chat_id</span><span class="p">,</span> <span class="n">message_ids</span><span class="p">,</span> <span class="n">revoke</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> </code>
+<a class="headerlink" href="#telegram.client.Telegram.delete_messages" title="Permanent link">¶</a></h3>
+<div class="doc doc-contents">
+<p>Delete a list of messages in a chat</p>
+<details class="quote">
+<summary>Source code in <code>telegram\client.py</code></summary>
+<table class="highlighttable">
+<tr>
+<td class="linenos">
+<div class="linenodiv">
+<pre><span></span>268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286</pre>
+</div>
+</td>
+<td class="code">
+<div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="nf">delete_messages</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span> <span class="n">chat_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">message_ids</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">revoke</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">AsyncResult</span><span class="p">:</span>
+    <span class="sd">"""</span>
+<span class="sd">    Delete a list of messages in a chat</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        chat_id</span>
+<span class="sd">        message_ids</span>
+<span class="sd">        revoke</span>
+<span class="sd">    """</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_send_data</span><span class="p">(</span>
+        <span class="p">{</span>
+            <span class="s1">'@type'</span><span class="p">:</span> <span class="s1">'deleteMessages'</span><span class="p">,</span>
+            <span class="s1">'chat_id'</span><span class="p">:</span> <span class="n">chat_id</span><span class="p">,</span>
+            <span class="s1">'message_ids'</span><span class="p">:</span> <span class="n">message_ids</span><span class="p">,</span>
+            <span class="s1">'revoke'</span><span class="p">:</span> <span class="n">revoke</span><span class="p">,</span>
+        <span class="p">}</span>
+    <span class="p">)</span>
+</code></pre>
+</div>
+</td>
+</tr>
+</table>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-method">
+<h3 class="doc doc-heading" id="telegram.client.Telegram.get_chat">
+<code class="highlight language-python">
+get_chat<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">chat_id</span><span class="p">)</span> </code>
+<a class="headerlink" href="#telegram.client.Telegram.get_chat" title="Permanent link">¶</a></h3>
+<div class="doc doc-contents">
+<p>This is offline request, if there is no chat in your database it will not be found
+tdlib saves chat to the database when it receives a new message or when you call <code>get_chats</code> method.</p>
+<details class="quote">
+<summary>Source code in <code>telegram\client.py</code></summary>
+<table class="highlighttable">
+<tr>
+<td class="linenos">
+<div class="linenodiv">
+<pre><span></span>161
+162
+163
+164
+165
+166
+167
+168</pre>
+</div>
+</td>
+<td class="code">
+<div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="nf">get_chat</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">chat_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">AsyncResult</span><span class="p">:</span>
+    <span class="sd">"""</span>
+<span class="sd">    This is offline request, if there is no chat in your database it will not be found</span>
+<span class="sd">    tdlib saves chat to the database when it receives a new message or when you call `get_chats` method.</span>
+<span class="sd">    """</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'@type'</span><span class="p">:</span> <span class="s1">'getChat'</span><span class="p">,</span> <span class="s1">'chat_id'</span><span class="p">:</span> <span class="n">chat_id</span><span class="p">}</span>
+
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_send_data</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</code></pre>
+</div>
+</td>
+</tr>
+</table>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-method">
+<h3 class="doc doc-heading" id="telegram.client.Telegram.get_chat_history">
+<code class="highlight language-python">
+get_chat_history<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">chat_id</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">from_message_id</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">only_local</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> </code>
+<a class="headerlink" href="#telegram.client.Telegram.get_chat_history" title="Permanent link">¶</a></h3>
+<div class="doc doc-contents">
+<p>Returns history of a chat</p>
+<details class="quote">
+<summary>Source code in <code>telegram\client.py</code></summary>
+<table class="highlighttable">
+<tr>
+<td class="linenos">
+<div class="linenodiv">
+<pre><span></span>212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239</pre>
+</div>
+</td>
+<td class="code">
+<div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="nf">get_chat_history</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="n">chat_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+    <span class="n">limit</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">,</span>
+    <span class="n">from_message_id</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="n">offset</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="n">only_local</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">AsyncResult</span><span class="p">:</span>
+    <span class="sd">"""</span>
+<span class="sd">    Returns history of a chat</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        chat_id</span>
+<span class="sd">        limit</span>
+<span class="sd">        from_message_id</span>
+<span class="sd">        offset</span>
+<span class="sd">        only_local</span>
+<span class="sd">    """</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">'@type'</span><span class="p">:</span> <span class="s1">'getChatHistory'</span><span class="p">,</span>
+        <span class="s1">'chat_id'</span><span class="p">:</span> <span class="n">chat_id</span><span class="p">,</span>
+        <span class="s1">'limit'</span><span class="p">:</span> <span class="n">limit</span><span class="p">,</span>
+        <span class="s1">'from_message_id'</span><span class="p">:</span> <span class="n">from_message_id</span><span class="p">,</span>
+        <span class="s1">'offset'</span><span class="p">:</span> <span class="n">offset</span><span class="p">,</span>
+        <span class="s1">'only_local'</span><span class="p">:</span> <span class="n">only_local</span><span class="p">,</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_send_data</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</code></pre>
+</div>
+</td>
+</tr>
+</table>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-method">
+<h3 class="doc doc-heading" id="telegram.client.Telegram.get_chats">
+<code class="highlight language-python">
+get_chats<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">offset_order</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">offset_chat_id</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span> </code>
+<a class="headerlink" href="#telegram.client.Telegram.get_chats" title="Permanent link">¶</a></h3>
+<div class="doc doc-contents">
+<p>Returns a list of chats:</p>
+<p><strong>Returns:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>AsyncResult</code></td>
+<td>
+<p>{
+    '@type': 'chats',
+    'chat_ids': [...],
+    '@extra': {
+        'request_id': '...'
+    }
+}</p>
+</td>
+</tr>
+</tbody>
+</table>
+<details class="quote">
+<summary>Source code in <code>telegram\client.py</code></summary>
+<table class="highlighttable">
+<tr>
+<td class="linenos">
+<div class="linenodiv">
+<pre><span></span>188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210</pre>
+</div>
+</td>
+<td class="code">
+<div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="nf">get_chats</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span> <span class="n">offset_order</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">offset_chat_id</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">limit</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">AsyncResult</span><span class="p">:</span>
+    <span class="sd">"""</span>
+<span class="sd">    Returns a list of chats:</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        {</span>
+<span class="sd">            '@type': 'chats',</span>
+<span class="sd">            'chat_ids': [...],</span>
+<span class="sd">            '@extra': {</span>
+<span class="sd">                'request_id': '...'</span>
+<span class="sd">            }</span>
+<span class="sd">        }</span>
+<span class="sd">    """</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">'@type'</span><span class="p">:</span> <span class="s1">'getChats'</span><span class="p">,</span>
+        <span class="s1">'offset_order'</span><span class="p">:</span> <span class="n">offset_order</span><span class="p">,</span>
+        <span class="s1">'offset_chat_id'</span><span class="p">:</span> <span class="n">offset_chat_id</span><span class="p">,</span>
+        <span class="s1">'limit'</span><span class="p">:</span> <span class="n">limit</span><span class="p">,</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_send_data</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</code></pre>
+</div>
+</td>
+</tr>
+</table>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-method">
+<h3 class="doc doc-heading" id="telegram.client.Telegram.get_me">
+<code class="highlight language-python">
+get_me<span class="p">(</span><span class="bp">self</span><span class="p">)</span> </code>
+<a class="headerlink" href="#telegram.client.Telegram.get_me" title="Permanent link">¶</a></h3>
+<div class="doc doc-contents">
+<p>Requests information of the current user (getMe method)</p>
+<p><a href="https://core.telegram.org/tdlib/docs/classtd_1_1td__api_1_1get_me.html">https://core.telegram.org/tdlib/docs/classtd_1_1td__api_1_1get_me.html</a></p>
+<details class="quote">
+<summary>Source code in <code>telegram\client.py</code></summary>
+<table class="highlighttable">
+<tr>
+<td class="linenos">
+<div class="linenodiv">
+<pre><span></span>170
+171
+172
+173
+174
+175
+176
+177</pre>
+</div>
+</td>
+<td class="code">
+<div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="nf">get_me</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">AsyncResult</span><span class="p">:</span>
+    <span class="sd">"""</span>
+<span class="sd">    Requests information of the current user (getMe method)</span>
+
+<span class="sd">    https://core.telegram.org/tdlib/docs/classtd_1_1td__api_1_1get_me.html</span>
+<span class="sd">    """</span>
+
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">call_method</span><span class="p">(</span><span class="s1">'getMe'</span><span class="p">)</span>
+</code></pre>
+</div>
+</td>
+</tr>
+</table>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-method">
+<h3 class="doc doc-heading" id="telegram.client.Telegram.get_message">
+<code class="highlight language-python">
+get_message<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">chat_id</span><span class="p">,</span> <span class="n">message_id</span><span class="p">)</span> </code>
+<a class="headerlink" href="#telegram.client.Telegram.get_message" title="Permanent link">¶</a></h3>
+<div class="doc doc-contents">
+<p>Return a message via its message_id</p>
+<p><strong>Returns:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>AsyncResult</code></td>
+<td>
+<p>AsyncResult
+The update will be:
+    {
+        '@type': 'message',
+        'id': 1,
+        'sender_user_id': 2,
+        'chat_id': 3,
+        'content': {...},
+        ...
+    }</p>
+</td>
+</tr>
+</tbody>
+</table>
+<details class="quote">
+<summary>Source code in <code>telegram\client.py</code></summary>
+<table class="highlighttable">
+<tr>
+<td class="linenos">
+<div class="linenodiv">
+<pre><span></span>241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266</pre>
+</div>
+</td>
+<td class="code">
+<div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="nf">get_message</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">chat_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">message_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,)</span> <span class="o">-&gt;</span> <span class="n">AsyncResult</span><span class="p">:</span>
+    <span class="sd">"""</span>
+<span class="sd">    Return a message via its message_id</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        chat_id</span>
+<span class="sd">        message_id</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        AsyncResult</span>
+<span class="sd">        The update will be:</span>
+<span class="sd">            {</span>
+<span class="sd">                '@type': 'message',</span>
+<span class="sd">                'id': 1,</span>
+<span class="sd">                'sender_user_id': 2,</span>
+<span class="sd">                'chat_id': 3,</span>
+<span class="sd">                'content': {...},</span>
+<span class="sd">                ...</span>
+<span class="sd">            }</span>
+<span class="sd">    """</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">'@type'</span><span class="p">:</span> <span class="s1">'getMessage'</span><span class="p">,</span>
+        <span class="s1">'chat_id'</span><span class="p">:</span> <span class="n">chat_id</span><span class="p">,</span>
+        <span class="s1">'message_id'</span><span class="p">:</span> <span class="n">message_id</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_send_data</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</code></pre>
+</div>
+</td>
+</tr>
+</table>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-method">
+<h3 class="doc doc-heading" id="telegram.client.Telegram.get_supergroup_full_info">
+<code class="highlight language-python">
+get_supergroup_full_info<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">supergroup_id</span><span class="p">)</span> </code>
+<a class="headerlink" href="#telegram.client.Telegram.get_supergroup_full_info" title="Permanent link">¶</a></h3>
+<div class="doc doc-contents">
+<p>Get the full info of a supergroup</p>
+<details class="quote">
+<summary>Source code in <code>telegram\client.py</code></summary>
+<table class="highlighttable">
+<tr>
+<td class="linenos">
+<div class="linenodiv">
+<pre><span></span>288
+289
+290
+291
+292
+293
+294
+295
+296
+297</pre>
+</div>
+</td>
+<td class="code">
+<div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="nf">get_supergroup_full_info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">supergroup_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">AsyncResult</span><span class="p">:</span>
+    <span class="sd">"""</span>
+<span class="sd">    Get the full info of a supergroup</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        supergroup_id</span>
+<span class="sd">    """</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_send_data</span><span class="p">(</span>
+        <span class="p">{</span><span class="s1">'@type'</span><span class="p">:</span> <span class="s1">'getSupergroupFullInfo'</span><span class="p">,</span> <span class="s1">'supergroup_id'</span><span class="p">:</span> <span class="n">supergroup_id</span><span class="p">}</span>
+    <span class="p">)</span>
+</code></pre>
+</div>
+</td>
+</tr>
+</table>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-method">
+<h3 class="doc doc-heading" id="telegram.client.Telegram.get_user">
+<code class="highlight language-python">
+get_user<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">user_id</span><span class="p">)</span> </code>
+<a class="headerlink" href="#telegram.client.Telegram.get_user" title="Permanent link">¶</a></h3>
+<div class="doc doc-contents">
+<p>Requests information about a user with id = user_id.</p>
+<p><a href="https://core.telegram.org/tdlib/docs/classtd_1_1td__api_1_1get_user.html">https://core.telegram.org/tdlib/docs/classtd_1_1td__api_1_1get_user.html</a></p>
+<details class="quote">
+<summary>Source code in <code>telegram\client.py</code></summary>
+<table class="highlighttable">
+<tr>
+<td class="linenos">
+<div class="linenodiv">
+<pre><span></span>179
+180
+181
+182
+183
+184
+185
+186</pre>
+</div>
+</td>
+<td class="code">
+<div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="nf">get_user</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">user_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">AsyncResult</span><span class="p">:</span>
+    <span class="sd">"""</span>
+<span class="sd">    Requests information about a user with id = user_id.</span>
+
+<span class="sd">    https://core.telegram.org/tdlib/docs/classtd_1_1td__api_1_1get_user.html</span>
+<span class="sd">    """</span>
+
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">call_method</span><span class="p">(</span><span class="s1">'getUser'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s1">'user_id'</span><span class="p">:</span> <span class="n">user_id</span><span class="p">})</span>
+</code></pre>
+</div>
+</td>
+</tr>
+</table>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-method">
+<h3 class="doc doc-heading" id="telegram.client.Telegram.get_web_page_instant_view">
+<code class="highlight language-python">
+get_web_page_instant_view<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">force_full</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> </code>
+<a class="headerlink" href="#telegram.client.Telegram.get_web_page_instant_view" title="Permanent link">¶</a></h3>
+<div class="doc doc-contents">
+<p>Use this method to request instant preview of a webpage.
+Returns error with 404 if there is no preview for this webpage.</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>url</code></td>
+<td><code>str</code></td>
+<td>
+<p>URL of a webpage</p>
+</td>
+<td><em>required</em></td>
+</tr>
+<tr>
+<td><code>force_full</code></td>
+<td><code>bool</code></td>
+<td>
+<p>If true, the full instant view for the web page will be returned</p>
+</td>
+<td><code>False</code></td>
+</tr>
+</tbody>
+</table>
+<details class="quote">
+<summary>Source code in <code>telegram\client.py</code></summary>
+<table class="highlighttable">
+<tr>
+<td class="linenos">
+<div class="linenodiv">
+<pre><span></span>310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323</pre>
+</div>
+</td>
+<td class="code">
+<div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="nf">get_web_page_instant_view</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span> <span class="n">url</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">force_full</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">AsyncResult</span><span class="p">:</span>
+    <span class="sd">"""</span>
+<span class="sd">    Use this method to request instant preview of a webpage.</span>
+<span class="sd">    Returns error with 404 if there is no preview for this webpage.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        url: URL of a webpage</span>
+<span class="sd">        force_full: If true, the full instant view for the web page will be returned</span>
+<span class="sd">    """</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'@type'</span><span class="p">:</span> <span class="s1">'getWebPageInstantView'</span><span class="p">,</span> <span class="s1">'url'</span><span class="p">:</span> <span class="n">url</span><span class="p">,</span> <span class="s1">'force_full'</span><span class="p">:</span> <span class="n">force_full</span><span class="p">}</span>
+
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_send_data</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</code></pre>
+</div>
+</td>
+</tr>
+</table>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-method">
+<h3 class="doc doc-heading" id="telegram.client.Telegram.idle">
+<code class="highlight language-python">
+idle<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stop_signals</span><span class="o">=</span><span class="p">(</span><span class="o">&lt;</span><span class="n">Signals</span><span class="o">.</span><span class="n">SIGINT</span><span class="p">:</span> <span class="mi">2</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">Signals</span><span class="o">.</span><span class="n">SIGTERM</span><span class="p">:</span> <span class="mi">15</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">Signals</span><span class="o">.</span><span class="n">SIGABRT</span><span class="p">:</span> <span class="mi">22</span><span class="o">&gt;</span><span class="p">))</span> </code>
+<a class="headerlink" href="#telegram.client.Telegram.idle" title="Permanent link">¶</a></h3>
+<div class="doc doc-contents">
+<p>Blocks until one of the signals are received and stops</p>
+<details class="quote">
+<summary>Source code in <code>telegram\client.py</code></summary>
+<table class="highlighttable">
+<tr>
+<td class="linenos">
+<div class="linenodiv">
+<pre><span></span>444
+445
+446
+447
+448
+449
+450
+451
+452
+453
+454
+455</pre>
+</div>
+</td>
+<td class="code">
+<div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="nf">idle</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span> <span class="n">stop_signals</span><span class="p">:</span> <span class="n">Tuple</span> <span class="o">=</span> <span class="p">(</span><span class="n">signal</span><span class="o">.</span><span class="n">SIGINT</span><span class="p">,</span> <span class="n">signal</span><span class="o">.</span><span class="n">SIGTERM</span><span class="p">,</span> <span class="n">signal</span><span class="o">.</span><span class="n">SIGABRT</span><span class="p">)</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="sd">"""Blocks until one of the signals are received and stops"""</span>
+
+    <span class="k">for</span> <span class="n">sig</span> <span class="ow">in</span> <span class="n">stop_signals</span><span class="p">:</span>
+        <span class="n">signal</span><span class="o">.</span><span class="n">signal</span><span class="p">(</span><span class="n">sig</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_signal_handler</span><span class="p">)</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">_is_enabled</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="k">while</span> <span class="bp">self</span><span class="o">.</span><span class="n">_is_enabled</span><span class="p">:</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
+</code></pre>
+</div>
+</td>
+</tr>
+</table>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-method">
+<h3 class="doc doc-heading" id="telegram.client.Telegram.login">
+<code class="highlight language-python">
+login<span class="p">(</span><span class="bp">self</span><span class="p">)</span> </code>
+<a class="headerlink" href="#telegram.client.Telegram.login" title="Permanent link">¶</a></h3>
+<div class="doc doc-contents">
+<p>Login process (blocking)</p>
+<p>Must be called before any other call.
+It sends initial params to the tdlib, sets database encryption key, etc.</p>
+<details class="quote">
+<summary>Source code in <code>telegram\client.py</code></summary>
+<table class="highlighttable">
+<tr>
+<td class="linenos">
+<div class="linenodiv">
+<pre><span></span>466
+467
+468
+469
+470
+471
+472
+473
+474
+475
+476
+477
+478
+479
+480
+481
+482
+483
+484
+485
+486
+487
+488
+489
+490
+491
+492
+493
+494
+495
+496
+497
+498
+499
+500
+501
+502
+503
+504</pre>
+</div>
+</td>
+<td class="code">
+<div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="nf">login</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="sd">"""</span>
+<span class="sd">    Login process (blocking)</span>
+
+<span class="sd">    Must be called before any other call.</span>
+<span class="sd">    It sends initial params to the tdlib, sets database encryption key, etc.</span>
+<span class="sd">    """</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">proxy_server</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_send_add_proxy</span><span class="p">()</span>
+
+    <span class="n">authorization_state</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">actions</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="kc">None</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_authorization_state</span><span class="p">,</span>
+        <span class="s1">'authorizationStateWaitTdlibParameters'</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_set_initial_params</span><span class="p">,</span>
+        <span class="s1">'authorizationStateWaitEncryptionKey'</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_send_encryption_key</span><span class="p">,</span>
+        <span class="s1">'authorizationStateWaitPhoneNumber'</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_send_phone_number_or_bot_token</span><span class="p">,</span>
+        <span class="s1">'authorizationStateWaitCode'</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_send_telegram_code</span><span class="p">,</span>
+        <span class="s1">'authorizationStateWaitPassword'</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_send_password</span><span class="p">,</span>
+        <span class="s1">'authorizationStateReady'</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_complete_authorization</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">phone</span><span class="p">:</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">'[login] Login process has been started with phone'</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">'[login] Login process has been started with bot token'</span><span class="p">)</span>
+
+    <span class="k">while</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_authorized</span><span class="p">:</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">'[login] current authorization state: </span><span class="si">%s</span><span class="s1">'</span><span class="p">,</span> <span class="n">authorization_state</span><span class="p">)</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">actions</span><span class="p">[</span><span class="n">authorization_state</span><span class="p">]()</span>
+
+        <span class="k">if</span> <span class="n">result</span><span class="p">:</span>
+            <span class="n">result</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="n">raise_exc</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">result</span><span class="o">.</span><span class="n">update</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s1">'Something wrong, the result update is None'</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">result</span><span class="o">.</span><span class="n">id</span> <span class="o">==</span> <span class="s1">'getAuthorizationState'</span><span class="p">:</span>
+                <span class="n">authorization_state</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">update</span><span class="p">[</span><span class="s1">'@type'</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">authorization_state</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">update</span><span class="p">[</span><span class="s1">'authorization_state'</span><span class="p">][</span><span class="s1">'@type'</span><span class="p">]</span>
+</code></pre>
+</div>
+</td>
+</tr>
+</table>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-method">
+<h3 class="doc doc-heading" id="telegram.client.Telegram.remove_update_handler">
+<code class="highlight language-python">
+remove_update_handler<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handler_type</span><span class="p">,</span> <span class="n">func</span><span class="p">)</span> </code>
+<a class="headerlink" href="#telegram.client.Telegram.remove_update_handler" title="Permanent link">¶</a></h3>
+<div class="doc doc-contents">
+<p>Remove a handler with the specified type</p>
+<details class="quote">
+<summary>Source code in <code>telegram\client.py</code></summary>
+<table class="highlighttable">
+<tr>
+<td class="linenos">
+<div class="linenodiv">
+<pre><span></span>399
+400
+401
+402
+403
+404
+405
+406
+407</pre>
+</div>
+</td>
+<td class="code">
+<div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="nf">remove_update_handler</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handler_type</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">func</span><span class="p">:</span> <span class="n">Callable</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="sd">"""</span>
+<span class="sd">    Remove a handler with the specified type</span>
+<span class="sd">    """</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_update_handlers</span><span class="p">[</span><span class="n">handler_type</span><span class="p">]</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+    <span class="k">except</span> <span class="p">(</span><span class="ne">ValueError</span><span class="p">,</span> <span class="ne">KeyError</span><span class="p">):</span>
+        <span class="c1"># not in the list</span>
+        <span class="k">pass</span>
+</code></pre>
+</div>
+</td>
+</tr>
+</table>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-method">
+<h3 class="doc doc-heading" id="telegram.client.Telegram.send_message">
+<code class="highlight language-python">
+send_message<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">chat_id</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span> </code>
+<a class="headerlink" href="#telegram.client.Telegram.send_message" title="Permanent link">¶</a></h3>
+<div class="doc doc-contents">
+<p>Sends a message to a chat. The chat must be in the tdlib's database.
+If there is no chat in the DB, tdlib returns an error.
+Chat is being saved to the database when the client receives a message or when you call the <code>get_chats</code> method.</p>
+<p><strong>Returns:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>AsyncResult</code></td>
+<td>
+<p>AsyncResult
+The update will be:
+    {
+        '@type': 'message',
+        'id': 1,
+        'sender_user_id': 2,
+        'chat_id': 3,
+        ...
+    }</p>
+</td>
+</tr>
+</tbody>
+</table>
+<details class="quote">
+<summary>Source code in <code>telegram\client.py</code></summary>
+<table class="highlighttable">
+<tr>
+<td class="linenos">
+<div class="linenodiv">
+<pre><span></span>129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159</pre>
+</div>
+</td>
+<td class="code">
+<div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="nf">send_message</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">chat_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">AsyncResult</span><span class="p">:</span>
+    <span class="sd">"""</span>
+<span class="sd">    Sends a message to a chat. The chat must be in the tdlib's database.</span>
+<span class="sd">    If there is no chat in the DB, tdlib returns an error.</span>
+<span class="sd">    Chat is being saved to the database when the client receives a message or when you call the `get_chats` method.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        chat_id</span>
+<span class="sd">        text</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        AsyncResult</span>
+<span class="sd">        The update will be:</span>
+<span class="sd">            {</span>
+<span class="sd">                '@type': 'message',</span>
+<span class="sd">                'id': 1,</span>
+<span class="sd">                'sender_user_id': 2,</span>
+<span class="sd">                'chat_id': 3,</span>
+<span class="sd">                ...</span>
+<span class="sd">            }</span>
+<span class="sd">    """</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">'@type'</span><span class="p">:</span> <span class="s1">'sendMessage'</span><span class="p">,</span>
+        <span class="s1">'chat_id'</span><span class="p">:</span> <span class="n">chat_id</span><span class="p">,</span>
+        <span class="s1">'input_message_content'</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">'@type'</span><span class="p">:</span> <span class="s1">'inputMessageText'</span><span class="p">,</span>
+            <span class="s1">'text'</span><span class="p">:</span> <span class="p">{</span><span class="s1">'@type'</span><span class="p">:</span> <span class="s1">'formattedText'</span><span class="p">,</span> <span class="s1">'text'</span><span class="p">:</span> <span class="n">text</span><span class="p">},</span>
+        <span class="p">},</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_send_data</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</code></pre>
+</div>
+</td>
+</tr>
+</table>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-method">
+<h3 class="doc doc-heading" id="telegram.client.Telegram.stop">
+<code class="highlight language-python">
+stop<span class="p">(</span><span class="bp">self</span><span class="p">)</span> </code>
+<a class="headerlink" href="#telegram.client.Telegram.stop" title="Permanent link">¶</a></h3>
+<div class="doc doc-contents">
+<p>Stops the client</p>
+<details class="quote">
+<summary>Source code in <code>telegram\client.py</code></summary>
+<table class="highlighttable">
+<tr>
+<td class="linenos">
+<div class="linenodiv">
+<pre><span></span>122
+123
+124
+125
+126
+127</pre>
+</div>
+</td>
+<td class="code">
+<div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="nf">stop</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="sd">"""Stops the client"""</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_is_enabled</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">'_tdjson'</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_tdjson</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+</code></pre>
+</div>
+</td>
+</tr>
+</table>
+</details>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+</div>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-nav">
+<nav aria-label="Footer" class="md-footer-nav__inner md-grid">
+<a class="md-footer-nav__link md-footer-nav__link--prev" href="../errors/" rel="prev" title="API Errors">
+<div class="md-footer-nav__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</div>
+<div class="md-footer-nav__title">
+<div class="md-ellipsis">
+<span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                API Errors
+              </div>
+</div>
+</a>
+</nav>
+</div>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-footer-copyright">
+<div class="md-footer-copyright__highlight">
+            Copyright © 2020 Telethon
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+          Material for MkDocs
+        </a>
+</div>
+<div class="md-footer-social">
+<a class="md-footer-social__link" href="https://github.com/LonamiWebs/Telethon" rel="noopener" target="_blank" title="github.com">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
+</a>
+<a class="md-footer-social__link" href="https://t.me/TelethonChat" rel="noopener" target="_blank" title="t.me">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><path d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm121.8 169.9l-40.7 191.8c-3 13.6-11.1 16.9-22.4 10.5l-62-45.7-29.9 28.8c-3.3 3.3-6.1 6.1-12.5 6.1l4.4-63.1 114.9-103.8c5-4.4-1.1-6.9-7.7-2.5l-142 89.4-61.2-19.1c-13.3-4.2-13.6-13.3 2.8-19.7l239.1-92.2c11.1-4 20.8 2.7 17.2 19.5z"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<script src="../../assets/javascripts/vendor.d710d30a.min.js"></script>
+<script src="../../assets/javascripts/bundle.5f27aba8.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+<script>
+        app = initialize({
+          base: "../..",
+          features: ["instant", "tabs"],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.27c6a5e6.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+</body>
+</html>

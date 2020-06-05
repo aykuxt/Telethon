@@ -1,7 +1,7 @@
 div.doc-contents:not(.first) {
   padding-left: 18px;
-  border-left: 2px solid rgba(230, 230, 230);
-  margin-bottom: 40px;
+  border-left: 2px solid rgba(230, 230, 230, 255);
+  margin-bottom: 48px;
 }
 
 /* For pieces of Markdown rendered in table cells. */

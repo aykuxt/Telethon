@@ -518,8 +518,33 @@
     </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="../../developing/project-structure/" title="Project Structure">
+      Project Structure
+    </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../../developing/coding-style/" title="Coding Style">
       Coding Style
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../developing/testing/" title="Tests">
+      Tests
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../developing/understanding-the-type-language/" title="Understanding the Type Language">
+      Understanding the Type Language
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../developing/tips-for-porting-the-project/" title="Tips for Porting the Project">
+      Tips for Porting the Project
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../developing/telegram-api-in-other-languages/" title="Telegram API in Other Languages">
+      Telegram API in Other Languages
     </a>
 </li>
 </ul>
@@ -926,26 +951,27 @@ encode_waveform<span class="p">(</span><span class="n">waveform</span><span clas
 <p>Encodes the input <code>bytes</code> into a 5-bit byte-string
 to be used as a voice note's waveform. See <code>decode_waveform</code>
 for the reverse operation.</p>
-<p>Example
-    .. code-block:: python</p>
-<div class="codehilite">
-<pre><span></span><code>    <span class="n">chat</span> <span class="o">=</span> <span class="p">...</span>
-    <span class="n">file</span> <span class="o">=</span> <span class="s1">'my.ogg'</span>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="highlight">
+<pre><span></span><code><span class="n">chat</span> <span class="o">=</span> <span class="o">...</span>
+<span class="n">file</span> <span class="o">=</span> <span class="s1">'my.ogg'</span>
 
-    <span class="o">#</span> <span class="n">Send</span> <span class="s1">'my.ogg'</span> <span class="k">with</span> <span class="n">a</span> <span class="n">ascending</span><span class="o">-</span><span class="n">triangle</span> <span class="n">waveform</span>
-    <span class="n">await</span> <span class="n">client</span><span class="p">.</span><span class="n">send_file</span><span class="p">(</span><span class="n">chat</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">attributes</span><span class="o">=</span><span class="p">[</span><span class="n">types</span><span class="p">.</span><span class="n">DocumentAttributeAudio</span><span class="p">(</span>
-        <span class="n">duration</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span>
-        <span class="n">voice</span><span class="o">=</span><span class="k">True</span><span class="p">,</span>
-        <span class="n">waveform</span><span class="o">=</span><span class="n">utils</span><span class="p">.</span><span class="n">encode_waveform</span><span class="p">(</span><span class="n">bytes</span><span class="p">(</span><span class="n">range</span><span class="p">(</span><span class="mi">2</span> <span class="o">**</span> <span class="mi">5</span><span class="p">))</span>  <span class="o">#</span> <span class="mi">2</span><span class="o">**</span><span class="mi">5</span> <span class="n">because</span> <span class="mi">5</span><span class="o">-</span><span class="nb">bit</span>
-    <span class="p">)]</span>
+<span class="c1"># Send 'my.ogg' with a ascending-triangle waveform</span>
+<span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">send_file</span><span class="p">(</span><span class="n">chat</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">attributes</span><span class="o">=</span><span class="p">[</span><span class="n">types</span><span class="o">.</span><span class="n">DocumentAttributeAudio</span><span class="p">(</span>
+    <span class="n">duration</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span>
+    <span class="n">voice</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">waveform</span><span class="o">=</span><span class="n">utils</span><span class="o">.</span><span class="n">encode_waveform</span><span class="p">(</span><span class="nb">bytes</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">2</span> <span class="o">**</span> <span class="mi">5</span><span class="p">))</span>  <span class="c1"># 2**5 because 5-bit</span>
+<span class="p">)]</span>
 
-    <span class="o">#</span> <span class="n">Send</span> <span class="s1">'my.ogg'</span> <span class="k">with</span> <span class="n">a</span> <span class="n">square</span> <span class="n">waveform</span>
-    <span class="n">await</span> <span class="n">client</span><span class="p">.</span><span class="n">send_file</span><span class="p">(</span><span class="n">chat</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">attributes</span><span class="o">=</span><span class="p">[</span><span class="n">types</span><span class="p">.</span><span class="n">DocumentAttributeAudio</span><span class="p">(</span>
-        <span class="n">duration</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span>
-        <span class="n">voice</span><span class="o">=</span><span class="k">True</span><span class="p">,</span>
-        <span class="n">waveform</span><span class="o">=</span><span class="n">utils</span><span class="p">.</span><span class="n">encode_waveform</span><span class="p">(</span><span class="n">bytes</span><span class="p">((</span><span class="mi">31</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">31</span><span class="p">))</span> <span class="o">*</span> <span class="mi">4</span><span class="p">)</span>
-    <span class="p">)]</span>
+<span class="c1"># Send 'my.ogg' with a square waveform</span>
+<span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">send_file</span><span class="p">(</span><span class="n">chat</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">attributes</span><span class="o">=</span><span class="p">[</span><span class="n">types</span><span class="o">.</span><span class="n">DocumentAttributeAudio</span><span class="p">(</span>
+    <span class="n">duration</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span>
+    <span class="n">voice</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">waveform</span><span class="o">=</span><span class="n">utils</span><span class="o">.</span><span class="n">encode_waveform</span><span class="p">(</span><span class="nb">bytes</span><span class="p">((</span><span class="mi">31</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">31</span><span class="p">))</span> <span class="o">*</span> <span class="mi">4</span><span class="p">)</span>
+<span class="p">)]</span>
 </code></pre>
+</div>
 </div>
 <details class="quote">
 <summary>Source code in <code>telethon\utils.py</code></summary>
@@ -1002,25 +1028,25 @@ for the reverse operation.</p>
 <span class="sd">    to be used as a voice note's waveform. See `decode_waveform`</span>
 <span class="sd">    for the reverse operation.</span>
 
-<span class="sd">    Example</span>
-<span class="sd">        .. code-block:: python</span>
+<span class="sd">    Example:</span>
+<span class="sd">        ```python</span>
+<span class="sd">        chat = ...</span>
+<span class="sd">        file = 'my.ogg'</span>
 
-<span class="sd">            chat = ...</span>
-<span class="sd">            file = 'my.ogg'</span>
+<span class="sd">        # Send 'my.ogg' with a ascending-triangle waveform</span>
+<span class="sd">        await client.send_file(chat, file, attributes=[types.DocumentAttributeAudio(</span>
+<span class="sd">            duration=7,</span>
+<span class="sd">            voice=True,</span>
+<span class="sd">            waveform=utils.encode_waveform(bytes(range(2 ** 5))  # 2**5 because 5-bit</span>
+<span class="sd">        )]</span>
 
-<span class="sd">            # Send 'my.ogg' with a ascending-triangle waveform</span>
-<span class="sd">            await client.send_file(chat, file, attributes=[types.DocumentAttributeAudio(</span>
-<span class="sd">                duration=7,</span>
-<span class="sd">                voice=True,</span>
-<span class="sd">                waveform=utils.encode_waveform(bytes(range(2 ** 5))  # 2**5 because 5-bit</span>
-<span class="sd">            )]</span>
-
-<span class="sd">            # Send 'my.ogg' with a square waveform</span>
-<span class="sd">            await client.send_file(chat, file, attributes=[types.DocumentAttributeAudio(</span>
-<span class="sd">                duration=7,</span>
-<span class="sd">                voice=True,</span>
-<span class="sd">                waveform=utils.encode_waveform(bytes((31, 31, 15, 15, 15, 15, 31, 31)) * 4)</span>
-<span class="sd">            )]</span>
+<span class="sd">        # Send 'my.ogg' with a square waveform</span>
+<span class="sd">        await client.send_file(chat, file, attributes=[types.DocumentAttributeAudio(</span>
+<span class="sd">            duration=7,</span>
+<span class="sd">            voice=True,</span>
+<span class="sd">            waveform=utils.encode_waveform(bytes((31, 31, 15, 15, 15, 15, 31, 31)) * 4)</span>
+<span class="sd">        )]</span>
+<span class="sd">        ```</span>
 <span class="sd">    """</span>
     <span class="n">bits_count</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">waveform</span><span class="p">)</span> <span class="o">*</span> <span class="mi">5</span>
     <span class="n">bytes_count</span> <span class="o">=</span> <span class="p">(</span><span class="n">bits_count</span> <span class="o">+</span> <span class="mi">7</span><span class="p">)</span> <span class="o">//</span> <span class="mi">8</span>

@@ -1,83 +1,103 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url>
      <loc>https://aykuxt.github.io/Telethon/</loc>
-     <lastmod>2020-06-04</lastmod>
+     <lastmod>2020-06-05</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://aykuxt.github.io/Telethon/basic/installation/</loc>
-     <lastmod>2020-06-04</lastmod>
+     <lastmod>2020-06-05</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://aykuxt.github.io/Telethon/basic/signing-in/</loc>
-     <lastmod>2020-06-04</lastmod>
+     <lastmod>2020-06-05</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://aykuxt.github.io/Telethon/basic/quick-start/</loc>
-     <lastmod>2020-06-04</lastmod>
+     <lastmod>2020-06-05</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://aykuxt.github.io/Telethon/basic/updates/</loc>
-     <lastmod>2020-06-04</lastmod>
+     <lastmod>2020-06-05</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://aykuxt.github.io/Telethon/basic/next-steps/</loc>
-     <lastmod>2020-06-04</lastmod>
+     <lastmod>2020-06-05</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://aykuxt.github.io/Telethon/quick-references/faq/</loc>
-     <lastmod>2020-06-04</lastmod>
+     <lastmod>2020-06-05</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://aykuxt.github.io/Telethon/concepts/strings/</loc>
-     <lastmod>2020-06-04</lastmod>
+     <lastmod>2020-06-05</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://aykuxt.github.io/Telethon/concepts/entities/</loc>
-     <lastmod>2020-06-04</lastmod>
+     <lastmod>2020-06-05</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://aykuxt.github.io/Telethon/concepts/botapi-vs-mtproto/</loc>
-     <lastmod>2020-06-04</lastmod>
+     <lastmod>2020-06-05</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://aykuxt.github.io/Telethon/modules/helpers/</loc>
-     <lastmod>2020-06-04</lastmod>
+     <lastmod>2020-06-05</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://aykuxt.github.io/Telethon/modules/utils/</loc>
-     <lastmod>2020-06-04</lastmod>
+     <lastmod>2020-06-05</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://aykuxt.github.io/Telethon/modules/custom/</loc>
-     <lastmod>2020-06-04</lastmod>
+     <lastmod>2020-06-05</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://aykuxt.github.io/Telethon/developing/philosophy/</loc>
-     <lastmod>2020-06-04</lastmod>
+     <lastmod>2020-06-05</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://aykuxt.github.io/Telethon/developing/test-servers/</loc>
-     <lastmod>2020-06-04</lastmod>
+     <lastmod>2020-06-05</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://aykuxt.github.io/Telethon/developing/project-structure/</loc>
+     <lastmod>2020-06-05</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://aykuxt.github.io/Telethon/developing/coding-style/</loc>
-     <lastmod>2020-06-04</lastmod>
+     <lastmod>2020-06-05</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://aykuxt.github.io/Telethon/developing/testing/</loc>
+     <lastmod>2020-06-05</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://aykuxt.github.io/Telethon/developing/understanding-the-type-language/</loc>
+     <lastmod>2020-06-05</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://aykuxt.github.io/Telethon/developing/tips-for-porting-the-project/</loc>
+     <lastmod>2020-06-05</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://aykuxt.github.io/Telethon/developing/telegram-api-in-other-languages/</loc>
+     <lastmod>2020-06-05</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://aykuxt.github.io/Telethon/examples/word-of-warning/</loc>
-     <lastmod>2020-06-04</lastmod>
+     <lastmod>2020-06-05</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://aykuxt.github.io/Telethon/misc/changelog/</loc>
-     <lastmod>2020-06-04</lastmod>
+     <lastmod>2020-06-05</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://aykuxt.github.io/Telethon/misc/wall-of-shame/</loc>
-     <lastmod>2020-06-04</lastmod>
+     <lastmod>2020-06-05</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://aykuxt.github.io/Telethon/misc/compatibility-and-convenience/</loc>
-     <lastmod>2020-06-04</lastmod>
+     <lastmod>2020-06-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>

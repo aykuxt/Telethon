@@ -378,8 +378,33 @@
     </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="../../developing/project-structure/" title="Project Structure">
+      Project Structure
+    </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../../developing/coding-style/" title="Coding Style">
       Coding Style
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../developing/testing/" title="Tests">
+      Tests
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../developing/understanding-the-type-language/" title="Understanding the Type Language">
+      Understanding the Type Language
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../developing/tips-for-porting-the-project/" title="Tips for Porting the Project">
+      Tips for Porting the Project
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../developing/telegram-api-in-other-languages/" title="Telegram API in Other Languages">
+      Telegram API in Other Languages
     </a>
 </li>
 </ul>
@@ -529,7 +554,8 @@
 <p>A list with an extra <code>total</code> property, which may not match its <code>len</code>
 since the total represents the total amount of items <em>available</em>
 somewhere else, not the items <em>in this list</em>.</p>
-<p>Examples:
+<div class="admonition example">
+<p class="admonition-title">Example</p>
 <div class="highlight">
 <pre><span></span><code><span class="c1"># Telethon returns these lists in some cases (for example,</span>
 <span class="c1"># only when a chunk is returned, but the "total" count</span>
@@ -544,7 +570,7 @@ somewhere else, not the items <em>in this list</em>.</p>
     <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
 </code></pre>
 </div>
-</p>
+</div>
 <div class="doc doc-children">
 </div>
 </div>
@@ -651,7 +677,7 @@ generate_random_long<span class="p">(</span><span class="n">signed</span><span c
 </td>
 <td class="code">
 <div class="highlight">
-<pre><span></span><code><span class="k">def</span> <span class="nf">generate_random_long</span><span class="p">(</span><span class="n">signed</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<pre><span></span><code><span class="k">def</span> <span class="nf">generate_random_long</span><span class="p">(</span><span class="n">signed</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
     <span class="sd">"""Generates a random long integer (8 bytes), which is optionally signed"""</span>
     <span class="k">return</span> <span class="nb">int</span><span class="o">.</span><span class="n">from_bytes</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">urandom</span><span class="p">(</span><span class="mi">8</span><span class="p">),</span> <span class="n">signed</span><span class="o">=</span><span class="n">signed</span><span class="p">,</span> <span class="n">byteorder</span><span class="o">=</span><span class="s1">'little'</span><span class="p">)</span>
 </code></pre>

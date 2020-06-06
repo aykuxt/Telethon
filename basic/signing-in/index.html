@@ -632,7 +632,7 @@ the client from there and it will fail with an error such as
 <p>In the first line, we import the class name so we can create an instance
 of the client. Then, we define variables to store our API ID and hash
 conveniently.</p>
-<p>At last, we create a new <code>TelegramClient &lt;telethon.client.telegramclient.TelegramClient&gt;</code>
+<p>At last, we create a new <a href="https://aykuxt.github.io/Telethon/modules/client/#telethon.client.telegramclient.TelegramClient"><code>TelegramClient</code></a>
 instance and call it <code>client</code>. We can now use the client variable
 for anything that we want, such as sending a message to ourselves.</p>
 <div class="admonition note">
@@ -641,10 +641,10 @@ for anything that we want, such as sending a message to ourselves.</p>
 coroutine functions to have them run (or otherwise, run the loop
 until they are complete). In this tiny example, we don't bother
 making an <code>async def main()</code>.</p>
-<p>See :ref:<code>mastering-asyncio</code> to find out more.</p>
+<p>See <a href="../../concepts/asyncio/">Mastering asyncio</a> to find out more.</p>
 </div>
 <p>Using a <code>with</code> block is the preferred way to use the library. It will
-automatically <code>start() &lt;telethon.client.auth.AuthMethods.start&gt;</code> the client,
+automatically <a href="https://aykuxt.github.io/Telethon/modules/client/#telethon.client.auth.AuthMethods.start"><code>start()</code></a> the client,
 logging or signing up if necessary.</p>
 <p>If the <code>.session</code> file already existed, it will not login
 again, so be aware of this if you move or rename the file!</p>

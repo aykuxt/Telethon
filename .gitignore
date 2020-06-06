@@ -1,6 +1,5 @@
 # Docs
 /_build/
-/docs/
 
 # Generated code
 /telethon/tl/functions/
@@ -110,3 +109,9 @@ ENV/
 # Nix build results
 result
 result-*
+
+# mkdocs
+site/
+
+# PyCharm
+.idea/

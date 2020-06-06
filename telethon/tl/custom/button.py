@@ -4,13 +4,11 @@ from ... import utils
 
 class Button:
     """
-    .. note::
-
+    Note:
         This class is used to **define** reply markups, e.g. when
         sending a message or replying to events. When you access
-        `Message.buttons <telethon.tl.custom.message.Message.buttons>`
-        they are actually `MessageButton
-        <telethon.tl.custom.messagebutton.MessageButton>`,
+        [`Message.buttons`][telethon.tl.custom.message.Message.buttons]
+        they are actually [`MessageButton`][telethon.tl.custom.messagebutton.MessageButton],
         so you might want to refer to that class instead.
 
     Helper class to allow defining ``reply_markup`` when
@@ -114,23 +112,23 @@ class Button:
         If no `url` is specified, it will default to `text`.
 
         Args:
-            bot (`hints.EntityLike`):
+            bot (hints.EntityLike):
                 The bot that requires this authorization. By default, this
                 is the bot that is currently logged in (itself), although
                 you may pass a different input peer.
 
-                .. note::
+                !!! Note
 
                     For now, you cannot use ID or username for this argument.
                     If you want to use a different bot than the one currently
                     logged in, you must manually use `client.get_input_entity()
                     <telethon.client.users.UserMethods.get_input_entity>`.
 
-            write_access (`bool`):
+            write_access (bool):
                 Whether write access is required or not.
                 This is `False` by default (read-only access).
 
-            fwd_text (`str`):
+            fwd_text (str):
                 The new text to show in the button if the message is
                 forwarded. By default, the button text will be the same.
         """

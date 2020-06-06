@@ -6,7 +6,7 @@ class AdminLogEvent:
     """
     Represents a more friendly interface for admin log events.
 
-    Members:
+    Attributes:
         original (:tl:`ChannelAdminLogEvent`):
             The original :tl:`ChannelAdminLogEvent`.
 

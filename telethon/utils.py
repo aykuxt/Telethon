@@ -839,14 +839,17 @@ def parse_username(username):
         return None, False
 
 
-def get_inner_text(text, entities):
+def get_inner_text(text: str, entities: "Iterable") -> "Union[str, list]":
     """
     Gets the inner text that's surrounded by the given entities.
     For instance: text = 'hey!', entity = MessageEntityBold(2, 2) -> 'y!'.
 
-    :param text:     the original text.
-    :param entities: the entity or entities that must be matched.
-    :return: a single result or a list of the text surrounded by the entities.
+    Args:
+        text: the original text.
+        entities: the entity or entities that must be matched.
+
+    Returns:
+        A single result or a list of the text surrounded by the entities.
     """
     text = add_surrogate(text)
     result = []
@@ -1247,25 +1250,25 @@ def encode_waveform(waveform):
     to be used as a voice note's waveform. See `decode_waveform`
     for the reverse operation.
 
-    Example
-        .. code-block:: python
+    Example:
+        ```python
+        chat = ...
+        file = 'my.ogg'
 
-            chat = ...
-            file = 'my.ogg'
+        # Send 'my.ogg' with a ascending-triangle waveform
+        await client.send_file(chat, file, attributes=[types.DocumentAttributeAudio(
+            duration=7,
+            voice=True,
+            waveform=utils.encode_waveform(bytes(range(2 ** 5))  # 2**5 because 5-bit
+        )]
 
-            # Send 'my.ogg' with a ascending-triangle waveform
-            await client.send_file(chat, file, attributes=[types.DocumentAttributeAudio(
-                duration=7,
-                voice=True,
-                waveform=utils.encode_waveform(bytes(range(2 ** 5))  # 2**5 because 5-bit
-            )]
-
-            # Send 'my.ogg' with a square waveform
-            await client.send_file(chat, file, attributes=[types.DocumentAttributeAudio(
-                duration=7,
-                voice=True,
-                waveform=utils.encode_waveform(bytes((31, 31, 15, 15, 15, 15, 31, 31)) * 4)
-            )]
+        # Send 'my.ogg' with a square waveform
+        await client.send_file(chat, file, attributes=[types.DocumentAttributeAudio(
+            duration=7,
+            voice=True,
+            waveform=utils.encode_waveform(bytes((31, 31, 15, 15, 15, 15, 31, 31)) * 4)
+        )]
+        ```
     """
     bits_count = len(waveform) * 5
     bytes_count = (bits_count + 7) // 8

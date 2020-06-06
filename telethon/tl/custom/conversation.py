@@ -3,6 +3,7 @@ import functools
 import inspect
 import itertools
 import time
+from typing import TYPE_CHECKING, Callable, Optional, Union
 
 from .chatgetter import ChatGetter
 from ... import helpers, utils, errors
@@ -130,19 +131,23 @@ class Conversation(ChatGetter):
         return self._client.send_read_acknowledge(
             self._input_chat, max_id=message)
 
-    def get_response(self, message=None, *, timeout=None):
+    def get_response(self,
+                     message=None,
+                     *,
+                     timeout: Optional[Union[int, float]] = None):
         """
         Gets the next message that responds to a previous one.
 
         Args:
-            message (`Message <telethon.tl.custom.message.Message>` | `int`, optional):
-                The message (or the message ID) for which a response
+            message (Message | int):
+                The [message][telethon.tl.custom.message.Message] (or the message ID) for which a response
                 is expected. By default this is the last sent message.
 
-            timeout (`int` | `float`, optional):
+            timeout:
                 If present, this `timeout` (in seconds) will override the
                 per-action timeout defined for the conversation.
         """
+        # Optional[Union['[Message][telethon.tl.custom.message.Message]'
         return self._get_message(
             message, self._response_indices, self._pending_responses, timeout,
             lambda x, y: True
@@ -158,27 +163,32 @@ class Conversation(ChatGetter):
         )
 
     def _get_message(
-            self, target_message, indices, pending, timeout, condition):
+            self,
+            target_message: object,
+            indices: dict,
+            pending: dict,
+            timeout: int,
+            condition: Callable):
         """
         Gets the next desired message under the desired condition.
 
         Args:
-            target_message (`object`):
+            target_message:
                 The target message for which we want to find another
                 response that applies based on `condition`.
 
-            indices (`dict`):
+            indices:
                 This dictionary remembers the last ID chosen for the
                 input `target_message`.
 
-            pending (`dict`):
+            pending:
                 This dictionary remembers {msg_id: Future} to be set
                 once `condition` is met.
 
-            timeout (`int`):
+            timeout:
                 The timeout (in seconds) override to use for this operation.
 
-            condition (`callable`):
+            condition:
                 The condition callable that checks if an incoming
                 message is a valid response.
         """
@@ -270,8 +280,7 @@ class Conversation(ChatGetter):
         """
         Waits for a custom event to occur. Timeouts still apply.
 
-        .. note::
-
+        Note:
             Only use this if there isn't another method available!
             For example, don't use `wait_event` for new messages,
             since `get_response` already exists, etc.
@@ -280,15 +289,17 @@ class Conversation(ChatGetter):
         generally you should get a "handle" of this special coroutine
         before acting. Generally, you should do this:
 
-        >>> from telethon import TelegramClient, events
-        >>>
-        >>> client = TelegramClient(...)
-        >>>
-        >>> async def main():
-        >>>     async with client.conversation(...) as conv:
-        >>>         response = conv.wait_event(events.NewMessage(incoming=True))
-        >>>         await conv.send_message('Hi')
-        >>>         response = await response
+        ```python
+        from telethon import TelegramClient, events
+
+        client = TelegramClient(...)
+
+        async def main():
+            async with client.conversation(...) as conv:
+                response = conv.wait_event(events.NewMessage(incoming=True))
+                await conv.send_message('Hi')
+                response = await response
+        ```
 
         This way your event can be registered before acting,
         since the response may arrive before your event was

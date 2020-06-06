@@ -772,62 +772,65 @@ class Message(ChatGetter, SenderGetter, TLObject, abc.ABC):
         Does nothing if the message has no buttons.
 
         Args:
-            i (`int`):
+            i (int):
                 Clicks the i'th button (starting from the index 0).
                 Will ``raise IndexError`` if out of bounds. Example:
 
-                >>> message = ...  # get the message somehow
-                >>> # Clicking the 3rd button
-                >>> # [button1] [button2]
-                >>> # [     button3     ]
-                >>> # [button4] [button5]
-                >>> await message.click(2)  # index
+                ```python
+                message = ...  # get the message somehow
+                # Clicking the 3rd button
+                # [button1] [button2]
+                # [     button3     ]
+                # [button4] [button5]
+                await message.click(2)  # index
+                ```
 
-            j (`int`):
+            j (int):
                 Clicks the button at position (i, j), these being the
                 indices for the (row, column) respectively. Example:
 
-                >>> # Clicking the 2nd button on the 1st row.
-                >>> # [button1] [button2]
-                >>> # [     button3     ]
-                >>> # [button4] [button5]
-                >>> await message.click(0, 1)  # (row, column)
+                ```python
+                # Clicking the 2nd button on the 1st row.
+                # [button1] [button2]
+                # [     button3     ]
+                # [button4] [button5]
+                await message.click(0, 1)  # (row, column)
+                ```
 
                 This is equivalent to ``message.buttons[0][1].click()``.
 
-            text (`str` | `callable`):
+            text (str | callable):
                 Clicks the first button with the text "text". This may
                 also be a callable, like a ``re.compile(...).match``,
                 and the text will be passed to it.
 
-            filter (`callable`):
+            filter (callable):
                 Clicks the first button for which the callable
                 returns `True`. The callable should accept a single
                 `MessageButton <telethon.tl.custom.messagebutton.MessageButton>`
                 argument.
 
-            data (`bytes`):
+            data (bytes):
                 This argument overrides the rest and will not search any
                 buttons. Instead, it will directly send the request to
                 behave as if it clicked a button with said data. Note
                 that if the message does not have this data, it will
                 ``raise DataInvalidError``.
 
-            Example:
+        Example:
+            ```python
+            # Click the first button
+            await message.click(0)
 
-                .. code-block:: python
+            # Click some row/column
+            await message.click(row, column)
 
-                    # Click the first button
-                    await message.click(0)
+            # Click by text
+            await message.click(text=':thumbsup:')
 
-                    # Click some row/column
-                    await message.click(row, column)
-
-                    # Click by text
-                    await message.click(text='👍')
-
-                    # Click by data
-                    await message.click(data=b'payload')
+            # Click by data
+            await message.click(data=b'payload')
+            ```
         """
         if not self._client:
             return

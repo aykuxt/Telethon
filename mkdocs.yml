@@ -1,0 +1,105 @@
+site_name: Telethon Docs
+site_url: https://aykuxt.github.io/Telethon/
+repo_name: LonamiWebs/Telethon
+repo_url: https://github.com/LonamiWebs/Telethon
+
+nav:
+  - First Steps:
+      - Getting Started: index.md
+      - basic/installation.md
+      - basic/signing-in.md
+      - basic/quick-start.md
+      - basic/updates.md
+      - basic/next-steps.md
+  - Quick References:
+      - quick-references/faq.md
+      - quick-references/events-reference.md
+  - Concepts:
+      - concepts/strings.md
+      - concepts/entities.md
+      - concepts/updates.md
+      - concepts/sessions.md
+      - concepts/full-api.md
+      - concepts/errors.md
+      - concepts/botapi-vs-mtproto.md
+      - concepts/asyncio.md
+  - Developing:
+      - developing/philosophy.md
+      - developing/test-servers.md
+      - developing/project-structure.md
+      - developing/coding-style.md
+      - developing/testing.md
+      - developing/understanding-the-type-language.md
+      - developing/tips-for-porting-the-project.md
+      - developing/telegram-api-in-other-languages.md
+  - Full API Examples:
+      - examples/word-of-warning.md
+      - examples/chats-and-channels.md
+      - examples/users.md
+      - examples/working-with-messages.md
+      - examples/projects-using-telethon.md
+  - Miscellaneous:
+      - misc/changelog.md
+      - misc/wall-of-shame.md
+      - misc/compatibility-and-convenience.md
+  - Modules:
+      - modules/client.md
+      - modules/events.md
+      - modules/custom.md
+      - Utilities: modules/utils.md
+      - modules/errors.md
+      - Sessions: modules/sessions.md
+      - modules/network.md
+      - Helpers: modules/helpers.md
+
+extra_css:
+  - assets/css/custom.css
+
+copyright: Copyright © 2020 Telethon
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/LonamiWebs/Telethon
+    - icon: fontawesome/brands/telegram
+      link: https://t.me/TelethonChat
+
+theme:
+  name: material
+  logo: assets/images/nav-logo.svg
+  palette:
+    primary: indigo
+    accent: amber
+    scheme: default # 'slate' for dark theme
+  features:
+    - instant
+    - tabs
+
+markdown_extensions:
+  - admonition
+  - codehilite:
+      guess_lang: false
+  - meta
+  #- pymdownx.emoji
+  - pymdownx.superfences
+  - pymdownx.magiclink:
+      provider: github
+      user: LonamiWebs
+      repo: Telethon
+      repo_url_shorthand: True
+      repo_url_shortener: True
+  - toc:
+      permalink: true
+
+plugins:
+  - search:
+      prebuild_index: true
+#  - git-revision-date-localized:
+#      type: timeago
+  - mkdocstrings:
+      default_handler: python
+      handlers:
+        python:
+          rendering:
+            show_source: true
+      watch:
+        - telethon

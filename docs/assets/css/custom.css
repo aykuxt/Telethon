@@ -1,0 +1,30 @@
+div.doc-contents:not(.first) {
+  padding-left: 18px;
+  border-left: 2px solid rgba(230, 230, 230, 255);
+  margin-bottom: 48px;
+}
+
+/* For pieces of Markdown rendered in table cells. */
+.md-typeset__table td > p {
+  margin: 0;
+}
+
+/* Avoid breaking parameters name, etc. in table cells. */
+.md-typeset__table code {
+  word-break: normal !important;
+}
+
+.md-typeset svg {
+    height: 1.2rem;
+}
+
+/* Don't capitalize names. */
+h5.doc-heading {
+  text-transform: none !important;
+}
+
+/* Fix layout bugs */
+.hidden-toc {
+  display: none;
+}
+

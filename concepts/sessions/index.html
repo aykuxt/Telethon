@@ -5,10 +5,10 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="https://aykuxt.github.io/Telethon/concepts/errors/" rel="canonical"/>
+<link href="https://aykuxt.github.io/Telethon/concepts/sessions/" rel="canonical"/>
 <link href="../../assets/images/favicon.png" rel="shortcut icon"/>
 <meta content="mkdocs-1.1.2, mkdocs-material-5.2.2" name="generator"/>
-<title>RPC Errors - Telethon Docs</title>
+<title>Session Files - Telethon Docs</title>
 <link href="../../assets/stylesheets/main.a2408e81.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.a46bcfb3.min.css" rel="stylesheet"/>
 <meta content="#3f51b5" name="theme-color"/>
@@ -22,7 +22,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#rpc-errors">
+<a class="md-skip" href="#session-files">
           Skip to content
         </a>
 </div>
@@ -43,7 +43,7 @@
           </span>
 <span class="md-header-nav__topic md-ellipsis">
             
-              RPC Errors
+              Session Files
             
           </span>
 </div>
@@ -257,21 +257,16 @@
       Updates in Dept
     </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../sessions/" title="Session Files">
-      Session Files
-    </a>
-</li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
 <label class="md-nav__link md-nav__link--active" for="__toc">
-        RPC Errors
+        Session Files
         <span class="md-nav__icon md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"></path></svg>
 </span>
 </label>
-<a class="md-nav__link md-nav__link--active" href="./" title="RPC Errors">
-      RPC Errors
+<a class="md-nav__link md-nav__link--active" href="./" title="Session Files">
+      Session Files
     </a>
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
 <label class="md-nav__title" for="__toc">
@@ -282,27 +277,32 @@
     </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#base-errors">
-    Base Errors
+<a class="md-nav__link" href="#what-are-sessions">
+    What are Sessions?
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#common-errors">
-    Common Errors
+<a class="md-nav__link" href="#different-session-storage">
+    Different Session Storage
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#attributes">
-    Attributes
+<a class="md-nav__link" href="#creating-your-own-storage">
+    Creating your Own Storage
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#avoiding-limits">
-    Avoiding Limits
+<a class="md-nav__link" href="#string-sessions">
+    String Sessions
   </a>
 </li>
 </ul>
 </nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../errors/" title="RPC Errors">
+      RPC Errors
+    </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../botapi-vs-mtproto/" title="HTTP Bot API vs MTProto">
@@ -515,23 +515,23 @@
     </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#base-errors">
-    Base Errors
+<a class="md-nav__link" href="#what-are-sessions">
+    What are Sessions?
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#common-errors">
-    Common Errors
+<a class="md-nav__link" href="#different-session-storage">
+    Different Session Storage
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#attributes">
-    Attributes
+<a class="md-nav__link" href="#creating-your-own-storage">
+    Creating your Own Storage
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#avoiding-limits">
-    Avoiding Limits
+<a class="md-nav__link" href="#string-sessions">
+    String Sessions
   </a>
 </li>
 </ul>
@@ -541,126 +541,133 @@
 </div>
 <div class="md-content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/LonamiWebs/Telethon/edit/master/docs/concepts/errors.md" title="Edit this page">
+<a class="md-content__button md-icon" href="https://github.com/LonamiWebs/Telethon/edit/master/docs/concepts/sessions.md" title="Edit this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
 </a>
-<h1 id="rpc-errors">RPC Errors<a class="headerlink" href="#rpc-errors" title="Permanent link">¶</a></h1>
-<p>RPC stands for Remote Procedure Call, and when the library raises a
-<code>RPCError</code>, it's because you have invoked some of the API methods
-incorrectly (wrong parameters, wrong permissions, or even something went
-wrong on Telegram's server).</p>
-<p>You should import the errors from <code>telethon.errors</code> like so:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">telethon</span> <span class="kn">import</span> <span class="n">errors</span>
+<h1 id="session-files">Session Files<a class="headerlink" href="#session-files" title="Permanent link">¶</a></h1>
+<p>They are an important part for the library to be efficient, such as caching
+and handling your authorization key (or you would have to login every time!).</p>
+<h2 id="what-are-sessions">What are Sessions?<a class="headerlink" href="#what-are-sessions" title="Permanent link">¶</a></h2>
+<p>The first parameter you pass to the constructor of the
+:ref:<code>TelegramClient &lt;telethon-client&gt;</code> is
+the <code>session</code>, and defaults to be the session name (or full path). That is,
+if you create a <code>TelegramClient('anon')</code> instance and connect, an
+<code>anon.session</code> file will be created in the working directory.</p>
+<p>Note that if you pass a string it will be a file in the current working
+directory, although you can also pass absolute paths.</p>
+<p>The session file contains enough information for you to login without
+re-sending the code, so if you have to enter the code more than once,
+maybe you're changing the working directory, renaming or removing the
+file, or using random names.</p>
+<p>These database files using <code>sqlite3</code> contain the required information to
+talk to the Telegram servers, such as to which IP the client should connect,
+port, authorization key so that messages can be encrypted, and so on.</p>
+<p>These files will by default also save all the input entities that you've seen,
+so that you can get information about a user or channel by just their ID.
+Telegram will <strong>not</strong> send their <code>access_hash</code> required to retrieve more
+information about them, if it thinks you have already seem them. For this
+reason, the library needs to store this information offline.</p>
+<p>The library will by default too save all the entities (chats and channels
+with their name and username, and users with the phone too) in the session
+file, so that you can quickly access them by username or phone number.</p>
+<p>If you're not going to work with updates, or don't need to cache the
+<code>access_hash</code> associated with the entities' ID, you can disable this
+by setting <code>client.session.save_entities = False</code>.</p>
+<h2 id="different-session-storage">Different Session Storage<a class="headerlink" href="#different-session-storage" title="Permanent link">¶</a></h2>
+<p>If you don't want to use the default SQLite session storage, you can also
+use one of the other implementations or implement your own storage.</p>
+<p>While it's often not the case, it's possible that SQLite is slow enough to
+be noticeable, in which case you can also use a different storage. Note that
+this is rare and most people won't have this issue, but it's worth a mention.</p>
+<p>To use a custom session storage, simply pass the custom session instance to
+:ref:<code>TelegramClient &lt;telethon-client&gt;</code> instead of
+the session name.</p>
+<p>Telethon contains three implementations of the abstract <code>Session</code> class:</p>
+<!---
+currentmodule:: telethon.sessions
+-->
+<ul>
+<li><code>MemorySession &lt;memory.MemorySession&gt;</code>: stores session data within memory.</li>
+<li><code>SQLiteSession &lt;sqlite.SQLiteSession&gt;</code>: stores sessions within on-disk SQLite databases. Default.</li>
+<li><code>StringSession &lt;string.StringSession&gt;</code>: stores session data within memory,
+  but can be saved as a string.</li>
+</ul>
+<p>You can import these <code>from telethon.sessions</code>. For example, using the
+<code>StringSession &lt;string.StringSession&gt;</code> is done as follows:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">telethon.sync</span> <span class="kn">import</span> <span class="n">TelegramClient</span>
+<span class="kn">from</span> <span class="nn">telethon.sessions</span> <span class="kn">import</span> <span class="n">StringSession</span>
 
-<span class="k">try</span><span class="p">:</span>
-    <span class="k">async</span> <span class="k">with</span> <span class="n">client</span><span class="o">.</span><span class="n">takeout</span><span class="p">()</span> <span class="k">as</span> <span class="n">takeout</span><span class="p">:</span>
-        <span class="o">...</span>
+<span class="k">with</span> <span class="n">TelegramClient</span><span class="p">(</span><span class="n">StringSession</span><span class="p">(</span><span class="n">string</span><span class="p">),</span> <span class="n">api_id</span><span class="p">,</span> <span class="n">api_hash</span><span class="p">)</span> <span class="k">as</span> <span class="n">client</span><span class="p">:</span>
+    <span class="o">...</span>  <span class="c1"># use the client</span>
 
-<span class="k">except</span> <span class="n">errors</span><span class="o">.</span><span class="n">TakeoutInitDelayError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-    <span class="c1">#  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ here we except TAKEOUT_INIT_DELAY</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">'Must wait'</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">seconds</span><span class="p">,</span> <span class="s1">'before takeout'</span><span class="p">)</span>
+    <span class="c1"># Save the string session as a string; you should decide how</span>
+    <span class="c1"># you want to save this information (over a socket, remote</span>
+    <span class="c1"># database, print it and then paste the string in the code,</span>
+    <span class="c1"># etc.); the advantage is that you don't need to save it</span>
+    <span class="c1"># on the current disk as a separate file, and can be reused</span>
+    <span class="c1"># anywhere else once you log in.</span>
+    <span class="n">string</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+
+<span class="c1"># Note that it's also possible to save any other session type</span>
+<span class="c1"># as a string by using ``StringSession.save(session_instance)``:</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">TelegramClient</span><span class="p">(</span><span class="s1">'sqlite-session'</span><span class="p">,</span> <span class="n">api_id</span><span class="p">,</span> <span class="n">api_hash</span><span class="p">)</span>
+<span class="n">string</span> <span class="o">=</span> <span class="n">StringSession</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">client</span><span class="o">.</span><span class="n">session</span><span class="p">)</span>
 </code></pre></div>
-<p>There isn't any official list of all possible RPC errors, so the <a href="https://github.com/LonamiWebs/Telethon/blob/master/telethon_generator/data/errors.csv">list
-of known errors</a> is provided on a best-effort basis. When new methods
-are available, the list may be lacking since we simply don't know what
-errors can raise from them.</p>
-<p>Once we do find out about a new error and what causes it, the list is
-updated, so if you see an error without a specific class, do report it
-(and what method caused it)!</p>
-<p>This list is used to generate documentation for the <a href="https://tl.telethon.dev/">raw API page</a>.
-For example, if we want to know what errors can occur from
-<a href="https://tl.telethon.dev/methods/messages/send_message.html">messages.sendMessage</a> we can simply navigate to its raw API page and
-find it has 24 known RPC errors at the time of writing.</p>
-<h2 id="base-errors">Base Errors<a class="headerlink" href="#base-errors" title="Permanent link">¶</a></h2>
-<p>All the "base" errors are listed in <a href="../../modules/errors/">API Errors</a>. Any other more
-specific error will be a subclass of these.</p>
-<p>If the library isn't aware of a specific error just yet, it will instead
-raise one of these superclasses. This means you may find stuff like
-this:</p>
-<div class="highlight"><pre><span></span><code>telethon.errors.rpcbaseerrors.BadRequestError: RPCError 400: MESSAGE_POLL_CLOSED (caused by SendVoteRequest)
-</code></pre></div>
-<p>If you do, make sure to open an issue or send a pull request to update
-the <a href="https://github.com/LonamiWebs/Telethon/blob/master/telethon_generator/data/errors.csv">list of known errors</a>.</p>
-<h2 id="common-errors">Common Errors<a class="headerlink" href="#common-errors" title="Permanent link">¶</a></h2>
-<p>These are some of the errors you may normally need to deal with:</p>
+<p>There are other community-maintained implementations available:</p>
 <ul>
 <li>
-<p><code>FloodWaitError</code> (420), the same request was repeated many times.
-    Must wait <code>.seconds</code> (you can access this attribute). For example:</p>
-<div class="highlight"><pre><span></span><code><span class="o">...</span>
-<span class="kn">from</span> <span class="nn">telethon</span> <span class="kn">import</span> <span class="n">errors</span>
+<p><a href="https://github.com/tulir/telethon-session-sqlalchemy">SQLAlchemy</a>:
+  stores all sessions in a single database via SQLAlchemy.</p>
+</li>
+<li>
+<p><a href="https://github.com/ezdev128/telethon-session-redis">Redis</a>:
+  stores all sessions in a single Redis data store.</p>
+</li>
+<li>
+<p><a href="https://github.com/watzon/telethon-session-mongo">MongoDB</a>:
+  stores the current session in a MongoDB database.</p>
+</li>
+</ul>
+<h2 id="creating-your-own-storage">Creating your Own Storage<a class="headerlink" href="#creating-your-own-storage" title="Permanent link">¶</a></h2>
+<p>The easiest way to create your own storage implementation is to use
+<code>MemorySession &lt;memory.MemorySession&gt;</code> as the base and check out how
+<code>SQLiteSession &lt;sqlite.SQLiteSession&gt;</code> or one of the community-maintained
+implementations work. You can find the relevant Python files under the
+<code>sessions/</code> directory in the Telethon's repository.</p>
+<p>After you have made your own implementation, you can add it to the
+community-maintained session implementation list above with a pull request.</p>
+<h2 id="string-sessions">String Sessions<a class="headerlink" href="#string-sessions" title="Permanent link">¶</a></h2>
+<p><code>StringSession &lt;string.StringSession&gt;</code> are a convenient way to embed your
+login credentials directly into your code for extremely easy portability,
+since all they take is a string to be able to login without asking for your
+phone and code (or faster start if you're using a bot token).</p>
+<p>The easiest way to generate a string session is as follows:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">telethon.sync</span> <span class="kn">import</span> <span class="n">TelegramClient</span>
+<span class="kn">from</span> <span class="nn">telethon.sessions</span> <span class="kn">import</span> <span class="n">StringSession</span>
 
-<span class="k">try</span><span class="p">:</span>
-    <span class="n">messages</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">get_messages</span><span class="p">(</span><span class="n">chat</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">messages</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
-<span class="k">except</span> <span class="n">errors</span><span class="o">.</span><span class="n">FloodWaitError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">'Have to sleep'</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">seconds</span><span class="p">,</span> <span class="s1">'seconds'</span><span class="p">)</span>
-    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">seconds</span><span class="p">)</span>
+<span class="k">with</span> <span class="n">TelegramClient</span><span class="p">(</span><span class="n">StringSession</span><span class="p">(),</span> <span class="n">api_id</span><span class="p">,</span> <span class="n">api_hash</span><span class="p">)</span> <span class="k">as</span> <span class="n">client</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">client</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">save</span><span class="p">())</span>
 </code></pre></div>
-</li>
-<li>
-<p><code>SessionPasswordNeededError</code>, if you have setup two-steps
-    verification on Telegram and are trying to sign in.</p>
-</li>
-<li>
-<p><code>FilePartMissingError</code>, if you have tried to upload an empty file.</p>
-</li>
-<li>
-<p><code>ChatAdminRequiredError</code>, you don't have permissions to perform said
-    operation on a chat or channel. Try avoiding filters, i.e. when
-    searching messages.</p>
-</li>
-</ul>
-<p>The generic classes for different error codes are:</p>
-<ul>
-<li><code>InvalidDCError</code> (303), the request must be repeated on another DC.</li>
-<li><code>BadRequestError</code> (400), the request contained errors.</li>
-<li><code>UnauthorizedError</code> (401), the user is not authorized yet.</li>
-<li><code>ForbiddenError</code> (403), privacy violation error.</li>
-<li><code>NotFoundError</code> (404), make sure you're invoking <code>Request</code>'s!</li>
-</ul>
-<p>If the error is not recognised, it will only be an <code>RPCError</code>.</p>
-<p>You can refer to all errors from Python through the <code>telethon.errors</code>
-module. If you don't know what attributes they have, try printing their
-dir (like <code>print(dir(e))</code>).</p>
-<h2 id="attributes">Attributes<a class="headerlink" href="#attributes" title="Permanent link">¶</a></h2>
-<p>Some of the errors carry additional data in them. When they look like
-<code>EMAIL_UNCONFIRMED_X</code>, the <code>_X</code> value will be accessible from the
-error instance. The current list of errors that do this is the following:</p>
-<ul>
-<li><code>EmailUnconfirmedError</code> has <code>.code_length</code>.</li>
-<li><code>FileMigrateError</code> has <code>.new_dc</code>.</li>
-<li><code>FilePartMissingError</code> has <code>.which</code>.</li>
-<li><code>FloodTestPhoneWaitError</code> has <code>.seconds</code>.</li>
-<li><code>FloodWaitError</code> has <code>.seconds</code>.</li>
-<li><code>InterdcCallErrorError</code> has <code>.dc</code>.</li>
-<li><code>InterdcCallRichErrorError</code> has <code>.dc</code>.</li>
-<li><code>NetworkMigrateError</code> has <code>.new_dc</code>.</li>
-<li><code>PhoneMigrateError</code> has <code>.new_dc</code>.</li>
-<li><code>SlowModeWaitError</code> has <code>.seconds</code>.</li>
-<li><code>TakeoutInitDelayError</code> has <code>.seconds</code>.</li>
-<li><code>UserMigrateError</code> has <code>.new_dc</code>.</li>
-</ul>
-<h2 id="avoiding-limits">Avoiding Limits<a class="headerlink" href="#avoiding-limits" title="Permanent link">¶</a></h2>
-<p>Don't spam. You won't get <code>FloodWaitError</code> or your account banned or
-deleted if you use the library <em>for legit use cases</em>. Make cool tools.
-Don't spam! Nobody knows the exact limits for all requests since they
-depend on a lot of factors, so don't bother asking.</p>
-<p>Still, if you do have a legit use case and still get those errors, the
-library will automatically sleep when they are smaller than 60 seconds
-by default. You can set different "auto-sleep" thresholds:</p>
-<div class="highlight"><pre><span></span><code><span class="n">client</span><span class="o">.</span><span class="n">flood_sleep_threshold</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># Don't auto-sleep</span>
-<span class="n">client</span><span class="o">.</span><span class="n">flood_sleep_threshold</span> <span class="o">=</span> <span class="mi">24</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span>  <span class="c1"># Sleep always</span>
+<p>Think of this as a way to export your authorization key (what's needed
+to login into your account). This will print a string in the standard
+output (likely your terminal).</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><strong>Keep this string safe!</strong> Anyone with this string can use it
+to login into your account and do anything they want to to do.</p>
+<p>This is similar to leaking your <code>*.session</code> files online,
+but it is easier to leak a string than it is to leak a file.</p>
+</div>
+<p>Once you have the string (which is a bit long), load it into your script
+somehow. You can use a normal text file and <code>open(...).read()</code> it or
+you can save it in a variable directly:</p>
+<div class="highlight"><pre><span></span><code><span class="n">string</span> <span class="o">=</span> <span class="s1">'1aaNk8EX-YRfwoRsebUkugFvht6DUPi_Q25UOCzOAqzc...'</span>
+<span class="k">with</span> <span class="n">TelegramClient</span><span class="p">(</span><span class="n">StringSession</span><span class="p">(</span><span class="n">string</span><span class="p">),</span> <span class="n">api_id</span><span class="p">,</span> <span class="n">api_hash</span><span class="p">)</span> <span class="k">as</span> <span class="n">client</span><span class="p">:</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">loop</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">client</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="s1">'me'</span><span class="p">,</span> <span class="s1">'Hi'</span><span class="p">))</span>
 </code></pre></div>
-<p>You can also except it and act as you prefer:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">telethon.errors</span> <span class="kn">import</span> <span class="n">FloodWaitError</span>
-<span class="k">try</span><span class="p">:</span>
-    <span class="o">...</span>
-<span class="k">except</span> <span class="n">FloodWaitError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">'Flood waited for'</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">seconds</span><span class="p">)</span>
-    <span class="n">quit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-</code></pre></div>
-<p>VoIP numbers are very limited, and some countries are more limited too.</p>
+<p>These strings are really convenient for using in places like Heroku since
+their ephemeral filesystem will delete external files once your application
+is over.</p>
 </article>
 </div>
 </div>
@@ -668,7 +675,7 @@ by default. You can set different "auto-sleep" thresholds:</p>
 <footer class="md-footer">
 <div class="md-footer-nav">
 <nav aria-label="Footer" class="md-footer-nav__inner md-grid">
-<a class="md-footer-nav__link md-footer-nav__link--prev" href="../sessions/" rel="prev" title="Session Files">
+<a class="md-footer-nav__link md-footer-nav__link--prev" href="../updates/" rel="prev" title="Updates in Dept">
 <div class="md-footer-nav__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
 </div>
@@ -677,17 +684,17 @@ by default. You can set different "auto-sleep" thresholds:</p>
 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Session Files
+                Updates in Dept
               </div>
 </div>
 </a>
-<a class="md-footer-nav__link md-footer-nav__link--next" href="../botapi-vs-mtproto/" rel="next" title="HTTP Bot API vs MTProto">
+<a class="md-footer-nav__link md-footer-nav__link--next" href="../errors/" rel="next" title="RPC Errors">
 <div class="md-footer-nav__title">
 <div class="md-ellipsis">
 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                HTTP Bot API vs MTProto
+                RPC Errors
               </div>
 </div>
 <div class="md-footer-nav__button md-icon">

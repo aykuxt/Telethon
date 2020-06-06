@@ -5,10 +5,10 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="https://aykuxt.github.io/Telethon/developing/testing/" rel="canonical"/>
+<link href="https://aykuxt.github.io/Telethon/concepts/full-api/" rel="canonical"/>
 <link href="../../assets/images/favicon.png" rel="shortcut icon"/>
 <meta content="mkdocs-1.1.2, mkdocs-material-5.2.2" name="generator"/>
-<title>Tests - Telethon Docs</title>
+<title>The Full API - Telethon Docs</title>
 <link href="../../assets/stylesheets/main.a2408e81.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.a46bcfb3.min.css" rel="stylesheet"/>
 <meta content="#3f51b5" name="theme-color"/>
@@ -22,7 +22,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#tests">
+<a class="md-skip" href="#the-full-api">
           Skip to content
         </a>
 </div>
@@ -43,7 +43,7 @@
           </span>
 <span class="md-header-nav__topic md-ellipsis">
             
-              Tests
+              The Full API
             
           </span>
 </div>
@@ -103,12 +103,12 @@
         </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../concepts/strings/">
+<a class="md-tabs__link md-tabs__link--active" href="../strings/">
           Concepts
         </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link md-tabs__link--active" href="../philosophy/">
+<a class="md-tabs__link" href="../../developing/philosophy/">
           Developing
         </a>
 </li>
@@ -226,8 +226,8 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" id="nav-3" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="nav-3" id="nav-3" type="checkbox"/>
 <label class="md-nav__link" for="nav-3">
       Concepts
       <span class="md-nav__icon md-icon">
@@ -243,50 +243,72 @@
       </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../concepts/strings/" title="String-based Debugging">
+<a class="md-nav__link" href="../strings/" title="String-based Debugging">
       String-based Debugging
     </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../concepts/entities/" title="Entities">
+<a class="md-nav__link" href="../entities/" title="Entities">
       Entities
     </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../concepts/updates/" title="Updates in Dept">
+<a class="md-nav__link" href="../updates/" title="Updates in Dept">
       Updates in Dept
     </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../concepts/sessions/" title="Session Files">
+<a class="md-nav__link" href="../sessions/" title="Session Files">
       Session Files
     </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../concepts/full-api/" title="The Full API">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+        The Full API
+        <span class="md-nav__icon md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"></path></svg>
+</span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./" title="The Full API">
       The Full API
     </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#requests-in-parallel">
+    Requests in Parallel
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../concepts/errors/" title="RPC Errors">
+<a class="md-nav__link" href="../errors/" title="RPC Errors">
       RPC Errors
     </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../concepts/botapi-vs-mtproto/" title="HTTP Bot API vs MTProto">
+<a class="md-nav__link" href="../botapi-vs-mtproto/" title="HTTP Bot API vs MTProto">
       HTTP Bot API vs MTProto
     </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../concepts/asyncio/" title="Mastering asyncio">
+<a class="md-nav__link" href="../asyncio/" title="Mastering asyncio">
       Mastering asyncio
     </a>
 </li>
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="nav-4" id="nav-4" type="checkbox"/>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" id="nav-4" type="checkbox"/>
 <label class="md-nav__link" for="nav-4">
       Developing
       <span class="md-nav__icon md-icon">
@@ -302,74 +324,42 @@
       </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../philosophy/" title="Philosophy">
+<a class="md-nav__link" href="../../developing/philosophy/" title="Philosophy">
       Philosophy
     </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../test-servers/" title="Test Servers">
+<a class="md-nav__link" href="../../developing/test-servers/" title="Test Servers">
       Test Servers
     </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../project-structure/" title="Project Structure">
+<a class="md-nav__link" href="../../developing/project-structure/" title="Project Structure">
       Project Structure
     </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../coding-style/" title="Coding Style">
+<a class="md-nav__link" href="../../developing/coding-style/" title="Coding Style">
       Coding Style
     </a>
 </li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-        Tests
-        <span class="md-nav__icon md-icon">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"></path></svg>
-</span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./" title="Tests">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../developing/testing/" title="Tests">
       Tests
     </a>
-<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
-</span>
-      Table of contents
-    </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#brief-introduction-to-pytest">
-    Brief Introduction to Pytest
-  </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#brief-introduction-to-tox">
-    Brief Introduction to Tox
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#brief-introduction-to-pytest-cov">
-    Brief Introduction to Pytest-cov
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../understanding-the-type-language/" title="Understanding the Type Language">
+<a class="md-nav__link" href="../../developing/understanding-the-type-language/" title="Understanding the Type Language">
       Understanding the Type Language
     </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../tips-for-porting-the-project/" title="Tips for Porting the Project">
+<a class="md-nav__link" href="../../developing/tips-for-porting-the-project/" title="Tips for Porting the Project">
       Tips for Porting the Project
     </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../telegram-api-in-other-languages/" title="Telegram API in Other Languages">
+<a class="md-nav__link" href="../../developing/telegram-api-in-other-languages/" title="Telegram API in Other Languages">
       Telegram API in Other Languages
     </a>
 </li>
@@ -515,18 +505,8 @@
     </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#brief-introduction-to-pytest">
-    Brief Introduction to Pytest
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#brief-introduction-to-tox">
-    Brief Introduction to Tox
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#brief-introduction-to-pytest-cov">
-    Brief Introduction to Pytest-cov
+<a class="md-nav__link" href="#requests-in-parallel">
+    Requests in Parallel
   </a>
 </li>
 </ul>
@@ -536,84 +516,185 @@
 </div>
 <div class="md-content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/LonamiWebs/Telethon/edit/master/docs/developing/testing.md" title="Edit this page">
+<a class="md-content__button md-icon" href="https://github.com/LonamiWebs/Telethon/edit/master/docs/concepts/full-api.md" title="Edit this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
 </a>
-<h1 id="tests">Tests<a class="headerlink" href="#tests" title="Permanent link">¶</a></h1>
-<p>Telethon uses <a href="https://pytest.org">Pytest</a> for testing,
-<a href="https://tox.readthedocs.io/en/latest/">Tox</a> for environment setup, and
-<a href="https://pypi.org/project/pytest-asyncio/">pytest-asyncio</a> and
-<a href="https://pytest-cov.readthedocs.io/en/latest/">pytest-cov</a> for asyncio
-and <a href="https://coverage.readthedocs.io/">coverage</a> integration.</p>
-<p>While reading the full documentation for these is probably a good idea, there
-is a lot to read, so a brief summary of these tools is provided below for
-convienience.</p>
-<h2 id="brief-introduction-to-pytest">Brief Introduction to Pytest<a class="headerlink" href="#brief-introduction-to-pytest" title="Permanent link">¶</a></h2>
-<p><a href="https://pytest.org">Pytest</a> is a tool for discovering and running python
-tests, as well as allowing modular reuse of test setup code using fixtures.</p>
-<p>Most Pytest tests will look something like this::
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">module</span> <span class="kn">import</span> <span class="n">my_thing</span><span class="p">,</span> <span class="n">my_other_thing</span>
+<h1 id="the-full-api">The Full API<a class="headerlink" href="#the-full-api" title="Permanent link">¶</a></h1>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>While you have access to this, you should always use the friendly
+methods listed on :ref:<code>client-ref</code> unless you have a better reason
+not to, like a method not existing or you wanting more control.</p>
+</div>
+<p>The :ref:<code>telethon-client</code> doesn't offer a method for every single request
+the Telegram API supports. However, it's very simple to <em>call</em> or <em>invoke</em>
+any request. Whenever you need something, don't forget to <a href="https://tl.telethon.dev">check the documentation</a>
+and look for the <a href="https://tl.telethon.dev/methods/index.html">method you need</a>. There you can go through a sorted list
+of everything you can do.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The reason to keep both <a href="https://tl.telethon.dev">https://tl.telethon.dev</a> and this
+documentation alive is that the former allows instant search results
+as you type, and a "Copy import" button. If you like namespaces, you
+can also do <code>from telethon.tl import types, functions</code>. Both work.</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>All the examples in this documentation assume that you have
+<code>from telethon import sync</code> or <code>import telethon.sync</code> for the
+sake of simplicity and that you understand what it does (see
+:ref:<code>compatibility-and-convenience</code> for more). Simply add
+either line at the beginning of your project and it will work.</p>
+</div>
+<p>You should also refer to the documentation to see what the objects
+(constructors) Telegram returns look like. Every constructor inherits
+from a common type, and that's the reason for this distinction.</p>
+<p>Say [<code>client.send_message()</code>][telethon.client.messages.MessageMethods.send_message] didn't exist,
+we could <a href="https://tl.telethon.dev/?q=message&amp;redirect=no">use the search</a> to look for "message". There we would find
+:tl:<code>SendMessageRequest</code>, which we can work with.</p>
+<p>Every request is a Python class, and has the parameters needed for you
+to invoke it. You can also call <code>help(request)</code> for information on
+what input parameters it takes. Remember to "Copy import to the
+clipboard", or your script won't be aware of this class! Now we have:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">telethon.tl.functions.messages</span> <span class="kn">import</span> <span class="n">SendMessageRequest</span>
+</code></pre></div>
+<p>If you're going to use a lot of these, you may do:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">telethon.tl</span> <span class="kn">import</span> <span class="n">types</span><span class="p">,</span> <span class="n">functions</span>
+<span class="c1"># We now have access to 'functions.messages.SendMessageRequest'</span>
+</code></pre></div>
+<p>We see that this request must take at least two parameters, a <code>peer</code>
+of type :tl:<code>InputPeer</code>, and a <code>message</code> which is just a Python
+<code>str</code>ing.</p>
+<p>How can we retrieve this :tl:<code>InputPeer</code>? We have two options. We manually
+construct one, for instance:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">telethon.tl.types</span> <span class="kn">import</span> <span class="n">InputPeerUser</span>
 
-<span class="k">def</span> <span class="nf">test_my_thing</span><span class="p">(</span><span class="n">fixture</span><span class="p">):</span>
-    <span class="k">assert</span> <span class="n">my_thing</span><span class="p">(</span><span class="n">fixture</span><span class="p">)</span> <span class="o">==</span> <span class="mi">42</span>
+<span class="n">peer</span> <span class="o">=</span> <span class="n">InputPeerUser</span><span class="p">(</span><span class="n">user_id</span><span class="p">,</span> <span class="n">user_hash</span><span class="p">)</span>
+</code></pre></div>
+<p>Or we call <code>client.get_input_entity()
+&lt;telethon.client.users.UserMethods.get_input_entity&gt;</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">telethon</span>
 
-<span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">asyncio</span>
-<span class="k">async</span> <span class="k">def</span> <span class="nf">test_my_thing</span><span class="p">(</span><span class="n">event_loop</span><span class="p">):</span>
-    <span class="k">assert</span> <span class="k">await</span> <span class="n">my_other_thing</span><span class="p">(</span><span class="n">loop</span><span class="o">=</span><span class="n">event_loop</span><span class="p">)</span> <span class="o">==</span> <span class="mi">42</span>
-</code></pre></div></p>
-<p>Note here:</p>
-<ol>
-<li>
-<p>The test imports one specific function. The role of unit tests is to test
-    that the implementation of some unit, like a function or class, works.
-    It's role is not so much to test that components interact well with each
-    other. I/O, such as connecting to remote servers, should be avoided. This
-    helps with quickly identifying the source of an error, finding silent
-    breakage, and makes it easier to cover all possible code paths.</p>
-<p>System or integration tests can also be useful, but are currently out of
-scope of Telethon's automated testing.</p>
-</li>
-<li>
-<p>A function <code>test_my_thing</code> is declared. Pytest searches for files
-    starting with <code>test_</code>, classes starting with <code>Test</code> and executes any
-    functions or methods starting with <code>test_</code> it finds.</p>
-</li>
-<li>
-<p>The function is declared with a parameter <code>fixture</code>. Fixtures are used to
-    request things required to run the test, such as temporary directories,
-    free TCP ports, Connections, etc. Fixtures are declared by simply adding
-    the fixture name as parameter. A full list of available fixtures can be
-    found with the <code>pytest --fixtures</code> command.</p>
-</li>
-<li>
-<p>The test uses a simple <code>assert</code> to test some condition is valid.  Pytest
-    uses some magic to ensure that the errors from this are readable and easy
-    to debug.</p>
-</li>
-<li>
-<p>The <code>pytest.mark.asyncio</code> fixture is provided by <code>pytest-asyncio</code>. It
-    starts a loop and executes a test function as coroutine. This should be
-    used for testing asyncio code. It also declares the <code>event_loop</code>
-    fixture, which will request an <code>asyncio</code> event loop.</p>
-</li>
-</ol>
-<h2 id="brief-introduction-to-tox">Brief Introduction to Tox<a class="headerlink" href="#brief-introduction-to-tox" title="Permanent link">¶</a></h2>
-<p><a href="https://tox.readthedocs.io/en/latest/">Tox</a> is a tool for automated setup of virtual environments for testing. While
-the tests can be run directly by just running <code>pytest</code>, this only tests one
-specific python version in your existing environment, which will not catch e.g.
-undeclared dependencies, or version incompatabilities.</p>
-<p>Tox environments are declared in the <code>tox.ini</code> file. The default
-environments, declared at the top, can be simply run with <code>tox</code>. The option
-<code>tox -e py36,flake</code> can be used to request specific environments to be run.</p>
-<h2 id="brief-introduction-to-pytest-cov">Brief Introduction to Pytest-cov<a class="headerlink" href="#brief-introduction-to-pytest-cov" title="Permanent link">¶</a></h2>
-<p>Coverage is a useful metric for testing. It measures the lines of code and
-branches that are exercised by the tests. The higher the coverage, the more
-likely it is that any coding errors will be caught by the tests.</p>
-<p>A brief coverage report can be generated with the <code>--cov</code> option to <code>tox</code>,
-which will be passed on to <code>pytest</code>. Additionally, the very useful HTML
-report can be generated with <code>--cov --cov-report=html</code>, which contains a
-browsable copy of the source code, annotated with coverage information for each
-line.</p>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">peer</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">get_input_entity</span><span class="p">(</span><span class="s1">'someone'</span><span class="p">)</span>
+
+<span class="n">client</span><span class="o">.</span><span class="n">loop</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Remember that <code>await</code> must occur inside an <code>async def</code>.
+Every full API example assumes you already know and do this.</p>
+</div>
+<p>When you're going to invoke an API method, most require you to pass an
+:tl:<code>InputUser</code>, :tl:<code>InputChat</code>, or so on, this is why using
+<code>client.get_input_entity() &lt;telethon.client.users.UserMethods.get_input_entity&gt;</code>
+is more straightforward (and often immediate, if you've seen the user before,
+know their ID, etc.). If you also <strong>need</strong> to have information about the whole
+user, use <code>client.get_entity() &lt;telethon.client.users.UserMethods.get_entity&gt;</code>
+instead:</p>
+<div class="highlight"><pre><span></span><code><span class="n">entity</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">get_entity</span><span class="p">(</span><span class="s1">'someone'</span><span class="p">)</span>
+</code></pre></div>
+<p>In the later case, when you use the entity, the library will cast it to
+its "input" version for you. If you already have the complete user and
+want to cache its input version so the library doesn't have to do this
+every time its used, simply call <code>telethon.utils.get_input_peer</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">telethon</span> <span class="kn">import</span> <span class="n">utils</span>
+<span class="n">peer</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">get_input_peer</span><span class="p">(</span><span class="n">entity</span><span class="p">)</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Since <code>v0.16.2</code> this is further simplified. The <code>Request</code> itself
+will call <code>client.get_input_entity
+&lt;telethon.client.users.UserMethods.get_input_entity&gt;</code> for you when
+required, but it's good to remember what's happening.</p>
+</div>
+<p>After this small parenthesis about <code>client.get_entity
+&lt;telethon.client.users.UserMethods.get_entity&gt;</code> versus
+<code>client.get_input_entity() &lt;telethon.client.users.UserMethods.get_input_entity&gt;</code>,
+we have everything we need. To invoke our
+request we do:</p>
+<div class="highlight"><pre><span></span><code><span class="n">result</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="p">(</span><span class="n">SendMessageRequest</span><span class="p">(</span><span class="n">peer</span><span class="p">,</span> <span class="s1">'Hello there!'</span><span class="p">))</span>
+</code></pre></div>
+<p>Message sent! Of course, this is only an example. There are over 250
+methods available as of layer 80, and you can use every single of them
+as you wish. Remember to use the right types! To sum up:</p>
+<div class="highlight"><pre><span></span><code><span class="n">result</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="p">(</span><span class="n">SendMessageRequest</span><span class="p">(</span>
+    <span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">get_input_entity</span><span class="p">(</span><span class="s1">'username'</span><span class="p">),</span> <span class="s1">'Hello there!'</span>
+<span class="p">))</span>
+</code></pre></div>
+<p>This can further be simplified to:</p>
+<div class="highlight"><pre><span></span><code><span class="n">result</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="p">(</span><span class="n">SendMessageRequest</span><span class="p">(</span><span class="s1">'username'</span><span class="p">,</span> <span class="s1">'Hello there!'</span><span class="p">))</span>
+<span class="c1"># Or even</span>
+<span class="n">result</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="p">(</span><span class="n">SendMessageRequest</span><span class="p">(</span><span class="n">PeerChannel</span><span class="p">(</span><span class="nb">id</span><span class="p">),</span> <span class="s1">'Hello there!'</span><span class="p">))</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note that some requests have a "hash" parameter. This is <strong>not</strong>
+your <code>api_hash</code>! It likely isn't your self-user <code>.access_hash</code> either.</p>
+<p>It's a special hash used by Telegram to only send a difference of new data
+that you don't already have with that request, so you can leave it to 0,
+and it should work (which means no hash is known yet).</p>
+<p>For those requests having a "limit" parameter, you can often set it to
+zero to signify "return default amount". This won't work for all of them
+though, for instance, in "messages.search" it will actually return 0 items.</p>
+</div>
+<h2 id="requests-in-parallel">Requests in Parallel<a class="headerlink" href="#requests-in-parallel" title="Permanent link">¶</a></h2>
+<p>The library will automatically merge outgoing requests into a single
+<em>container</em>. Telegram's API supports sending multiple requests in a
+single container, which is faster because it has less overhead and
+the server can run them without waiting for others. You can also
+force using a container manually:</p>
+<div class="highlight"><pre><span></span><code><span class="k">async</span> <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+
+    <span class="c1"># Letting the library do it behind the scenes</span>
+    <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">wait</span><span class="p">([</span>
+        <span class="n">client</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="s1">'me'</span><span class="p">,</span> <span class="s1">'Hello'</span><span class="p">),</span>
+        <span class="n">client</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="s1">'me'</span><span class="p">,</span> <span class="s1">','</span><span class="p">),</span>
+        <span class="n">client</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="s1">'me'</span><span class="p">,</span> <span class="s1">'World'</span><span class="p">),</span>
+        <span class="n">client</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="s1">'me'</span><span class="p">,</span> <span class="s1">'.'</span><span class="p">)</span>
+    <span class="p">])</span>
+
+    <span class="c1"># Manually invoking many requests at once</span>
+    <span class="k">await</span> <span class="n">client</span><span class="p">([</span>
+        <span class="n">SendMessageRequest</span><span class="p">(</span><span class="s1">'me'</span><span class="p">,</span> <span class="s1">'Hello'</span><span class="p">),</span>
+        <span class="n">SendMessageRequest</span><span class="p">(</span><span class="s1">'me'</span><span class="p">,</span> <span class="s1">', '</span><span class="p">),</span>
+        <span class="n">SendMessageRequest</span><span class="p">(</span><span class="s1">'me'</span><span class="p">,</span> <span class="s1">'World'</span><span class="p">),</span>
+        <span class="n">SendMessageRequest</span><span class="p">(</span><span class="s1">'me'</span><span class="p">,</span> <span class="s1">'.'</span><span class="p">)</span>
+    <span class="p">])</span>
+</code></pre></div>
+<p>Note that you cannot guarantee the order in which they are run.
+Try running the above code more than one time. You will see the
+order in which the messages arrive is different.</p>
+<p>If you use the raw API (the first option), you can use <code>ordered</code>
+to tell the server that it should run the requests sequentially.
+This will still be faster than going one by one, since the server
+knows all requests directly:</p>
+<div class="highlight"><pre><span></span><code><span class="k">await</span> <span class="n">client</span><span class="p">([</span>
+    <span class="n">SendMessageRequest</span><span class="p">(</span><span class="s1">'me'</span><span class="p">,</span> <span class="s1">'Hello'</span><span class="p">),</span>
+    <span class="n">SendMessageRequest</span><span class="p">(</span><span class="s1">'me'</span><span class="p">,</span> <span class="s1">', '</span><span class="p">),</span>
+    <span class="n">SendMessageRequest</span><span class="p">(</span><span class="s1">'me'</span><span class="p">,</span> <span class="s1">'World'</span><span class="p">),</span>
+    <span class="n">SendMessageRequest</span><span class="p">(</span><span class="s1">'me'</span><span class="p">,</span> <span class="s1">'.'</span><span class="p">)</span>
+<span class="p">],</span> <span class="n">ordered</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</code></pre></div>
+<p>If any of the requests fails with a Telegram error (not connection
+errors or any other unexpected events), the library will raise
+<code>telethon.errors.common.MultiError</code>. You can <code>except</code> this
+and still access the successful results:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">telethon.errors</span> <span class="kn">import</span> <span class="n">MultiError</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="k">await</span> <span class="n">client</span><span class="p">([</span>
+        <span class="n">SendMessageRequest</span><span class="p">(</span><span class="s1">'me'</span><span class="p">,</span> <span class="s1">'Hello'</span><span class="p">),</span>
+        <span class="n">SendMessageRequest</span><span class="p">(</span><span class="s1">'me'</span><span class="p">,</span> <span class="s1">''</span><span class="p">),</span>
+        <span class="n">SendMessageRequest</span><span class="p">(</span><span class="s1">'me'</span><span class="p">,</span> <span class="s1">'World'</span><span class="p">)</span>
+    <span class="p">],</span> <span class="n">ordered</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">except</span> <span class="n">MultiError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="c1"># The first and third requests worked.</span>
+    <span class="n">first</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="n">results</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">third</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="n">results</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+    <span class="c1"># The second request failed.</span>
+    <span class="n">second</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="n">exceptions</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</code></pre></div>
 </article>
 </div>
 </div>
@@ -621,7 +702,7 @@ line.</p>
 <footer class="md-footer">
 <div class="md-footer-nav">
 <nav aria-label="Footer" class="md-footer-nav__inner md-grid">
-<a class="md-footer-nav__link md-footer-nav__link--prev" href="../coding-style/" rel="prev" title="Coding Style">
+<a class="md-footer-nav__link md-footer-nav__link--prev" href="../sessions/" rel="prev" title="Session Files">
 <div class="md-footer-nav__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
 </div>
@@ -630,17 +711,17 @@ line.</p>
 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Coding Style
+                Session Files
               </div>
 </div>
 </a>
-<a class="md-footer-nav__link md-footer-nav__link--next" href="../understanding-the-type-language/" rel="next" title="Understanding the Type Language">
+<a class="md-footer-nav__link md-footer-nav__link--next" href="../errors/" rel="next" title="RPC Errors">
 <div class="md-footer-nav__title">
 <div class="md-ellipsis">
 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Understanding the Type Language
+                RPC Errors
               </div>
 </div>
 <div class="md-footer-nav__button md-icon">

@@ -5,10 +5,10 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="https://aykuxt.github.io/Telethon/basic/signing-in/" rel="canonical"/>
+<link href="https://aykuxt.github.io/Telethon/concepts/errors/" rel="canonical"/>
 <link href="../../assets/images/favicon.png" rel="shortcut icon"/>
 <meta content="mkdocs-1.1.2, mkdocs-material-5.2.2" name="generator"/>
-<title>Signing In - Telethon Docs</title>
+<title>RPC Errors - Telethon Docs</title>
 <link href="../../assets/stylesheets/main.a2408e81.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.a46bcfb3.min.css" rel="stylesheet"/>
 <meta content="#3f51b5" name="theme-color"/>
@@ -22,7 +22,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#signing-in">
+<a class="md-skip" href="#rpc-errors">
           Skip to content
         </a>
 </div>
@@ -43,7 +43,7 @@
           </span>
 <span class="md-header-nav__topic md-ellipsis">
             
-              Signing In
+              RPC Errors
             
           </span>
 </div>
@@ -93,7 +93,7 @@
 <div class="md-tabs__inner md-grid">
 <ul class="md-tabs__list">
 <li class="md-tabs__item">
-<a class="md-tabs__link md-tabs__link--active" href="../..">
+<a class="md-tabs__link" href="../..">
           First Steps
         </a>
 </li>
@@ -103,7 +103,7 @@
         </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../concepts/strings/">
+<a class="md-tabs__link md-tabs__link--active" href="../strings/">
           Concepts
         </a>
 </li>
@@ -153,8 +153,8 @@
 </a>
 </div>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="nav-1" id="nav-1" type="checkbox"/>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" id="nav-1" type="checkbox"/>
 <label class="md-nav__link" for="nav-1">
       First Steps
       <span class="md-nav__icon md-icon">
@@ -175,69 +175,27 @@
     </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../installation/" title="Installation">
+<a class="md-nav__link" href="../../basic/installation/" title="Installation">
       Installation
     </a>
 </li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-        Signing In
-        <span class="md-nav__icon md-icon">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"></path></svg>
-</span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./" title="Signing In">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../basic/signing-in/" title="Signing In">
       Signing In
     </a>
-<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
-</span>
-      Table of contents
-    </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#editing-the-code">
-    Editing the Code
-  </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#signing-in_1">
-    Signing In
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#signing-in-as-a-bot-account">
-    Signing In as a Bot Account
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#signing-in-behind-a-proxy">
-    Signing In behind a Proxy
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#using-mtproto-proxies">
-    Using MTProto Proxies
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../quick-start/" title="Quick-Start">
+<a class="md-nav__link" href="../../basic/quick-start/" title="Quick-Start">
       Quick-Start
     </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../updates/" title="Updates">
+<a class="md-nav__link" href="../../basic/updates/" title="Updates">
       Updates
     </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../next-steps/" title="Next Steps">
+<a class="md-nav__link" href="../../basic/next-steps/" title="Next Steps">
       Next Steps
     </a>
 </li>
@@ -268,8 +226,8 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" id="nav-3" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="nav-3" id="nav-3" type="checkbox"/>
 <label class="md-nav__link" for="nav-3">
       Concepts
       <span class="md-nav__icon md-icon">
@@ -285,29 +243,66 @@
       </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../concepts/strings/" title="String-based Debugging">
+<a class="md-nav__link" href="../strings/" title="String-based Debugging">
       String-based Debugging
     </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../concepts/entities/" title="Entities">
+<a class="md-nav__link" href="../entities/" title="Entities">
       Entities
     </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../concepts/botapi-vs-mtproto/" title="HTTP Bot API vs MTProto">
+<a class="md-nav__link" href="../botapi-vs-mtproto/" title="HTTP Bot API vs MTProto">
       HTTP Bot API vs MTProto
     </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../concepts/asyncio/" title="Mastering asyncio">
+<a class="md-nav__link" href="../asyncio/" title="Mastering asyncio">
       Mastering asyncio
     </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../concepts/errors/" title="RPC Errors">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+        RPC Errors
+        <span class="md-nav__icon md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"></path></svg>
+</span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./" title="RPC Errors">
       RPC Errors
     </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#base-errors">
+    Base Errors
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#common-errors">
+    Common Errors
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#attributes">
+    Attributes
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#avoiding-limits">
+    Avoiding Limits
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -510,28 +505,23 @@
     </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#editing-the-code">
-    Editing the Code
+<a class="md-nav__link" href="#base-errors">
+    Base Errors
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#signing-in_1">
-    Signing In
+<a class="md-nav__link" href="#common-errors">
+    Common Errors
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#signing-in-as-a-bot-account">
-    Signing In as a Bot Account
+<a class="md-nav__link" href="#attributes">
+    Attributes
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#signing-in-behind-a-proxy">
-    Signing In behind a Proxy
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#using-mtproto-proxies">
-    Using MTProto Proxies
+<a class="md-nav__link" href="#avoiding-limits">
+    Avoiding Limits
   </a>
 </li>
 </ul>
@@ -541,149 +531,126 @@
 </div>
 <div class="md-content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/LonamiWebs/Telethon/edit/master/docs/basic/signing-in.md" title="Edit this page">
+<a class="md-content__button md-icon" href="https://github.com/LonamiWebs/Telethon/edit/master/docs/concepts/errors.md" title="Edit this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
 </a>
-<h1 id="signing-in">Signing In<a class="headerlink" href="#signing-in" title="Permanent link">¶</a></h1>
-<p>Before working with Telegram's API, you need to get your own API ID and hash:</p>
-<ol>
-<li>
-<p><a href="https://my.telegram.org/">Login to your Telegram account</a> with the
-   phone number of the developer account to use.</p>
-</li>
-<li>
-<p>Click under API Development tools.</p>
-</li>
-<li>
-<p>A <em>Create new application</em> window will appear. Fill in your application
-   details. There is no need to enter any <em>URL</em>, and only the first two
-   fields (<em>App title</em> and <em>Short name</em>) can currently be changed later.</p>
-</li>
-<li>
-<p>Click on <em>Create application</em> at the end. Remember that your
-   <strong>API hash is secret</strong> and Telegram won't let you revoke it.
-   Don't post it anywhere!</p>
-</li>
-</ol>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This API ID and hash is the one used by <em>your application</em>, not your
-phone number. You can use this API ID and hash with <em>any</em> phone number
-or even for bot accounts.</p>
-</div>
-<h2 id="editing-the-code">Editing the Code<a class="headerlink" href="#editing-the-code" title="Permanent link">¶</a></h2>
-<p>This is a little introduction for those new to Python programming in general.</p>
-<p>We will write our code inside <code>hello.py</code>, so you can use any text
-editor that you like. To run the code, use <code>python3 hello.py</code> from
-the terminal.</p>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>Don't call your script <code>telethon.py</code>! Python will try to import
-the client from there and it will fail with an error such as
-<code>ImportError: cannot import name 'TelegramClient' ...</code>.</p>
-</div>
-<h2 id="signing-in_1">Signing In<a class="headerlink" href="#signing-in_1" title="Permanent link">¶</a></h2>
-<p>We can finally write some code to log into our account!</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">telethon</span> <span class="kn">import</span> <span class="n">TelegramClient</span>
+<h1 id="rpc-errors">RPC Errors<a class="headerlink" href="#rpc-errors" title="Permanent link">¶</a></h1>
+<p>RPC stands for Remote Procedure Call, and when the library raises a
+<code>RPCError</code>, it's because you have invoked some of the API methods
+incorrectly (wrong parameters, wrong permissions, or even something went
+wrong on Telegram's server).</p>
+<p>You should import the errors from <code>telethon.errors</code> like so:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">telethon</span> <span class="kn">import</span> <span class="n">errors</span>
 
-<span class="c1"># Use your own values from my.telegram.org</span>
-<span class="n">api_id</span> <span class="o">=</span> <span class="mi">12345</span>
-<span class="n">api_hash</span> <span class="o">=</span> <span class="s1">'0123456789abcdef0123456789abcdef'</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">with</span> <span class="n">client</span><span class="o">.</span><span class="n">takeout</span><span class="p">()</span> <span class="k">as</span> <span class="n">takeout</span><span class="p">:</span>
+        <span class="o">...</span>
 
-<span class="c1"># The first parameter is the .session file name (absolute paths allowed)</span>
-<span class="k">with</span> <span class="n">TelegramClient</span><span class="p">(</span><span class="s1">'anon'</span><span class="p">,</span> <span class="n">api_id</span><span class="p">,</span> <span class="n">api_hash</span><span class="p">)</span> <span class="k">as</span> <span class="n">client</span><span class="p">:</span>
-    <span class="n">client</span><span class="o">.</span><span class="n">loop</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">client</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="s1">'me'</span><span class="p">,</span> <span class="s1">'Hello, myself!'</span><span class="p">))</span>
+<span class="k">except</span> <span class="n">errors</span><span class="o">.</span><span class="n">TakeoutInitDelayError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="c1">#  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ here we except TAKEOUT_INIT_DELAY</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'Must wait'</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">seconds</span><span class="p">,</span> <span class="s1">'before takeout'</span><span class="p">)</span>
 </code></pre></div>
-<p>In the first line, we import the class name so we can create an instance
-of the client. Then, we define variables to store our API ID and hash
-conveniently.</p>
-<p>At last, we create a new <code>TelegramClient &lt;telethon.client.telegramclient.TelegramClient&gt;</code>
-instance and call it <code>client</code>. We can now use the client variable
-for anything that we want, such as sending a message to ourselves.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Since Telethon is an asynchronous library, you need to <code>await</code>
-coroutine functions to have them run (or otherwise, run the loop
-until they are complete). In this tiny example, we don't bother
-making an <code>async def main()</code>.</p>
-<p>See :ref:<code>mastering-asyncio</code> to find out more.</p>
-</div>
-<p>Using a <code>with</code> block is the preferred way to use the library. It will
-automatically <code>start() &lt;telethon.client.auth.AuthMethods.start&gt;</code> the client,
-logging or signing up if necessary.</p>
-<p>If the <code>.session</code> file already existed, it will not login
-again, so be aware of this if you move or rename the file!</p>
-<h2 id="signing-in-as-a-bot-account">Signing In as a Bot Account<a class="headerlink" href="#signing-in-as-a-bot-account" title="Permanent link">¶</a></h2>
-<p>You can also use Telethon for your bots (normal bot accounts, not users).
-You will still need an API ID and hash, but the process is very similar:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">telethon.sync</span> <span class="kn">import</span> <span class="n">TelegramClient</span>
-
-<span class="n">api_id</span> <span class="o">=</span> <span class="mi">12345</span>
-<span class="n">api_hash</span> <span class="o">=</span> <span class="s1">'0123456789abcdef0123456789abcdef'</span>
-<span class="n">bot_token</span> <span class="o">=</span> <span class="s1">'12345:0123456789abcdef0123456789abcdef'</span>
-
-<span class="c1"># We have to manually call "start" if we want an explicit bot token</span>
-<span class="n">bot</span> <span class="o">=</span> <span class="n">TelegramClient</span><span class="p">(</span><span class="s1">'bot'</span><span class="p">,</span> <span class="n">api_id</span><span class="p">,</span> <span class="n">api_hash</span><span class="p">)</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="n">bot_token</span><span class="o">=</span><span class="n">bot_token</span><span class="p">)</span>
-
-<span class="c1"># But then we can use the client instance as usual</span>
-<span class="k">with</span> <span class="n">bot</span><span class="p">:</span>
-    <span class="o">...</span>
+<p>There isn't any official list of all possible RPC errors, so the <a href="https://github.com/LonamiWebs/Telethon/blob/master/telethon_generator/data/errors.csv">list
+of known errors</a> is provided on a best-effort basis. When new methods
+are available, the list may be lacking since we simply don't know what
+errors can raise from them.</p>
+<p>Once we do find out about a new error and what causes it, the list is
+updated, so if you see an error without a specific class, do report it
+(and what method caused it)!</p>
+<p>This list is used to generate documentation for the <a href="https://tl.telethon.dev/">raw API page</a>.
+For example, if we want to know what errors can occur from
+<a href="https://tl.telethon.dev/methods/messages/send_message.html">messages.sendMessage</a> we can simply navigate to its raw API page and
+find it has 24 known RPC errors at the time of writing.</p>
+<h2 id="base-errors">Base Errors<a class="headerlink" href="#base-errors" title="Permanent link">¶</a></h2>
+<p>All the "base" errors are listed in <a href="https://docs.telethon.dev/en/latest/modules/errors.html#telethon-errors">API Errors</a>. Any other more
+specific error will be a subclass of these.</p>
+<p>If the library isn't aware of a specific error just yet, it will instead
+raise one of these superclasses. This means you may find stuff like
+this:</p>
+<div class="highlight"><pre><span></span><code>telethon.errors.rpcbaseerrors.BadRequestError: RPCError 400: MESSAGE_POLL_CLOSED (caused by SendVoteRequest)
 </code></pre></div>
-<p>To get a bot account, you need to talk
-with <a href="https://t.me/BotFather">@BotFather</a>.</p>
-<h2 id="signing-in-behind-a-proxy">Signing In behind a Proxy<a class="headerlink" href="#signing-in-behind-a-proxy" title="Permanent link">¶</a></h2>
-<p>If you need to use a proxy to access Telegram,
-you will need to <a href="https://github.com/Anorov/PySocks#installation">install PySocks</a>
-and then change:</p>
-<div class="highlight"><pre><span></span><code><span class="n">TelegramClient</span><span class="p">(</span><span class="s1">'anon'</span><span class="p">,</span> <span class="n">api_id</span><span class="p">,</span> <span class="n">api_hash</span><span class="p">)</span>
-</code></pre></div>
-<p>with</p>
-<div class="highlight"><pre><span></span><code><span class="n">TelegramClient</span><span class="p">(</span><span class="s1">'anon'</span><span class="p">,</span> <span class="n">api_id</span><span class="p">,</span> <span class="n">api_hash</span><span class="p">,</span> <span class="n">proxy</span><span class="o">=</span><span class="p">(</span><span class="n">socks</span><span class="o">.</span><span class="n">SOCKS5</span><span class="p">,</span> <span class="s1">'127.0.0.1'</span><span class="p">,</span> <span class="mi">4444</span><span class="p">))</span>
-</code></pre></div>
-<p>(of course, replacing the IP and port with the IP and port of the proxy).</p>
-<p>The <code>proxy=</code> argument should be a tuple, a list or a dict,
-consisting of parameters described <a href="https://github.com/Anorov/PySocks#usage-1">in PySocks usage</a>.</p>
-<h2 id="using-mtproto-proxies">Using MTProto Proxies<a class="headerlink" href="#using-mtproto-proxies" title="Permanent link">¶</a></h2>
-<p>MTProto Proxies are Telegram's alternative to normal proxies,
-and work a bit differently. The following protocols are available:</p>
+<p>If you do, make sure to open an issue or send a pull request to update
+the <a href="https://github.com/LonamiWebs/Telethon/blob/master/telethon_generator/data/errors.csv">list of known errors</a>.</p>
+<h2 id="common-errors">Common Errors<a class="headerlink" href="#common-errors" title="Permanent link">¶</a></h2>
+<p>These are some of the errors you may normally need to deal with:</p>
 <ul>
-<li><code>ConnectionTcpMTProxyAbridged</code></li>
-<li><code>ConnectionTcpMTProxyIntermediate</code></li>
-<li><code>ConnectionTcpMTProxyRandomizedIntermediate</code> (preferred)</li>
+<li>
+<p><code>FloodWaitError</code> (420), the same request was repeated many times.
+    Must wait <code>.seconds</code> (you can access this attribute). For example:</p>
+<div class="highlight"><pre><span></span><code><span class="o">...</span>
+<span class="kn">from</span> <span class="nn">telethon</span> <span class="kn">import</span> <span class="n">errors</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">messages</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">get_messages</span><span class="p">(</span><span class="n">chat</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">messages</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+<span class="k">except</span> <span class="n">errors</span><span class="o">.</span><span class="n">FloodWaitError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'Have to sleep'</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">seconds</span><span class="p">,</span> <span class="s1">'seconds'</span><span class="p">)</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">seconds</span><span class="p">)</span>
+</code></pre></div>
+</li>
+<li>
+<p><code>SessionPasswordNeededError</code>, if you have setup two-steps
+    verification on Telegram and are trying to sign in.</p>
+</li>
+<li>
+<p><code>FilePartMissingError</code>, if you have tried to upload an empty file.</p>
+</li>
+<li>
+<p><code>ChatAdminRequiredError</code>, you don't have permissions to perform said
+    operation on a chat or channel. Try avoiding filters, i.e. when
+    searching messages.</p>
+</li>
 </ul>
-<p>For now, you need to manually specify these special connection modes
-if you want to use a MTProto Proxy. Your code would look like this:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">telethon</span> <span class="kn">import</span> <span class="n">TelegramClient</span><span class="p">,</span> <span class="n">connection</span>
-<span class="c1">#   we need to change the connection ^^^^^^^^^^</span>
-
-<span class="n">client</span> <span class="o">=</span> <span class="n">TelegramClient</span><span class="p">(</span>
-    <span class="s1">'anon'</span><span class="p">,</span>
-    <span class="n">api_id</span><span class="p">,</span>
-    <span class="n">api_hash</span><span class="p">,</span>
-
-    <span class="c1"># Use one of the available connection modes.</span>
-    <span class="c1"># Normally, this one works with most proxies.</span>
-    <span class="n">connection</span><span class="o">=</span><span class="n">connection</span><span class="o">.</span><span class="n">ConnectionTcpMTProxyRandomizedIntermediate</span><span class="p">,</span>
-
-    <span class="c1"># Then, pass the proxy details as a tuple:</span>
-    <span class="c1">#     (host name, port, proxy secret)</span>
-    <span class="c1">#</span>
-    <span class="c1"># If the proxy has no secret, the secret must be:</span>
-    <span class="c1">#     '00000000000000000000000000000000'</span>
-    <span class="n">proxy</span><span class="o">=</span><span class="p">(</span><span class="s1">'mtproxy.example.com'</span><span class="p">,</span> <span class="mi">2002</span><span class="p">,</span> <span class="s1">'secret'</span><span class="p">)</span>
-<span class="p">)</span>
+<p>The generic classes for different error codes are:</p>
+<ul>
+<li><code>InvalidDCError</code> (303), the request must be repeated on another DC.</li>
+<li><code>BadRequestError</code> (400), the request contained errors.</li>
+<li><code>UnauthorizedError</code> (401), the user is not authorized yet.</li>
+<li><code>ForbiddenError</code> (403), privacy violation error.</li>
+<li><code>NotFoundError</code> (404), make sure you're invoking <code>Request</code>'s!</li>
+</ul>
+<p>If the error is not recognised, it will only be an <code>RPCError</code>.</p>
+<p>You can refer to all errors from Python through the <code>telethon.errors</code>
+module. If you don't know what attributes they have, try printing their
+dir (like <code>print(dir(e))</code>).</p>
+<h2 id="attributes">Attributes<a class="headerlink" href="#attributes" title="Permanent link">¶</a></h2>
+<p>Some of the errors carry additional data in them. When they look like
+<code>EMAIL_UNCONFIRMED_X</code>, the <code>_X</code> value will be accessible from the
+error instance. The current list of errors that do this is the following:</p>
+<ul>
+<li><code>EmailUnconfirmedError</code> has <code>.code_length</code>.</li>
+<li><code>FileMigrateError</code> has <code>.new_dc</code>.</li>
+<li><code>FilePartMissingError</code> has <code>.which</code>.</li>
+<li><code>FloodTestPhoneWaitError</code> has <code>.seconds</code>.</li>
+<li><code>FloodWaitError</code> has <code>.seconds</code>.</li>
+<li><code>InterdcCallErrorError</code> has <code>.dc</code>.</li>
+<li><code>InterdcCallRichErrorError</code> has <code>.dc</code>.</li>
+<li><code>NetworkMigrateError</code> has <code>.new_dc</code>.</li>
+<li><code>PhoneMigrateError</code> has <code>.new_dc</code>.</li>
+<li><code>SlowModeWaitError</code> has <code>.seconds</code>.</li>
+<li><code>TakeoutInitDelayError</code> has <code>.seconds</code>.</li>
+<li><code>UserMigrateError</code> has <code>.new_dc</code>.</li>
+</ul>
+<h2 id="avoiding-limits">Avoiding Limits<a class="headerlink" href="#avoiding-limits" title="Permanent link">¶</a></h2>
+<p>Don't spam. You won't get <code>FloodWaitError</code> or your account banned or
+deleted if you use the library <em>for legit use cases</em>. Make cool tools.
+Don't spam! Nobody knows the exact limits for all requests since they
+depend on a lot of factors, so don't bother asking.</p>
+<p>Still, if you do have a legit use case and still get those errors, the
+library will automatically sleep when they are smaller than 60 seconds
+by default. You can set different "auto-sleep" thresholds:</p>
+<div class="highlight"><pre><span></span><code><span class="n">client</span><span class="o">.</span><span class="n">flood_sleep_threshold</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># Don't auto-sleep</span>
+<span class="n">client</span><span class="o">.</span><span class="n">flood_sleep_threshold</span> <span class="o">=</span> <span class="mi">24</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span>  <span class="c1"># Sleep always</span>
 </code></pre></div>
-<p>In future updates, we may make it easier to use MTProto Proxies
-(such as avoiding the need to manually pass <code>connection=</code>).</p>
-<p>In short, the same code above but without comments to make it clearer:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">telethon</span> <span class="kn">import</span> <span class="n">TelegramClient</span><span class="p">,</span> <span class="n">connection</span>
-
-<span class="n">client</span> <span class="o">=</span> <span class="n">TelegramClient</span><span class="p">(</span>
-    <span class="s1">'anon'</span><span class="p">,</span> <span class="n">api_id</span><span class="p">,</span> <span class="n">api_hash</span><span class="p">,</span>
-    <span class="n">connection</span><span class="o">=</span><span class="n">connection</span><span class="o">.</span><span class="n">ConnectionTcpMTProxyRandomizedIntermediate</span><span class="p">,</span>
-    <span class="n">proxy</span><span class="o">=</span><span class="p">(</span><span class="s1">'mtproxy.example.com'</span><span class="p">,</span> <span class="mi">2002</span><span class="p">,</span> <span class="s1">'secret'</span><span class="p">)</span>
-<span class="p">)</span>
+<p>You can also except it and act as you prefer:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">telethon.errors</span> <span class="kn">import</span> <span class="n">FloodWaitError</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="o">...</span>
+<span class="k">except</span> <span class="n">FloodWaitError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'Flood waited for'</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">seconds</span><span class="p">)</span>
+    <span class="n">quit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </code></pre></div>
+<p>VoIP numbers are very limited, and some countries are more limited too.</p>
 </article>
 </div>
 </div>
@@ -691,7 +658,7 @@ if you want to use a MTProto Proxy. Your code would look like this:</p>
 <footer class="md-footer">
 <div class="md-footer-nav">
 <nav aria-label="Footer" class="md-footer-nav__inner md-grid">
-<a class="md-footer-nav__link md-footer-nav__link--prev" href="../installation/" rel="prev" title="Installation">
+<a class="md-footer-nav__link md-footer-nav__link--prev" href="../asyncio/" rel="prev" title="Mastering asyncio">
 <div class="md-footer-nav__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
 </div>
@@ -700,17 +667,17 @@ if you want to use a MTProto Proxy. Your code would look like this:</p>
 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Installation
+                Mastering asyncio
               </div>
 </div>
 </a>
-<a class="md-footer-nav__link md-footer-nav__link--next" href="../quick-start/" rel="next" title="Quick-Start">
+<a class="md-footer-nav__link md-footer-nav__link--next" href="../../developing/philosophy/" rel="next" title="Philosophy">
 <div class="md-footer-nav__title">
 <div class="md-ellipsis">
 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Quick-Start
+                Philosophy
               </div>
 </div>
 <div class="md-footer-nav__button md-icon">

@@ -5,10 +5,10 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="https://aykuxt.github.io/Telethon/developing/tips-for-porting-the-project/" rel="canonical"/>
+<link href="https://aykuxt.github.io/Telethon/concepts/updates/" rel="canonical"/>
 <link href="../../assets/images/favicon.png" rel="shortcut icon"/>
 <meta content="mkdocs-1.1.2, mkdocs-material-5.2.2" name="generator"/>
-<title>Tips for Porting the Project - Telethon Docs</title>
+<title>Updates in Dept - Telethon Docs</title>
 <link href="../../assets/stylesheets/main.a2408e81.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.a46bcfb3.min.css" rel="stylesheet"/>
 <meta content="#3f51b5" name="theme-color"/>
@@ -22,7 +22,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#tips-for-porting-the-project">
+<a class="md-skip" href="#updates-in-dept">
           Skip to content
         </a>
 </div>
@@ -43,7 +43,7 @@
           </span>
 <span class="md-header-nav__topic md-ellipsis">
             
-              Tips for Porting the Project
+              Updates in Dept
             
           </span>
 </div>
@@ -103,12 +103,12 @@
         </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../concepts/strings/">
+<a class="md-tabs__link md-tabs__link--active" href="../strings/">
           Concepts
         </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link md-tabs__link--active" href="../philosophy/">
+<a class="md-tabs__link" href="../../developing/philosophy/">
           Developing
         </a>
 </li>
@@ -226,8 +226,8 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" id="nav-3" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="nav-3" id="nav-3" type="checkbox"/>
 <label class="md-nav__link" for="nav-3">
       Concepts
       <span class="md-nav__icon md-icon">
@@ -243,40 +243,87 @@
       </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../concepts/strings/" title="String-based Debugging">
+<a class="md-nav__link" href="../strings/" title="String-based Debugging">
       String-based Debugging
     </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../concepts/entities/" title="Entities">
+<a class="md-nav__link" href="../entities/" title="Entities">
       Entities
     </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../concepts/updates/" title="Updates in Dept">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+        Updates in Dept
+        <span class="md-nav__icon md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"></path></svg>
+</span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./" title="Updates in Dept">
       Updates in Dept
     </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#properties-vs-methods">
+    Properties vs. Methods
+  </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../concepts/errors/" title="RPC Errors">
+<a class="md-nav__link" href="#events-without-the-client">
+    Events Without the client
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#events-without-decorators">
+    Events Without Decorators
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#stopping-propagation-of-updates">
+    Stopping Propagation of Updates
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#understanding-asyncio">
+    Understanding asyncio
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#sequential-updates">
+    Sequential Updates
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../errors/" title="RPC Errors">
       RPC Errors
     </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../concepts/botapi-vs-mtproto/" title="HTTP Bot API vs MTProto">
+<a class="md-nav__link" href="../botapi-vs-mtproto/" title="HTTP Bot API vs MTProto">
       HTTP Bot API vs MTProto
     </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../concepts/asyncio/" title="Mastering asyncio">
+<a class="md-nav__link" href="../asyncio/" title="Mastering asyncio">
       Mastering asyncio
     </a>
 </li>
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="nav-4" id="nav-4" type="checkbox"/>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" id="nav-4" type="checkbox"/>
 <label class="md-nav__link" for="nav-4">
       Developing
       <span class="md-nav__icon md-icon">
@@ -292,43 +339,42 @@
       </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../philosophy/" title="Philosophy">
+<a class="md-nav__link" href="../../developing/philosophy/" title="Philosophy">
       Philosophy
     </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../test-servers/" title="Test Servers">
+<a class="md-nav__link" href="../../developing/test-servers/" title="Test Servers">
       Test Servers
     </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../project-structure/" title="Project Structure">
+<a class="md-nav__link" href="../../developing/project-structure/" title="Project Structure">
       Project Structure
     </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../coding-style/" title="Coding Style">
+<a class="md-nav__link" href="../../developing/coding-style/" title="Coding Style">
       Coding Style
     </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../testing/" title="Tests">
+<a class="md-nav__link" href="../../developing/testing/" title="Tests">
       Tests
     </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../understanding-the-type-language/" title="Understanding the Type Language">
+<a class="md-nav__link" href="../../developing/understanding-the-type-language/" title="Understanding the Type Language">
       Understanding the Type Language
     </a>
 </li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
-<a class="md-nav__link md-nav__link--active" href="./" title="Tips for Porting the Project">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../developing/tips-for-porting-the-project/" title="Tips for Porting the Project">
       Tips for Porting the Project
     </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../telegram-api-in-other-languages/" title="Telegram API in Other Languages">
+<a class="md-nav__link" href="../../developing/telegram-api-in-other-languages/" title="Telegram API in Other Languages">
       Telegram API in Other Languages
     </a>
 </li>
@@ -466,26 +512,220 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#properties-vs-methods">
+    Properties vs. Methods
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#events-without-the-client">
+    Events Without the client
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#events-without-decorators">
+    Events Without Decorators
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#stopping-propagation-of-updates">
+    Stopping Propagation of Updates
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#understanding-asyncio">
+    Understanding asyncio
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#sequential-updates">
+    Sequential Updates
+  </a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
 </div>
 <div class="md-content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/LonamiWebs/Telethon/edit/master/docs/developing/tips-for-porting-the-project.md" title="Edit this page">
+<a class="md-content__button md-icon" href="https://github.com/LonamiWebs/Telethon/edit/master/docs/concepts/updates.md" title="Edit this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
 </a>
-<h1 id="tips-for-porting-the-project">Tips for Porting the Project<a class="headerlink" href="#tips-for-porting-the-project" title="Permanent link">¶</a></h1>
-<p>If you're going to use the code on this repository to guide you, please
-be kind and don't forget to mention it helped you!</p>
-<p>You should start by reading the source code on the <a href="https://github.com/LonamiWebs/Telethon/releases/tag/v0.1">first
-release</a> of
-the project, and start creating a <code>MTProtoSender</code>. Once this is made,
-you should write by hand the code to authenticate on the Telegram's
-server, which are some steps required to get the key required to talk to
-them. Save it somewhere! Then, simply mimic, or reinvent other parts of
-the code, and it will be ready to go within a few days.</p>
-<p>Good luck!</p>
+<h1 id="updates-in-dept">Updates in Dept<a class="headerlink" href="#updates-in-dept" title="Permanent link">¶</a></h1>
+<h2 id="properties-vs-methods">Properties vs. Methods<a class="headerlink" href="#properties-vs-methods" title="Permanent link">¶</a></h2>
+<p>The event shown above acts just like a <code>custom.Message
+&lt;telethon.tl.custom.message.Message&gt;</code>, which means you
+can access all the properties it has, like <code>.sender</code>.</p>
+<p><strong>However</strong> events are different to other methods in the client, like
+<code>client.get_messages &lt;telethon.client.messages.MessageMethods.get_messages&gt;</code>.
+Events <em>may not</em> send information about the sender or chat, which means it
+can be <code>None</code>, but all the methods defined in the client always have this
+information so it doesn't need to be re-fetched. For this reason, you have
+<code>get_</code> methods, which will make a network call if necessary.</p>
+<p>In short, you should do this:</p>
+<div class="highlight"><pre><span></span><code><span class="nd">@client</span><span class="o">.</span><span class="n">on</span><span class="p">(</span><span class="n">events</span><span class="o">.</span><span class="n">NewMessage</span><span class="p">)</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">handler</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+    <span class="c1"># event.input_chat may be None, use event.get_input_chat()</span>
+    <span class="n">chat</span> <span class="o">=</span> <span class="k">await</span> <span class="n">event</span><span class="o">.</span><span class="n">get_input_chat</span><span class="p">()</span>
+    <span class="n">sender</span> <span class="o">=</span> <span class="k">await</span> <span class="n">event</span><span class="o">.</span><span class="n">get_sender</span><span class="p">()</span>
+    <span class="n">buttons</span> <span class="o">=</span> <span class="k">await</span> <span class="n">event</span><span class="o">.</span><span class="n">get_buttons</span><span class="p">()</span>
+
+<span class="k">async</span> <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="k">async</span> <span class="k">for</span> <span class="n">message</span> <span class="ow">in</span> <span class="n">client</span><span class="o">.</span><span class="n">iter_messages</span><span class="p">(</span><span class="s1">'me'</span><span class="p">,</span> <span class="mi">10</span><span class="p">):</span>
+        <span class="c1"># Methods from the client always have these properties ready</span>
+        <span class="n">chat</span> <span class="o">=</span> <span class="n">message</span><span class="o">.</span><span class="n">input_chat</span>
+        <span class="n">sender</span> <span class="o">=</span> <span class="n">message</span><span class="o">.</span><span class="n">sender</span>
+        <span class="n">buttons</span> <span class="o">=</span> <span class="n">message</span><span class="o">.</span><span class="n">buttons</span>
+</code></pre></div>
+<p>Notice, properties (<code>message.sender
+&lt;telethon.tl.custom.message.Message.sender&gt;</code>) don't need an <code>await</code>, but
+methods (<code>message.get_sender
+&lt;telethon.tl.custom.message.Message.get_sender&gt;</code>) <strong>do</strong> need an <code>await</code>,
+and you should use methods in events for these properties that may need network.</p>
+<h2 id="events-without-the-client">Events Without the client<a class="headerlink" href="#events-without-the-client" title="Permanent link">¶</a></h2>
+<p>The code of your application starts getting big, so you decide to
+separate the handlers into different files. But how can you access
+the client from these files? You don't need to! Just <code>events.register
+&lt;telethon.events.register&gt;</code> them:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># handlers/welcome.py</span>
+<span class="kn">from</span> <span class="nn">telethon</span> <span class="kn">import</span> <span class="n">events</span>
+
+<span class="nd">@events</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">events</span><span class="o">.</span><span class="n">NewMessage</span><span class="p">(</span><span class="s1">'(?i)hello'</span><span class="p">))</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">handler</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+    <span class="n">client</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">client</span>
+    <span class="k">await</span> <span class="n">event</span><span class="o">.</span><span class="n">respond</span><span class="p">(</span><span class="s1">'Hey!'</span><span class="p">)</span>
+    <span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="s1">'me'</span><span class="p">,</span> <span class="s1">'I said hello to someone'</span><span class="p">)</span>
+</code></pre></div>
+<p>Registering events is a way of saying "this method is an event handler".
+You can use <code>telethon.events.is_handler</code> to check if any method is a handler.
+You can think of them as a different approach to Flask's blueprints.</p>
+<p>It's important to note that this does <strong>not</strong> add the handler to any client!
+You never specified the client on which the handler should be used. You only
+declared that it is a handler, and its type.</p>
+<p>To actually use the handler, you need to <code>client.add_event_handler
+&lt;telethon.client.updates.UpdateMethods.add_event_handler&gt;</code> to the
+client (or clients) where they should be added to:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># main.py</span>
+<span class="kn">from</span> <span class="nn">telethon</span> <span class="kn">import</span> <span class="n">TelegramClient</span>
+<span class="kn">import</span> <span class="nn">handlers.welcome</span>
+
+<span class="k">with</span> <span class="n">TelegramClient</span><span class="p">(</span><span class="o">...</span><span class="p">)</span> <span class="k">as</span> <span class="n">client</span><span class="p">:</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">add_event_handler</span><span class="p">(</span><span class="n">handlers</span><span class="o">.</span><span class="n">welcome</span><span class="o">.</span><span class="n">handler</span><span class="p">)</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">run_until_disconnected</span><span class="p">()</span>
+</code></pre></div>
+<p>This also means that you can register an event handler once and
+then add it to many clients without re-declaring the event.</p>
+<h2 id="events-without-decorators">Events Without Decorators<a class="headerlink" href="#events-without-decorators" title="Permanent link">¶</a></h2>
+<p>If for any reason you don't want to use <code>telethon.events.register</code>,
+you can explicitly pass the event handler to use to the mentioned
+<code>client.add_event_handler
+&lt;telethon.client.updates.UpdateMethods.add_event_handler&gt;</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">telethon</span> <span class="kn">import</span> <span class="n">TelegramClient</span><span class="p">,</span> <span class="n">events</span>
+
+<span class="k">async</span> <span class="k">def</span> <span class="nf">handler</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+    <span class="o">...</span>
+
+<span class="k">with</span> <span class="n">TelegramClient</span><span class="p">(</span><span class="o">...</span><span class="p">)</span> <span class="k">as</span> <span class="n">client</span><span class="p">:</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">add_event_handler</span><span class="p">(</span><span class="n">handler</span><span class="p">,</span> <span class="n">events</span><span class="o">.</span><span class="n">NewMessage</span><span class="p">)</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">run_until_disconnected</span><span class="p">()</span>
+</code></pre></div>
+<p>Similarly, you also have <code>client.remove_event_handler
+&lt;telethon.client.updates.UpdateMethods.remove_event_handler&gt;</code>
+and <code>client.list_event_handlers
+&lt;telethon.client.updates.UpdateMethods.list_event_handlers&gt;</code>.</p>
+<p>The <code>event</code> argument is optional in all three methods and defaults to
+<code>events.Raw &lt;telethon.events.raw.Raw&gt;</code> for adding, and <code>None</code> when
+removing (so all callbacks would be removed).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code>event</code> type is ignored in <code>client.add_event_handler
+&lt;telethon.client.updates.UpdateMethods.add_event_handler&gt;</code>
+if you have used <code>telethon.events.register</code> on the <code>callback</code>
+before, since that's the point of using such method at all.</p>
+</div>
+<h2 id="stopping-propagation-of-updates">Stopping Propagation of Updates<a class="headerlink" href="#stopping-propagation-of-updates" title="Permanent link">¶</a></h2>
+<p>There might be cases when an event handler is supposed to be used solitary and
+it makes no sense to process any other handlers in the chain. For this case,
+it is possible to raise a <code>telethon.events.StopPropagation</code> exception which
+will cause the propagation of the update through your handlers to stop:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">telethon.events</span> <span class="kn">import</span> <span class="n">StopPropagation</span>
+
+<span class="nd">@client</span><span class="o">.</span><span class="n">on</span><span class="p">(</span><span class="n">events</span><span class="o">.</span><span class="n">NewMessage</span><span class="p">)</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">_</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+    <span class="c1"># ... some conditions</span>
+    <span class="k">await</span> <span class="n">event</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span>
+
+    <span class="c1"># Other handlers won't have an event to work with</span>
+    <span class="k">raise</span> <span class="n">StopPropagation</span>
+
+<span class="nd">@client</span><span class="o">.</span><span class="n">on</span><span class="p">(</span><span class="n">events</span><span class="o">.</span><span class="n">NewMessage</span><span class="p">)</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">_</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+    <span class="c1"># Will never be reached, because it is the second handler</span>
+    <span class="c1"># in the chain.</span>
+    <span class="k">pass</span>
+</code></pre></div>
+<p>Remember to check :ref:<code>telethon-events</code> if you're looking for
+the methods reference.</p>
+<h2 id="understanding-asyncio">Understanding asyncio<a class="headerlink" href="#understanding-asyncio" title="Permanent link">¶</a></h2>
+<p>With <code>asyncio</code>, the library has several tasks running in the background.
+One task is used for sending requests, another task is used to receive them,
+and a third one is used to handle updates.</p>
+<p>To handle updates, you must keep your script running. You can do this in
+several ways. For instance, if you are <em>not</em> running <code>asyncio</code>'s event
+loop, you should use <code>client.run_until_disconnected
+&lt;telethon.client.updates.UpdateMethods.run_until_disconnected&gt;</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">asyncio</span>
+<span class="kn">from</span> <span class="nn">telethon</span> <span class="kn">import</span> <span class="n">TelegramClient</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">TelegramClient</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="o">...</span>
+<span class="n">client</span><span class="o">.</span><span class="n">run_until_disconnected</span><span class="p">()</span>
+</code></pre></div>
+<p>Behind the scenes, this method is <code>await</code>'ing on the <code>client.disconnected
+&lt;telethon.client.telegrambaseclient.TelegramBaseClient.disconnected&gt;</code> property,
+so the code above and the following are equivalent:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">asyncio</span>
+<span class="kn">from</span> <span class="nn">telethon</span> <span class="kn">import</span> <span class="n">TelegramClient</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">TelegramClient</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+
+<span class="k">async</span> <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">disconnected</span>
+
+<span class="n">loop</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span>
+<span class="n">loop</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
+</code></pre></div>
+<p>You could also run <code>client.disconnected
+&lt;telethon.client.telegrambaseclient.TelegramBaseClient.disconnected&gt;</code>
+until it completed.</p>
+<p>But if you don't want to <code>await</code>, then you should know what you want
+to be doing instead! What matters is that you shouldn't let your script
+die. If you don't care about updates, you don't need any of this.</p>
+<p>Notice that unlike <code>client.disconnected
+&lt;telethon.client.telegrambaseclient.TelegramBaseClient.disconnected&gt;</code>,
+<code>client.run_until_disconnected
+&lt;telethon.client.updates.UpdateMethods.run_until_disconnected&gt;</code> will
+handle <code>KeyboardInterrupt</code> with you. This method is special and can
+also be ran while the loop is running, so you can do this:</p>
+<div class="highlight"><pre><span></span><code><span class="k">async</span> <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">run_until_disconnected</span><span class="p">()</span>
+
+<span class="n">loop</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
+</code></pre></div>
+<h2 id="sequential-updates">Sequential Updates<a class="headerlink" href="#sequential-updates" title="Permanent link">¶</a></h2>
+<p>If you need to process updates sequentially (i.e. not in parallel),
+you should set <code>sequential_updates=True</code> when creating the client:</p>
+<div class="highlight"><pre><span></span><code><span class="k">with</span> <span class="n">TelegramClient</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="n">sequential_updates</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">client</span><span class="p">:</span>
+    <span class="o">...</span>
+</code></pre></div>
 </article>
 </div>
 </div>
@@ -493,7 +733,7 @@ the code, and it will be ready to go within a few days.</p>
 <footer class="md-footer">
 <div class="md-footer-nav">
 <nav aria-label="Footer" class="md-footer-nav__inner md-grid">
-<a class="md-footer-nav__link md-footer-nav__link--prev" href="../understanding-the-type-language/" rel="prev" title="Understanding the Type Language">
+<a class="md-footer-nav__link md-footer-nav__link--prev" href="../entities/" rel="prev" title="Entities">
 <div class="md-footer-nav__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
 </div>
@@ -502,17 +742,17 @@ the code, and it will be ready to go within a few days.</p>
 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Understanding the Type Language
+                Entities
               </div>
 </div>
 </a>
-<a class="md-footer-nav__link md-footer-nav__link--next" href="../telegram-api-in-other-languages/" rel="next" title="Telegram API in Other Languages">
+<a class="md-footer-nav__link md-footer-nav__link--next" href="../errors/" rel="next" title="RPC Errors">
 <div class="md-footer-nav__title">
 <div class="md-ellipsis">
 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Telegram API in Other Languages
+                RPC Errors
               </div>
 </div>
 <div class="md-footer-nav__button md-icon">

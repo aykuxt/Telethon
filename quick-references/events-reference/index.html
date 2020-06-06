@@ -5,10 +5,10 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="https://aykuxt.github.io/Telethon/concepts/sessions/" rel="canonical"/>
+<link href="https://aykuxt.github.io/Telethon/quick-references/events-reference/" rel="canonical"/>
 <link href="../../assets/images/favicon.png" rel="shortcut icon"/>
 <meta content="mkdocs-1.1.2, mkdocs-material-5.2.2" name="generator"/>
-<title>Session Files - Telethon Docs</title>
+<title>Events Reference - Telethon Docs</title>
 <link href="../../assets/stylesheets/main.a2408e81.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.a46bcfb3.min.css" rel="stylesheet"/>
 <meta content="#3f51b5" name="theme-color"/>
@@ -22,7 +22,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#session-files">
+<a class="md-skip" href="#events-reference">
           Skip to content
         </a>
 </div>
@@ -43,7 +43,7 @@
           </span>
 <span class="md-header-nav__topic md-ellipsis">
             
-              Session Files
+              Events Reference
             
           </span>
 </div>
@@ -98,12 +98,12 @@
         </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../quick-references/faq/">
+<a class="md-tabs__link md-tabs__link--active" href="../faq/">
           Quick References
         </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link md-tabs__link--active" href="../strings/">
+<a class="md-tabs__link" href="../../concepts/strings/">
           Concepts
         </a>
 </li>
@@ -202,8 +202,8 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" id="nav-2" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="nav-2" id="nav-2" type="checkbox"/>
 <label class="md-nav__link" for="nav-2">
       Quick References
       <span class="md-nav__icon md-icon">
@@ -219,20 +219,87 @@
       </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../quick-references/faq/" title="FAQ">
+<a class="md-nav__link" href="../faq/" title="FAQ">
       FAQ
     </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../quick-references/events-reference/" title="Events Reference">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+        Events Reference
+        <span class="md-nav__icon md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"></path></svg>
+</span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./" title="Events Reference">
       Events Reference
     </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#newmessage">
+    NewMessage
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#messageedited">
+    MessageEdited
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#messagedeleted">
+    MessageDeleted
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#messageread">
+    MessageRead
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#chataction">
+    ChatAction
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#userupdate">
+    UserUpdate
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#callbackquery">
+    CallbackQuery
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#inlinequery">
+    InlineQuery
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#album">
+    Album
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#raw">
+    Raw
+  </a>
 </li>
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="nav-3" id="nav-3" type="checkbox"/>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" id="nav-3" type="checkbox"/>
 <label class="md-nav__link" for="nav-3">
       Concepts
       <span class="md-nav__icon md-icon">
@@ -248,79 +315,42 @@
       </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../strings/" title="String-based Debugging">
+<a class="md-nav__link" href="../../concepts/strings/" title="String-based Debugging">
       String-based Debugging
     </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../entities/" title="Entities">
+<a class="md-nav__link" href="../../concepts/entities/" title="Entities">
       Entities
     </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../updates/" title="Updates in Depth">
+<a class="md-nav__link" href="../../concepts/updates/" title="Updates in Depth">
       Updates in Depth
     </a>
 </li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-        Session Files
-        <span class="md-nav__icon md-icon">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"></path></svg>
-</span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./" title="Session Files">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../concepts/sessions/" title="Session Files">
       Session Files
     </a>
-<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
-</span>
-      Table of contents
-    </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#what-are-sessions">
-    What are Sessions?
-  </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#different-session-storage">
-    Different Session Storage
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#creating-your-own-storage">
-    Creating your Own Storage
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#string-sessions">
-    String Sessions
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../full-api/" title="The Full API">
+<a class="md-nav__link" href="../../concepts/full-api/" title="The Full API">
       The Full API
     </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../errors/" title="RPC Errors">
+<a class="md-nav__link" href="../../concepts/errors/" title="RPC Errors">
       RPC Errors
     </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../botapi-vs-mtproto/" title="HTTP Bot API vs MTProto">
+<a class="md-nav__link" href="../../concepts/botapi-vs-mtproto/" title="HTTP Bot API vs MTProto">
       HTTP Bot API vs MTProto
     </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../asyncio/" title="Mastering asyncio">
+<a class="md-nav__link" href="../../concepts/asyncio/" title="Mastering asyncio">
       Mastering asyncio
     </a>
 </li>
@@ -540,23 +570,53 @@
     </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#what-are-sessions">
-    What are Sessions?
+<a class="md-nav__link" href="#newmessage">
+    NewMessage
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#different-session-storage">
-    Different Session Storage
+<a class="md-nav__link" href="#messageedited">
+    MessageEdited
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#creating-your-own-storage">
-    Creating your Own Storage
+<a class="md-nav__link" href="#messagedeleted">
+    MessageDeleted
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#string-sessions">
-    String Sessions
+<a class="md-nav__link" href="#messageread">
+    MessageRead
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#chataction">
+    ChatAction
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#userupdate">
+    UserUpdate
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#callbackquery">
+    CallbackQuery
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#inlinequery">
+    InlineQuery
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#album">
+    Album
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#raw">
+    Raw
   </a>
 </li>
 </ul>
@@ -566,133 +626,191 @@
 </div>
 <div class="md-content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/LonamiWebs/Telethon/edit/master/docs/concepts/sessions.md" title="Edit this page">
+<a class="md-content__button md-icon" href="https://github.com/LonamiWebs/Telethon/edit/master/docs/quick-references/events-reference.md" title="Edit this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
 </a>
-<h1 id="session-files">Session Files<a class="headerlink" href="#session-files" title="Permanent link">¶</a></h1>
-<p>They are an important part for the library to be efficient, such as caching
-and handling your authorization key (or you would have to login every time!).</p>
-<h2 id="what-are-sessions">What are Sessions?<a class="headerlink" href="#what-are-sessions" title="Permanent link">¶</a></h2>
-<p>The first parameter you pass to the constructor of the
-:ref:<code>TelegramClient &lt;telethon-client&gt;</code> is
-the <code>session</code>, and defaults to be the session name (or full path). That is,
-if you create a <code>TelegramClient('anon')</code> instance and connect, an
-<code>anon.session</code> file will be created in the working directory.</p>
-<p>Note that if you pass a string it will be a file in the current working
-directory, although you can also pass absolute paths.</p>
-<p>The session file contains enough information for you to login without
-re-sending the code, so if you have to enter the code more than once,
-maybe you're changing the working directory, renaming or removing the
-file, or using random names.</p>
-<p>These database files using <code>sqlite3</code> contain the required information to
-talk to the Telegram servers, such as to which IP the client should connect,
-port, authorization key so that messages can be encrypted, and so on.</p>
-<p>These files will by default also save all the input entities that you've seen,
-so that you can get information about a user or channel by just their ID.
-Telegram will <strong>not</strong> send their <code>access_hash</code> required to retrieve more
-information about them, if it thinks you have already seem them. For this
-reason, the library needs to store this information offline.</p>
-<p>The library will by default too save all the entities (chats and channels
-with their name and username, and users with the phone too) in the session
-file, so that you can quickly access them by username or phone number.</p>
-<p>If you're not going to work with updates, or don't need to cache the
-<code>access_hash</code> associated with the entities' ID, you can disable this
-by setting <code>client.session.save_entities = False</code>.</p>
-<h2 id="different-session-storage">Different Session Storage<a class="headerlink" href="#different-session-storage" title="Permanent link">¶</a></h2>
-<p>If you don't want to use the default SQLite session storage, you can also
-use one of the other implementations or implement your own storage.</p>
-<p>While it's often not the case, it's possible that SQLite is slow enough to
-be noticeable, in which case you can also use a different storage. Note that
-this is rare and most people won't have this issue, but it's worth a mention.</p>
-<p>To use a custom session storage, simply pass the custom session instance to
-:ref:<code>TelegramClient &lt;telethon-client&gt;</code> instead of
-the session name.</p>
-<p>Telethon contains three implementations of the abstract <code>Session</code> class:</p>
-<!---
-currentmodule:: telethon.sessions
--->
-<ul>
-<li><code>MemorySession &lt;memory.MemorySession&gt;</code>: stores session data within memory.</li>
-<li><code>SQLiteSession &lt;sqlite.SQLiteSession&gt;</code>: stores sessions within on-disk SQLite databases. Default.</li>
-<li><code>StringSession &lt;string.StringSession&gt;</code>: stores session data within memory,
-  but can be saved as a string.</li>
-</ul>
-<p>You can import these <code>from telethon.sessions</code>. For example, using the
-<code>StringSession &lt;string.StringSession&gt;</code> is done as follows:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">telethon.sync</span> <span class="kn">import</span> <span class="n">TelegramClient</span>
-<span class="kn">from</span> <span class="nn">telethon.sessions</span> <span class="kn">import</span> <span class="n">StringSession</span>
-
-<span class="k">with</span> <span class="n">TelegramClient</span><span class="p">(</span><span class="n">StringSession</span><span class="p">(</span><span class="n">string</span><span class="p">),</span> <span class="n">api_id</span><span class="p">,</span> <span class="n">api_hash</span><span class="p">)</span> <span class="k">as</span> <span class="n">client</span><span class="p">:</span>
-    <span class="o">...</span>  <span class="c1"># use the client</span>
-
-    <span class="c1"># Save the string session as a string; you should decide how</span>
-    <span class="c1"># you want to save this information (over a socket, remote</span>
-    <span class="c1"># database, print it and then paste the string in the code,</span>
-    <span class="c1"># etc.); the advantage is that you don't need to save it</span>
-    <span class="c1"># on the current disk as a separate file, and can be reused</span>
-    <span class="c1"># anywhere else once you log in.</span>
-    <span class="n">string</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
-
-<span class="c1"># Note that it's also possible to save any other session type</span>
-<span class="c1"># as a string by using ``StringSession.save(session_instance)``:</span>
-<span class="n">client</span> <span class="o">=</span> <span class="n">TelegramClient</span><span class="p">(</span><span class="s1">'sqlite-session'</span><span class="p">,</span> <span class="n">api_id</span><span class="p">,</span> <span class="n">api_hash</span><span class="p">)</span>
-<span class="n">string</span> <span class="o">=</span> <span class="n">StringSession</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">client</span><span class="o">.</span><span class="n">session</span><span class="p">)</span>
-</code></pre></div>
-<p>There are other community-maintained implementations available:</p>
-<ul>
-<li>
-<p><a href="https://github.com/tulir/telethon-session-sqlalchemy">SQLAlchemy</a>:
-  stores all sessions in a single database via SQLAlchemy.</p>
-</li>
-<li>
-<p><a href="https://github.com/ezdev128/telethon-session-redis">Redis</a>:
-  stores all sessions in a single Redis data store.</p>
-</li>
-<li>
-<p><a href="https://github.com/watzon/telethon-session-mongo">MongoDB</a>:
-  stores the current session in a MongoDB database.</p>
-</li>
-</ul>
-<h2 id="creating-your-own-storage">Creating your Own Storage<a class="headerlink" href="#creating-your-own-storage" title="Permanent link">¶</a></h2>
-<p>The easiest way to create your own storage implementation is to use
-<code>MemorySession &lt;memory.MemorySession&gt;</code> as the base and check out how
-<code>SQLiteSession &lt;sqlite.SQLiteSession&gt;</code> or one of the community-maintained
-implementations work. You can find the relevant Python files under the
-<code>sessions/</code> directory in the Telethon's repository.</p>
-<p>After you have made your own implementation, you can add it to the
-community-maintained session implementation list above with a pull request.</p>
-<h2 id="string-sessions">String Sessions<a class="headerlink" href="#string-sessions" title="Permanent link">¶</a></h2>
-<p><code>StringSession &lt;string.StringSession&gt;</code> are a convenient way to embed your
-login credentials directly into your code for extremely easy portability,
-since all they take is a string to be able to login without asking for your
-phone and code (or faster start if you're using a bot token).</p>
-<p>The easiest way to generate a string session is as follows:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">telethon.sync</span> <span class="kn">import</span> <span class="n">TelegramClient</span>
-<span class="kn">from</span> <span class="nn">telethon.sessions</span> <span class="kn">import</span> <span class="n">StringSession</span>
-
-<span class="k">with</span> <span class="n">TelegramClient</span><span class="p">(</span><span class="n">StringSession</span><span class="p">(),</span> <span class="n">api_id</span><span class="p">,</span> <span class="n">api_hash</span><span class="p">)</span> <span class="k">as</span> <span class="n">client</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">client</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">save</span><span class="p">())</span>
-</code></pre></div>
-<p>Think of this as a way to export your authorization key (what's needed
-to login into your account). This will print a string in the standard
-output (likely your terminal).</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p><strong>Keep this string safe!</strong> Anyone with this string can use it
-to login into your account and do anything they want to to do.</p>
-<p>This is similar to leaking your <code>*.session</code> files online,
-but it is easier to leak a string than it is to leak a file.</p>
+<h1 id="events-reference">Events Reference<a class="headerlink" href="#events-reference" title="Permanent link">¶</a></h1>
+<p>Here you will find a quick summary of all the methods
+and properties that you can access when working with events.</p>
+<p>You can access the client that creates this event by doing
+<code>event.client</code>, and you should view the description of the
+events to find out what arguments it allows on creation and
+its <strong>attributes</strong> (the properties will be shown here).</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Remember that <strong>all events base</strong> <code>ChatGetter
+&lt;telethon.tl.custom.chatgetter.ChatGetter&gt;</code>! Please see :ref:<code>faq</code>
+if you don't know what this means or the implications of it.</p>
 </div>
-<p>Once you have the string (which is a bit long), load it into your script
-somehow. You can use a normal text file and <code>open(...).read()</code> it or
-you can save it in a variable directly:</p>
-<div class="highlight"><pre><span></span><code><span class="n">string</span> <span class="o">=</span> <span class="s1">'1aaNk8EX-YRfwoRsebUkugFvht6DUPi_Q25UOCzOAqzc...'</span>
-<span class="k">with</span> <span class="n">TelegramClient</span><span class="p">(</span><span class="n">StringSession</span><span class="p">(</span><span class="n">string</span><span class="p">),</span> <span class="n">api_id</span><span class="p">,</span> <span class="n">api_hash</span><span class="p">)</span> <span class="k">as</span> <span class="n">client</span><span class="p">:</span>
-    <span class="n">client</span><span class="o">.</span><span class="n">loop</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">client</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="s1">'me'</span><span class="p">,</span> <span class="s1">'Hi'</span><span class="p">))</span>
+<h2 id="newmessage">NewMessage<a class="headerlink" href="#newmessage" title="Permanent link">¶</a></h2>
+<p>Occurs whenever a new text message or a message with media arrives.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The new message event <strong>should be treated as</strong> a
+normal <code>Message &lt;telethon.tl.custom.message.Message&gt;</code>, with
+the following exceptions:</p>
+<ul>
+<li><code>pattern_match</code> is the match object returned by <code>pattern=</code>.</li>
+<li><code>message</code> is <strong>not</strong> the message string. It's the <code>Message
+  &lt;telethon.tl.custom.message.Message&gt;</code> object.</li>
+</ul>
+<p>Remember, this event is just a proxy over the message, so while
+you won't see its attributes and properties, you can still access
+them. Please see the full documentation for examples.</p>
+</div>
+<p>Full documentation for the <code>NewMessage
+&lt;telethon.events.newmessage.NewMessage&gt;</code>.</p>
+<h2 id="messageedited">MessageEdited<a class="headerlink" href="#messageedited" title="Permanent link">¶</a></h2>
+<p>Occurs whenever a message is edited. Just like <code>NewMessage
+&lt;telethon.events.newmessage.NewMessage&gt;</code>, you should treat
+this event as a <code>Message &lt;telethon.tl.custom.message.Message&gt;</code>.</p>
+<p>Full documentation for the <code>MessageEdited
+&lt;telethon.events.messageedited.MessageEdited&gt;</code>.</p>
+<h2 id="messagedeleted">MessageDeleted<a class="headerlink" href="#messagedeleted" title="Permanent link">¶</a></h2>
+<p>Occurs whenever a message is deleted. Note that this event isn't 100%
+reliable, since Telegram doesn't always notify the clients that a message
+was deleted.</p>
+<p>It only has the <code>deleted_id</code> and <code>deleted_ids</code> attributes
+(in addition to the chat if the deletion happened in a channel).</p>
+<p>Full documentation for the <code>MessageDeleted
+&lt;telethon.events.messagedeleted.MessageDeleted&gt;</code>.</p>
+<h2 id="messageread">MessageRead<a class="headerlink" href="#messageread" title="Permanent link">¶</a></h2>
+<p>Occurs whenever one or more messages are read in a chat.</p>
+<p>Full documentation for the <code>MessageRead
+&lt;telethon.events.messageread.MessageRead&gt;</code>.</p>
+<p>.. currentmodule:: telethon.events.messageread.MessageRead.Event</p>
+<p>.. autosummary::
+    :nosignatures:</p>
+<div class="codehilite"><pre><span></span><code>    inbox
+    message_ids
+
+    get_messages
+    is_read
 </code></pre></div>
-<p>These strings are really convenient for using in places like Heroku since
-their ephemeral filesystem will delete external files once your application
-is over.</p>
+<h2 id="chataction">ChatAction<a class="headerlink" href="#chataction" title="Permanent link">¶</a></h2>
+<p>Occurs on certain chat actions, such as chat title changes,
+user join or leaves, pinned messages, photo changes, etc.</p>
+<p>Full documentation for the <code>ChatAction
+&lt;telethon.events.chataction.ChatAction&gt;</code>.</p>
+<p>.. currentmodule:: telethon.events.chataction.ChatAction.Event</p>
+<p>.. autosummary::
+    :nosignatures:</p>
+<div class="codehilite"><pre><span></span><code>    added_by
+    kicked_by
+    user
+    input_user
+    user_id
+    users
+    input_users
+    user_ids
+
+    respond
+    reply
+    delete
+    get_pinned_message
+    get_added_by
+    get_kicked_by
+    get_user
+    get_input_user
+    get_users
+    get_input_users
+</code></pre></div>
+<h2 id="userupdate">UserUpdate<a class="headerlink" href="#userupdate" title="Permanent link">¶</a></h2>
+<p>Occurs whenever a user goes online, starts typing, etc.</p>
+<p>Full documentation for the <code>UserUpdate
+&lt;telethon.events.userupdate.UserUpdate&gt;</code>.</p>
+<p>.. currentmodule:: telethon.events.userupdate.UserUpdate.Event</p>
+<p>.. autosummary::
+    :nosignatures:</p>
+<div class="codehilite"><pre><span></span><code>    user
+    input_user
+    user_id
+
+    get_user
+    get_input_user
+
+    typing
+    uploading
+    recording
+    playing
+    cancel
+    geo
+    audio
+    round
+    video
+    contact
+    document
+    photo
+    last_seen
+    until
+    online
+    recently
+    within_weeks
+    within_months
+</code></pre></div>
+<h2 id="callbackquery">CallbackQuery<a class="headerlink" href="#callbackquery" title="Permanent link">¶</a></h2>
+<p>Occurs whenever you sign in as a bot and a user
+clicks one of the inline buttons on your messages.</p>
+<p>Full documentation for the <code>CallbackQuery
+&lt;telethon.events.callbackquery.CallbackQuery&gt;</code>.</p>
+<p>.. currentmodule:: telethon.events.callbackquery.CallbackQuery.Event</p>
+<p>.. autosummary::
+    :nosignatures:</p>
+<div class="codehilite"><pre><span></span><code>    id
+    message_id
+    data
+    chat_instance
+    via_inline
+
+    respond
+    reply
+    edit
+    delete
+    answer
+    get_message
+</code></pre></div>
+<h2 id="inlinequery">InlineQuery<a class="headerlink" href="#inlinequery" title="Permanent link">¶</a></h2>
+<p>Occurs whenever you sign in as a bot and a user
+sends an inline query such as <code>@bot query</code>.</p>
+<p>Full documentation for the <code>InlineQuery
+&lt;telethon.events.inlinequery.InlineQuery&gt;</code>.</p>
+<p>.. currentmodule:: telethon.events.inlinequery.InlineQuery.Event</p>
+<p>.. autosummary::
+    :nosignatures:</p>
+<div class="codehilite"><pre><span></span><code>    id
+    text
+    offset
+    geo
+    builder
+
+    answer
+</code></pre></div>
+<h2 id="album">Album<a class="headerlink" href="#album" title="Permanent link">¶</a></h2>
+<p>Occurs whenever you receive an entire album.</p>
+<p>Full documentation for the <code>Album
+&lt;telethon.events.album.Album&gt;</code>.</p>
+<p>.. currentmodule:: telethon.events.album.Album.Event</p>
+<p>.. autosummary::
+    :nosignatures:</p>
+<div class="codehilite"><pre><span></span><code>    grouped_id
+    text
+    raw_text
+    is_reply
+    forward
+
+    get_reply_message
+    respond
+    reply
+    forward_to
+    edit
+    delete
+    mark_read
+    pin
+</code></pre></div>
+<h2 id="raw">Raw<a class="headerlink" href="#raw" title="Permanent link">¶</a></h2>
+<p>Raw events are not actual events. Instead, they are the raw
+:tl:<code>Update</code> object that Telegram sends. You normally shouldn't
+need these.</p>
 </article>
 </div>
 </div>
@@ -700,7 +818,7 @@ is over.</p>
 <footer class="md-footer">
 <div class="md-footer-nav">
 <nav aria-label="Footer" class="md-footer-nav__inner md-grid">
-<a class="md-footer-nav__link md-footer-nav__link--prev" href="../updates/" rel="prev" title="Updates in Depth">
+<a class="md-footer-nav__link md-footer-nav__link--prev" href="../faq/" rel="prev" title="FAQ">
 <div class="md-footer-nav__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
 </div>
@@ -709,17 +827,17 @@ is over.</p>
 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Updates in Depth
+                FAQ
               </div>
 </div>
 </a>
-<a class="md-footer-nav__link md-footer-nav__link--next" href="../full-api/" rel="next" title="The Full API">
+<a class="md-footer-nav__link md-footer-nav__link--next" href="../../concepts/strings/" rel="next" title="String-based Debugging">
 <div class="md-footer-nav__title">
 <div class="md-ellipsis">
 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                The Full API
+                String-based Debugging
               </div>
 </div>
 <div class="md-footer-nav__button md-icon">

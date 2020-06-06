@@ -124,15 +124,11 @@
      <lastmod>2020-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://aykuxt.github.io/Telethon/modules/helpers/</loc>
+     <loc>https://aykuxt.github.io/Telethon/modules/custom/</loc>
      <lastmod>2020-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://aykuxt.github.io/Telethon/modules/utils/</loc>
-     <lastmod>2020-06-06</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://aykuxt.github.io/Telethon/modules/custom/</loc>
      <lastmod>2020-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
@@ -141,6 +137,14 @@
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://aykuxt.github.io/Telethon/modules/client/</loc>
+     <lastmod>2020-06-06</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://aykuxt.github.io/Telethon/modules/sessions/</loc>
+     <lastmod>2020-06-06</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://aykuxt.github.io/Telethon/modules/helpers/</loc>
      <lastmod>2020-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
